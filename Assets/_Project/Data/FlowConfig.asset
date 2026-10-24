@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92ffe8d75597c4128898fd418790480d, type: 3}
+  m_Name: FlowConfig
+  m_EditorClassIdentifier: Assembly-CSharp::NeonDrift.Data.FlowConfig
+  multipliers: 0100000002000000030000000500000008000000i
+  flowThresholdsForMultiplier:
+  - 0
+  - 25
+  - 50
+  - 75
+  - 95
+  maxFlow: 100
+  flowDecayRate: 7.5
+  flowGainDriftPerSec: 16
+  flowGainLongDrift: 25
+  flowGainPerfectExit: 20
+  flowGainDriftChain: 15
+  flowGainNearMiss: 18
+  flowGainDriftNearMiss: 30
+  flowGainTrafficGap: 25
+  flowGainDriftGap: 40
+  flowGainHighSpeedPerSec: 6
+  scorePerDriftSec: 300
+  scoreLongDrift: 1200
+  scorePerfectExit: 500
+  scoreDriftChain: 400
+  scoreNearMiss: 250
+  scoreDriftNearMiss: 650
+  scoreTrafficGap: 500
+  scoreDriftGap: 1000
+  scoreHighSpeedPerSec: 100
+  flowPenaltyWallTouch: 15
+  flowPenaltyTrafficHit: 40
+  flowPenaltyHeavyCrash: 80
+  boostEnergyPerFlowGain: 0.6

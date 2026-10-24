@@ -1,0 +1,731 @@
+Unity Editor version:    6000.6.2f1 (770e33f6875c)
+Branch:                  6000.6/staging
+Build type:              Release
+Batch mode:              NO
+macOS version:           Version 15.6.1 (Build 24G90)
+Darwin version:          24.6.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        49152 MB
+Date:                    2026-10-21T20:30:44Z
+Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/NetCoreRuntime/dotnet
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 51551)
+VBCSCompiler prewarm took 8.02 ms
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-logmat" at "2026-10-21T20:30:44.732643Z"
+Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/MacOS/Unity
+-projectPath
+/Users/logmat/Desktop/CLAUDE/NeonDrift
+-logFile
+/Users/logmat/Desktop/CLAUDE/NeonDrift/Logs/Editor.log
+Successfully changed project path to: /Users/logmat/Desktop/CLAUDE/NeonDrift
+/Users/logmat/Desktop/CLAUDE/NeonDrift
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-remapper-allocator-initial-capacity=32768"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-main-allocator-mimalloc-enabled=1"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Logging is directed to a specific file, skipping project log.
+Player connection [8640618688]  Target information:
+
+Player connection [8640618688]  * "[IP] 192.168.1.12 [Port] 55504 [Flags] 2 [Guid] 3315089770 [EditorId] 3315089770 [Version] 1048832 [Id] OSXEditor(0,MacBook-Pro-de-Matias.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+
+Player connection [8640618688] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [8640618688] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              cf232178006c4414936c6ef48127f200
+  Correlation Id:          b9c7231150aa75ed8ddead81b194ebef
+  External correlation Id: 4760526354965953443
+  Machine Id:              4qLDUGMRa+xgv/WJd8yMsCb+6N0=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-logmat" (connect: 0.00s, validation: 0.00s, handshake: 0.21s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-logmat-notifications" at "2026-10-21T20:30:44.940667Z"
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 4674256553018-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Package Manager] Connected to IPC stream "Upm-51550" after 0.0 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.01
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.25s
+[Licensing::Module] Licensing is initialized (took 0.02s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+Initialising UDS system complete:
+  - System type: Client
+  - Resource namespace: 2a1be7aca8bd7c7393854cd969233ab6
+  - Shared memory size: 1073741824
+  - Command buffer id: 1052672
+  - Command buffer size: 8192
+  - Hashmap size: 4194304
+  - Service connected: false
+Launching Unity Data Store - /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/Unity.DataStore 
+Unity Data Store artifact dir = Library/DataStore, working dir = /Users/logmat/Desktop/CLAUDE/NeonDrift[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Unity Data Store running and initialised
+Initialize engine version: 6000.6.2f1 (770e33f6875c)
+[EntityIdStore] init: VM path (explicit commit), pageSize=16384, blockCount=262144, entitiesPerBlock=1024, slots reserved=4294967296 bytes
+[Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path /Users/logmat/Desktop/CLAUDE/NeonDrift/Assets
+GfxDevice: creating device client; kGfxThreadingModeThreaded
+ preferred device: Apple M4 Max (high power)
+Metal devices available: 1
+0: Apple M4 Max (high power)
+Using device Apple M4 Max (high power)
+Initializing Metal device caps: Apple M4 Max
+Mac GPU Family: 2
+Apple GPU Family: 9
+MSL Version: 3.0
+Has Float MSAA: 1
+Has Float Filtering: 1
+ReadWrite Texture Tier: 2
+Initialize mono
+Mono path[0] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/Managed'
+Mono path[1] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/BCLExtensions/runtime/netstandard2.1'
+Mono path[2] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
+Mono config path = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56550
+CodeReloadManager initialized
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: /Applications/Unity/Hub/Editor/6000.6.2f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: /Applications/Unity/Hub/Editor/6000.6.2f1/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: /Applications/Unity/Hub/Editor/6000.6.2f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.008481 seconds.
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  0.491 seconds
+Domain Reload Profiling: 723ms
+	BeginReloadAssembly (45ms)
+		CreateAndSetChildDomain (9ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (145ms)
+		LoadAssemblies (36ms)
+		TypeCache.Refresh (103ms)
+			TypeCache.ScanAssembly (96ms)
+		AnalyzeDomain (0ms)
+	FinalizeReload (491ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (51ms)
+			BeforeProcessingInitializeOnLoad (49ms)
+			ProcessInitializeOnLoadAttributes (46ms)
+			ProcessInitializeOnLoadMethodAttributes (254ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 60 packages:
+  Packages from [https://packages.unity.com]:
+    com.unity.2d.tooling@4.0.1 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.2d.tooling@4e93af4036ee)
+    com.unity.ide.rider@3.0.38 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.ide.rider@1f60b3138684)
+    com.unity.ide.visualstudio@2.0.26 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.ide.visualstudio@a99d56dec63f)
+    com.unity.inputsystem@1.20.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.inputsystem@7a4e1a2a8194)
+    com.unity.2d.common@15.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.2d.common@b779c433ed47)
+    com.unity.searcher@4.9.5 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.searcher@a463122f2c00)
+    com.unity.profiling.core@1.0.3 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.profiling.core@8a49f7027d06)
+    com.unity.nuget.mono-cecil@1.11.6 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.nuget.mono-cecil@ecb9724e46ff)
+  Built-in packages:
+    com.unity.2d.sprite@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.2d.sprite@947350d67f82)
+    com.unity.2d.tilemap@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.2d.tilemap@2c6966496615)
+    com.unity.render-pipelines.universal@17.6.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.render-pipelines.universal@1e1cf3dcbd40)
+    com.unity.ugui@2.6.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.ugui@0f30cee369f3)
+    com.unity.modules.accessibility@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.accessibility)
+    com.unity.modules.adaptiveperformance@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.adaptiveperformance)
+    com.unity.modules.ai@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.ai)
+    com.unity.modules.androidjni@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.androidjni)
+    com.unity.modules.animation@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.animation)
+    com.unity.modules.assetbundle@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.assetbundle)
+    com.unity.modules.audio@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.audio)
+    com.unity.modules.cloth@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.cloth)
+    com.unity.modules.director@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.director)
+    com.unity.modules.imageconversion@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.imageconversion)
+    com.unity.modules.imgui@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.imgui)
+    com.unity.modules.jsonserialize@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.jsonserialize)
+    com.unity.modules.particlesystem@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.particlesystem)
+    com.unity.modules.physics@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.physics)
+    com.unity.modules.physics2d@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.physics2d)
+    com.unity.modules.physicscore2d@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.physicscore2d)
+    com.unity.modules.screencapture@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.screencapture)
+    com.unity.modules.terrain@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.terrainphysics)
+    com.unity.modules.tetgen@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.tetgen)
+    com.unity.modules.tilemap@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.tilemap)
+    com.unity.modules.timelinefoundation@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.timelinefoundation)
+    com.unity.modules.ui@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.ui)
+    com.unity.modules.uielements@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.uielements)
+    com.unity.modules.umbra@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.umbra)
+    com.unity.modules.unityanalytics@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.unityanalytics)
+    com.unity.modules.unitywebrequest@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.unitywebrequest)
+    com.unity.modules.unitywebrequestassetbundle@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.unitywebrequestassetbundle)
+    com.unity.modules.unitywebrequestaudio@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.unitywebrequestaudio)
+    com.unity.modules.unitywebrequesttexture@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.unitywebrequesttexture)
+    com.unity.modules.unitywebrequestwww@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.unitywebrequestwww)
+    com.unity.modules.vectorgraphics@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.vectorgraphics)
+    com.unity.modules.vehicles@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.vehicles)
+    com.unity.modules.video@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.video)
+    com.unity.modules.wind@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.wind)
+    com.unity.modules.xr@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.xr)
+    com.unity.modules.subsystems@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.subsystems)
+    com.unity.modules.hierarchycore@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.modules.hierarchycore)
+    com.unity.render-pipelines.core@17.6.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.render-pipelines.core@a14850be21a6)
+    com.unity.shadergraph@17.6.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.shadergraph@96a7923f6bed)
+    com.unity.render-pipelines.universal-config@17.6.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.render-pipelines.universal-config@561422b74439)
+    com.unity.test-framework@1.8.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.test-framework@7a3849e09bd0)
+    com.unity.ext.nunit@2.1.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.ext.nunit@0198eae3b53e)
+    com.unity.graph-authoring@1.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.graph-authoring@cfd2588851ee)
+    com.unity.burst@2.0.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.burst@626e66ab421b)
+    com.unity.collections@6.6.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.collections@10fff0607388)
+    com.unity.mathematics@1.4.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.mathematics@8306a64d0cd6)
+    com.unity.test-framework.performance@6.6.0 (location: /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/PackageCache/com.unity.test-framework.performance@0a60b857a52e)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.00 seconds
+Starting: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/200b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: /Users/logmat/Desktop/CLAUDE/NeonDrift
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.runtime.interopservices.windowsruntime has duplicate hint path. Ignoring "/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/UnityReferenceAssemblies/unity-4.8-api/Facades/System.Runtime.InteropServices.WindowsRuntime.dll" in favor of "/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/NetStandard/Extensions/2.0.0/System.Runtime.InteropServices.WindowsRuntime.dll"
+warn: Unity.ILPP.Runner.PostProcessingAssemblyLoadContext[0]
+      Assembly system.componentmodel.composition has duplicate hint path. Ignoring "/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/UnityReferenceAssemblies/unity-4.8-api/System.ComponentModel.Composition.dll" in favor of "/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/NetStandard/compat/2.1.0/shims/netfx/System.ComponentModel.Composition.dll"
+ExitCode: 4 Duration: 0s166ms
+Rebuilding DAG because FileSignature timestamp changed: Library/Bee/200b0aE-inputdata.json
+[627/817    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra requires additional run (0.15 seconds), 1 items updated, 626 evaluated
+Starting: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/DotNetSdk/dotnet "/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/BuildPipeline/ScriptCompilationBuildProgram.exe" "Library/Bee/200b0aE.dag.json" "Library/Bee/200b0aE-inputdata.json" "Library/Bee/buildprogram0.traceevents"
+WorkingDir: /Users/logmat/Desktop/CLAUDE/NeonDrift
+ExitCode: 0 Duration: 0s812ms
+Starting: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/BuildPipeline/bee_backend --ipc --defer-dag-verification --dagfile="Library/Bee/200b0aE.dag" --continue-on-failure --dagfilejson="Library/Bee/200b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: /Users/logmat/Desktop/CLAUDE/NeonDrift
+ExitCode: 0 Duration: 0s345ms
+Finished compiling graph: 820 nodes, 16811 flattened edges (14211 ToBuild, 132 ToUse), maximum node priority 951
+[627/817    0s] ILPP-Configuration Library/ilpp-configuration.nevergeneratedoutput
+*** Tundra build success (0.33 seconds), 1 items updated, 817 evaluated
+AssetDatabase: script compilation time: 1.591686s
+Begin MonoManager ReloadAssembly
+Total cache size 267941243
+Total cache size after purge 267941243, took 00:00:00.1905989
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
+Native extension for Android target not found
+Native extension for OSXStandalone target not found
+Native extension for WebGL target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Scripting: successfully reloaded assembly
+- Finished resetting the current domain, in  0.384 seconds
+Domain Reload Profiling: 731ms
+	BeginReloadAssembly (120ms)
+		DisableScriptedObjects (16ms)
+		CreateAndSetChildDomain (39ms)
+	RebuildCommonClasses (4ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (17ms)
+	LoadAllAssembliesAndSetupDomain (198ms)
+		LoadAssemblies (95ms)
+		TypeCache.Refresh (49ms)
+			TypeCache.ScanAssembly (43ms)
+		AnalyzeDomain (20ms)
+			BuildScriptInfoCaches (16ms)
+			ResolveRequiredComponents (3ms)
+	FinalizeReload (384ms)
+		SetupLoadedEditorAssemblies (0ms)
+			InitializePlatformSupportModulesInManaged (5ms)
+			BeforeProcessingInitializeOnLoad (54ms)
+			ProcessInitializeOnLoadAttributes (88ms)
+			ProcessInitializeOnLoadMethodAttributes (91ms)
+		AwakeInstancesAfterBackupRestoration (9ms)
+Starting new worker id: 0 with log in /Users/logmat/Desktop/CLAUDE/NeonDrift/Logs/AssetImportWorkerHW0.log
+
+Asset Pipeline Refresh (id=279b01d55917b43fa9b63544fefdcdde): Total: 3.046 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1048 ms
+		Asset DB Callback time: managed=22 ms, native=4 ms
+		Scripting: domain reloads=1, domain reload time=360 ms, compile time=1593 ms, other=18 ms
+		Project Asset Count: scripts=1052, non-scripts=1994
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokePackagesCallback: 4.873ms
+	ApplyChangesToAssetFolders: 0.177ms
+	Scan: 553.064ms
+	Collect global state as custom dependencies: 7.413ms
+	CategorizeScriptCompilationAssets: 11.023ms
+	ProcessAssetsWithTransientArtifactChanges: 20.134ms
+	CategorizeAssets: 26.912ms
+	CompileScripts: 1592.528ms
+	ImportOutOfDateAssets: 387.654ms (385.557ms without children)
+		UnloadImportedAssets: 0.526ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.267ms
+		ImportSchedulerStart: 1.278ms
+	PostProcessAllAssets: 22.054ms
+		MonoPostProcessAllAssets: 22.033ms
+			UniversalRenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 10.068ms
+			SyncVS.PostprocessSyncProject 4.828ms
+			SpeedTree9Postprocessor.OnPostprocessAllAssets 0.820ms
+			WindowAssetPostprocessingWatcher.OnPostprocessAllAssets 0.754ms
+			EditModeScopePostprocessor.OnPostprocessAllAssets 0.381ms
+			RenderPipelineGlobalSettingsPostprocessor.OnPostprocessAllAssets 0.297ms
+			ShaderReflectionAssetPostProcessor.OnPostprocessAllAssets 0.227ms
+			InputActionAssetPostprocessor.OnPostprocessAllAssets 0.118ms
+			ReferencedClipsPostProcessor.OnPostprocessAllAssets 0.113ms
+			TerrainToolbarOverlayPostProcessor.OnPostprocessAllAssets 0.087ms
+			ProjectSettingsPostprocessor.OnPostprocessAllAssets 0.075ms
+			AssetDatabaseCallbacks.OnPostprocessAllAssets 0.057ms
+	UnloadStreamsBegin: 0.625ms
+	PersistCurrentRevisions: 0.067ms
+	GenerateScriptTypeHashes: 0.704ms
+	GenerateScriptTypeSerializationHashes: 1.391ms
+	Untracked: 417.599ms
+
+Application.AssetDatabase Initial Refresh End
+Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
+Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/UnityShaderCompiler
+Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
+Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
+Scanning for USB devices : 0.020ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-NEON DRIFT
+2026-10-21 17:30:49.593 Unity[51550:17757500] NSEventModifierFlagFunction specified to -setKeyEquivalentModifierMask: for item <NSMenuItem: 0x600000860380 SDF, ke='Command-F12'>, but is only supported for system-provided menu items; will not be used
+Unloading 86 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/_Project/Scenes/NeonDistrictLoop.unity'
+	Deserialize:            11.619 ms
+	Integration:            19.960 ms
+	Integration of assets:  1.410 ms
+	Thread Wait Time:       0.006 ms
+	Total Operation Time:   32.996 ms
+Unloading 4086 unused Assets / (9.7 MB). Loaded Objects now: 5494.
+Memory consumption went from 241.6 MB to 231.8 MB.
+Total: 5.922625 ms (FindLiveObjects: 0.246167 ms CreateObjectMapping: 0.058791 ms MarkObjects: 4.085208 ms  DeleteObjects: 1.461625 ms)
+
+[LAYOUT] About to load UserSettings/Layouts/default-6000.dwlt, keepMainWindow=False
+2026-10-21 17:30:49.656 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:49.656 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:49.657 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:49.657 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:49.657 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:49.657 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:49.657 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:50.003 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:50.003 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:50.003 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:50.003 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:50.004 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:50.004 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+2026-10-21 17:30:50.004 Unity[51550:17757500] CAMetalLayer ignoring invalid setDrawableSize width=0.000000 height=0.000000
+[LAYOUT] About to save layout /Users/logmat/Desktop/CLAUDE/NeonDrift/UserSettings/Layouts/default-6000.dwlt
+[LAYOUT] About to save layout /Users/logmat/Library/Preferences/Unity/Editor-5.x/Layouts/current/default-6000.dwlt
+[MODES] ModeService[default].InitializeCurrentMode
+[MODES] ModeService[default].RaiseModeChanged(default, default)
+This project uses Input Manager, which is marked for deprecation. To manage input in your project, use the <a href="https://docs.unity3d.com/Packages/com.unity.inputsystem@latest">Input System package</a> instead.
+[Project] Loading completed in 5.397 seconds
+	Project init time: 				4.708 seconds
+		Template init time: 		0.000 seconds
+		Package Manager init time: 		0.061 seconds
+		Asset Database init time: 		0.437 seconds
+		Global illumination init time: 	0.001 seconds
+		Assemblies load time: 			0.736 seconds
+		Unity extensions init time: 	0.012 seconds
+		Asset Database refresh time: 	3.048 seconds
+	Scene opening time: 			0.549 seconds
+##utp:{"type":"ProjectInfo","version":2,"phase":"Immediate","time":1792614650118,"processId":51550,"projectLoad":5.397273417,"projectInit":4.707608959,"templateInit":0.0,"packageManagerInit":0.061279416,"assetDatabaseInit":0.436790667,"globalIlluminationInit":0.000613916,"assembliesLoad":0.736329916,"unityExtensionsInit":0.0119395,"assetDatabaseRefresh":3.047741792,"sceneOpening":0.5488575}
+##utp:{"type":"EditorInfo","version":2,"phase":"Immediate","time":1792614650118,"processId":51550,"editorVersion":"6000.6.2f1 (770e33f6875c)","branch":"6000.6/staging","buildType":"Release","platform":"OSX"}
+Subscribe to USB device events
+Worker ready: AssetImportWorkerHW0 0
+Start Indexing on Editor startup
+[Indexing] Starting Initial Indexing for Assets
+Created GICache directory at /Users/logmat/Library/Caches/com.unity3d.UnityEditor/GiCache. Took: 0.005s, timestamps: [5.408 - 5.413]
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated access token: "xiJlIBsD"... (expires: 2026-10-21T21:05:02Z)
+Android Extension - Scanning For ADB Devices 3070 ms
+Android Extension - Scanning For ADB Devices 63 ms
+[Licensing::Client] Successfully resolved entitlement details
+Attempted to call .Dispose on an already disposed CancellationTokenSource
+Android Extension - Scanning For ADB Devices 83 ms
+Android Extension - Scanning For ADB Devices 86 ms
+TrimDiskCacheJob: Current cache size 0mb
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated access token: "G7uhbWWN"... (expires: 2026-10-21T23:05:04Z)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated access token: "jTw_rxhg"... (expires: 2026-10-22T01:27:26Z)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated access token: "9BtfmIa8"... (expires: 2026-10-22T05:59:34Z)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+UnityConnectWebRequestException: Token Exchange failed due a failure with the web request.
+  at UnityEditor.Connect.TokenExchange.VerifyTokenExchangeResponse (UnityEngine.Networking.UnityWebRequest exchangeRequest) [0x00009] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:106 
+  at UnityEditor.Connect.TokenExchange.TokenExchangeRequestAsync (UnityEditor.Connect.TokenExchangeRequest tokenExchangeRequest, System.Threading.CancellationToken cancellationToken) [0x00195] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:89 
+  at UnityEditor.Connect.TokenExchange.GetServiceTokenAsync (System.String genesisToken, System.Threading.CancellationToken cancellationToken) [0x00031] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:33 
+  at UnityEditor.Connect.ServiceToken.GetServiceTokenAsync (System.String genesisToken, System.Threading.CancellationToken cancellationToken) [0x000f3] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/ServiceToken.cs:50 
+  at UnityEditor.Connect.UnityConnect.RequestNewServiceToken () [0x0003b] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/UnityConnect.bindings.cs:566 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+<>c.<ThrowAsync>b__7_0 (System.Object state) [0x00000] in <0e19fd8bd8e94908bba2ee4f803bc6a7>:0 
+  at UnityEngine.UnitySynchronizationContext+WorkRequest.Invoke () [0x00000] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:156 
+  at UnityEngine.UnitySynchronizationContext.Exec () [0x00052] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:84 
+  at UnityEngine.UnitySynchronizationContext.ExecuteTasks () [0x0000e] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:110 
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&) (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:50)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs Line: 106)
+
+[Licensing::Client] Successfully resolved entitlement details
+UnityConnectWebRequestException: Token Exchange failed due a failure with the web request.
+  at UnityEditor.Connect.TokenExchange.VerifyTokenExchangeResponse (UnityEngine.Networking.UnityWebRequest exchangeRequest) [0x00009] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:106 
+  at UnityEditor.Connect.TokenExchange.TokenExchangeRequestAsync (UnityEditor.Connect.TokenExchangeRequest tokenExchangeRequest, System.Threading.CancellationToken cancellationToken) [0x00195] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:89 
+  at UnityEditor.Connect.TokenExchange.GetServiceTokenAsync (System.String genesisToken, System.Threading.CancellationToken cancellationToken) [0x00031] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:33 
+  at UnityEditor.Connect.ServiceToken.GetServiceTokenAsync (System.String genesisToken, System.Threading.CancellationToken cancellationToken) [0x000f3] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/ServiceToken.cs:50 
+  at UnityEditor.Connect.UnityConnect.RequestNewServiceToken () [0x0003b] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/UnityConnect.bindings.cs:566 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+<>c.<ThrowAsync>b__7_0 (System.Object state) [0x00000] in <0e19fd8bd8e94908bba2ee4f803bc6a7>:0 
+  at UnityEngine.UnitySynchronizationContext+WorkRequest.Invoke () [0x00000] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:156 
+  at UnityEngine.UnitySynchronizationContext.Exec () [0x00052] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:84 
+  at UnityEngine.UnitySynchronizationContext.ExecuteTasks () [0x0000e] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:110 
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&) (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:50)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs Line: 106)
+
+[Licensing::Client] Successfully resolved entitlement details
+UnityConnectWebRequestException: Token Exchange failed due a failure with the web request.
+  at UnityEditor.Connect.TokenExchange.VerifyTokenExchangeResponse (UnityEngine.Networking.UnityWebRequest exchangeRequest) [0x00009] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:106 
+  at UnityEditor.Connect.TokenExchange.TokenExchangeRequestAsync (UnityEditor.Connect.TokenExchangeRequest tokenExchangeRequest, System.Threading.CancellationToken cancellationToken) [0x00195] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:89 
+  at UnityEditor.Connect.TokenExchange.GetServiceTokenAsync (System.String genesisToken, System.Threading.CancellationToken cancellationToken) [0x00031] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:33 
+  at UnityEditor.Connect.ServiceToken.GetServiceTokenAsync (System.String genesisToken, System.Threading.CancellationToken cancellationToken) [0x000f3] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/ServiceToken.cs:50 
+  at UnityEditor.Connect.UnityConnect.RequestNewServiceToken () [0x0003b] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/UnityConnect.bindings.cs:566 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+<>c.<ThrowAsync>b__7_0 (System.Object state) [0x00000] in <0e19fd8bd8e94908bba2ee4f803bc6a7>:0 
+  at UnityEngine.UnitySynchronizationContext+WorkRequest.Invoke () [0x00000] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:156 
+  at UnityEngine.UnitySynchronizationContext.Exec () [0x00052] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:84 
+  at UnityEngine.UnitySynchronizationContext.ExecuteTasks () [0x0000e] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:110 
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&) (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:50)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs Line: 106)
+
+[Licensing::Client] Successfully resolved entitlement details
+UnityConnectWebRequestException: Token Exchange failed due a failure with the web request.
+  at UnityEditor.Connect.TokenExchange.VerifyTokenExchangeResponse (UnityEngine.Networking.UnityWebRequest exchangeRequest) [0x00009] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:106 
+  at UnityEditor.Connect.TokenExchange.TokenExchangeRequestAsync (UnityEditor.Connect.TokenExchangeRequest tokenExchangeRequest, System.Threading.CancellationToken cancellationToken) [0x00195] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:89 
+  at UnityEditor.Connect.TokenExchange.GetServiceTokenAsync (System.String genesisToken, System.Threading.CancellationToken cancellationToken) [0x00031] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:33 
+  at UnityEditor.Connect.ServiceToken.GetServiceTokenAsync (System.String genesisToken, System.Threading.CancellationToken cancellationToken) [0x000f3] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/ServiceToken.cs:50 
+  at UnityEditor.Connect.UnityConnect.RequestNewServiceToken () [0x0003b] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/UnityConnect.bindings.cs:566 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+<>c.<ThrowAsync>b__7_0 (System.Object state) [0x00000] in <0e19fd8bd8e94908bba2ee4f803bc6a7>:0 
+  at UnityEngine.UnitySynchronizationContext+WorkRequest.Invoke () [0x00000] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:156 
+  at UnityEngine.UnitySynchronizationContext.Exec () [0x00052] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:84 
+  at UnityEngine.UnitySynchronizationContext.ExecuteTasks () [0x0000e] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:110 
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&) (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:50)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs Line: 106)
+
+[Licensing::Client] Successfully resolved entitlement details
+UnityConnectWebRequestException: Token Exchange failed due a failure with the web request.
+  at UnityEditor.Connect.TokenExchange.VerifyTokenExchangeResponse (UnityEngine.Networking.UnityWebRequest exchangeRequest) [0x00009] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:106 
+  at UnityEditor.Connect.TokenExchange.TokenExchangeRequestAsync (UnityEditor.Connect.TokenExchangeRequest tokenExchangeRequest, System.Threading.CancellationToken cancellationToken) [0x00195] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:89 
+  at UnityEditor.Connect.TokenExchange.GetServiceTokenAsync (System.String genesisToken, System.Threading.CancellationToken cancellationToken) [0x00031] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:33 
+  at UnityEditor.Connect.ServiceToken.GetServiceTokenAsync (System.String genesisToken, System.Threading.CancellationToken cancellationToken) [0x000f3] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/ServiceToken.cs:50 
+  at UnityEditor.Connect.UnityConnect.RequestNewServiceToken () [0x0003b] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/UnityConnect.bindings.cs:566 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+<>c.<ThrowAsync>b__7_0 (System.Object state) [0x00000] in <0e19fd8bd8e94908bba2ee4f803bc6a7>:0 
+  at UnityEngine.UnitySynchronizationContext+WorkRequest.Invoke () [0x00000] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:156 
+  at UnityEngine.UnitySynchronizationContext.Exec () [0x00052] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:84 
+  at UnityEngine.UnitySynchronizationContext.ExecuteTasks () [0x0000e] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:110 
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&) (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:50)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs Line: 106)
+
+[Licensing::Client] Successfully resolved entitlement details
+UnityConnectWebRequestException: Token Exchange failed due a failure with the web request.
+  at UnityEditor.Connect.TokenExchange.VerifyTokenExchangeResponse (UnityEngine.Networking.UnityWebRequest exchangeRequest) [0x00009] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:106 
+  at UnityEditor.Connect.TokenExchange.TokenExchangeRequestAsync (UnityEditor.Connect.TokenExchangeRequest tokenExchangeRequest, System.Threading.CancellationToken cancellationToken) [0x00195] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:89 
+  at UnityEditor.Connect.TokenExchange.GetServiceTokenAsync (System.String genesisToken, System.Threading.CancellationToken cancellationToken) [0x00031] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs:33 
+  at UnityEditor.Connect.ServiceToken.GetServiceTokenAsync (System.String genesisToken, System.Threading.CancellationToken cancellationToken) [0x000f3] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/ServiceToken.cs:50 
+  at UnityEditor.Connect.UnityConnect.RequestNewServiceToken () [0x0003b] in /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/UnityConnect.bindings.cs:566 
+  at System.Runtime.CompilerServices.AsyncMethodBuilderCore+<>c.<ThrowAsync>b__7_0 (System.Object state) [0x00000] in <0e19fd8bd8e94908bba2ee4f803bc6a7>:0 
+  at UnityEngine.UnitySynchronizationContext+WorkRequest.Invoke () [0x00000] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:156 
+  at UnityEngine.UnitySynchronizationContext.Exec () [0x00052] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:84 
+  at UnityEngine.UnitySynchronizationContext.ExecuteTasks () [0x0000e] in /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/UnitySynchronizationContext.cs:110 
+UnityEngine.StackTraceUtility:ExtractStringFromExceptionInternal(Object, String&, String&) (at /Users/bokken/build/output/unity/unity/Runtime/Export/Scripting/StackTrace.cs:50)
+
+(Filename: /Users/bokken/build/output/unity/unity/Editor/Mono/UnityConnect/ServiceToken/TokenExchange/TokenExchange.cs Line: 106)
+
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated access token: "wgGnaAXE"... (expires: 2026-10-22T08:44:45Z)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated access token: "ACy4DfwZ"... (expires: 2026-10-22T10:45:53Z)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated access token: "oIMYsxzz"... (expires: 2026-10-22T12:45:14Z)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated access token: "UpEvCLGG"... (expires: 2026-10-22T14:44:48Z)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated access token: "D3KOodBU"... (expires: 2026-10-22T17:05:22Z)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated access token: "aNWIZh0e"... (expires: 2026-10-22T19:17:56Z)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully updated the access token
+[Licensing::Module] Successfully updated access token: "iVv-spAp"... (expires: 2026-10-22T22:06:16Z)
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Client] Successfully resolved entitlement details
+
+Asset Pipeline Refresh (id=e0087a94990aa4065b3d4decb44437da): Total: 1.008 seconds - Initiated by RefreshV2(AllowForceSynchronousImport)
+	(Values over 0.05ms)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=1006 ms
+		Asset DB Callback time: managed=0 ms, native=1 ms
+		Scripting: domain reloads=0, domain reload time=0 ms, compile time=0 ms, other=0 ms
+		Project Asset Count: scripts=1052, non-scripts=1994
+		Asset File Changes: new=0, changed=0, moved=0, deleted=0
+		Scan Filter Count: 1
+	InvokePackagesCallback: 1.405ms
+	ApplyChangesToAssetFolders: 0.126ms
+	Scan: 267.413ms
+	Collect global state as custom dependencies: 0.209ms
+	CategorizeAssets: 20.501ms
+	ImportOutOfDateAssets: 0.560ms (0.083ms without children)
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.193ms
+		ImportSchedulerStart: 0.221ms
+	GatherAllCurrentPrimaryImportResultRevisions: 0.132ms
+	UnloadStreamsBegin: 2.126ms
+	PersistCurrentRevisions: 0.062ms
+	Untracked: 3.164ms
+
+MonoPathRemapper: Attempts to remap: 33958; Successful remaps: 12676
+Thread 0xc7a9af000 may have been prematurely finalized
+Serialized file version minimum: 23, current 23
+[LAYOUT] About to save layout /Users/logmat/Desktop/CLAUDE/NeonDrift/UserSettings/Layouts/default-6000.dwlt
+[LAYOUT] About to save layout /Users/logmat/Library/Preferences/Unity/Editor-5.x/Layouts/current/default-6000.dwlt
+Killing ADB server in 0.030949 seconds.
+Importing 'GUID: 00000000000000009000000000000000 - Path: ProjectSettings/QualitySettings.asset' with importer (LibraryAssetImporter)
+Imported 'GUID: 00000000000000009000000000000000' -> (Import Result ID: 'ad6ca2034549a8dd6f88c2e2fb528c97') in 0.002 seconds [static dependencies only]. Details - ImportResultOutputID=2a108b3da874f726c62fbe5f12be4a8a DependenciesID=1aedbe56ae62f321fe459982db2fa012 StaticDependenciesID=e9a43e809c5953780a851aff477bfce8 
+Asset Pipeline Refresh (id=bbf899a0dc58d497bb701f994abc27b0): Total: 0.035 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Thread 0xc7ab47000 may have been prematurely finalized
+Input System module state changed to: ShutdownInProgress.
+Input Polling Thread exited.
+Input System module state changed to: Shutdown.
+Apagando Servidor de MSBuild...
+Apagando Servidor del compilador de VB o C#...
+Servidor del compilador de VB o C# se apagó correctamente.
+Thread 0x16d79f000 may have been prematurely finalized
+Thread 0x16d82b000 may have been prematurely finalized
+Thread 0x16d8b7000 may have been prematurely finalized
+Thread 0x16da5b000 may have been prematurely finalized
+Thread 0x16db73000 may have been prematurely finalized
+Thread 0x16dd17000 may have been prematurely finalized
+Thread 0x16d9cf000 may have been prematurely finalized
+Thread 0x16dbff000 may have been prematurely finalized
+Thread 0x16debb000 may have been prematurely finalized
+Thread 0x16dc8b000 may have been prematurely finalized
+Thread 0x16dda3000 may have been prematurely finalized
+Thread 0x16de2f000 may have been prematurely finalized
+Thread 0x16dae7000 may have been prematurely finalized
+Thread 0x16d943000 may have been prematurely finalized
+Thread 0x16df47000 may have been prematurely finalized
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+[Licensing::IpcConnector] LicenseClient-logmat-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-logmat channel disconnected successfully.
+Servidor de MSBuild se apagó correctamente.
+Shut down UDS service system complete
+Lingering sessions upon destruction of worker manager
+Unity Data Store service was successfully shut down
+UDS shutting down local client system
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+CodeReloadManager destroyed
+debugger-agent: Unable to listen on 45
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1792713106157,"processId":51550,"allocatedMemory":12316813,"memoryLabels":[{"Default":177522},{"Permanent":15672},{"Thread":1056736},{"Manager":815222},{"VertexData":8},{"Geometry":408},{"Texture":24},{"Shader":854020},{"Material":68},{"GfxDevice":42920},{"GfxThread":2240},{"Animation":968},{"Audio":1896},{"FreeType":8},{"FontEngine":736},{"Physics":2002},{"Physics2D":16},{"Serialization":16600},{"Input":43216},{"JobScheduler":448},{"TextLib":23211},{"Mono":56},{"MonoCode":72},{"ScriptingNativeRuntime":155024},{"BaseObject":49744},{"Resource":1028},{"Renderer":2448},{"Transform":4693},{"File":13539},{"WebCam":32},{"Culling":32},{"Terrain":11346},{"Wind":24},{"String":1138395},{"StaticString":3808},{"Utility":2694528},{"PoolAlloc":2152},{"AI":80},{"TypeTree":21125},{"ScriptManager":12656},{"CodeReload":448},{"RuntimeInitializeOnLoadManager":64},{"Sprites":102},{"SpriteAtlas":120},{"GI":7240},{"Director":8288},{"CloudService":7728},{"WebRequest":5502},{"VR":49426},{"SceneManager":616},{"Video":2112},{"LazyScriptCache":32},{"NativeArray":936},{"Camera":1177},{"Secure":10105},{"SerializationCache":9704},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57504},{"StaticSafetyDebugInfo":278528},{"Baselib":16},{"Analytics":568},{"Hierarchy":1492},{"UIElements":40},{"CoreStats":14536},{"Identifiers":7152},{"Gui":13021},{"EditorUtility":76576},{"VersionControl":8},{"Undo":939},{"AssetDatabase":4521073},{"AssetImporter":40},{"EditorGi":328},{"UnityConnect":41609},{"Upm":1788},{"UpmDiagnostics":8},{"AssetCompliance":96},{"DrivenProperties":72},{"HubClient":848},{"LocalIPC":205},{"ProfilerEditor":9738},{"CoreBusinessMetrics":3205},{"Windowing":416},{"Licensing":992},{"AssetReference":32},{"IPCStream":7004}]}

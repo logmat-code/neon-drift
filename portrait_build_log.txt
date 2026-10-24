@@ -1,0 +1,31 @@
+Unity Editor version:    6000.6.2f1 (770e33f6875c)
+Branch:                  6000.6/staging
+Build type:              Release
+Batch mode:              YES
+macOS version:           Version 15.6.1 (Build 24G90)
+Darwin version:          24.6.0
+Architecture:            arm64
+Running under Rosetta:   NO
+Available memory:        49152 MB
+Date:                    2026-10-11T13:09:19Z
+Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/NetCoreRuntime/dotnet
+VBCSCompilerPreWarmer: pre-warm launched (dotnet PID 6870)
+VBCSCompiler prewarm took 8.58 ms
+[Licensing::Module] Trying to connect to existing licensing client channel...
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-logmat" at "2026-10-11T13:09:19.109635Z"
+Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/PackageManager/Server/UnityPackageManager
+
+COMMAND LINE ARGUMENTS:
+/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/MacOS/Unity
+-projectPath
+/Users/logmat/Desktop/CLAUDE/NeonDrift
+-executeMethod
+NeonDrift.Editor.ProjectBuilder.BuildAll
+-batchmode
+-quit
+-logFile
+/Users/logmat/Desktop/CLAUDE/NeonDrift/portrait_build_log.txt
+Successfully changed project path to: /Users/logmat/Desktop/CLAUDE/NeonDrift
+/Users/logmat/Desktop/CLAUDE/NeonDrift
+[ExitDontLaunchBugReporter] Exiting without the bug reporter. Application will exit with return code 1
+[Package Manager] Server process was shutdown

@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a9957ffa971b43298105b96223d8967, type: 3}
+  m_Name: UpgradeConfig
+  m_EditorClassIdentifier: Assembly-CSharp::NeonDrift.Data.UpgradeConfig
+  maxLevel: 5
+  engineCost: 9001000020030000dc050000280a000068100000i
+  engineSpeedBonus:
+  - 0
+  - 1.8
+  - 3.8
+  - 6
+  - 8.5
+  engineAccelBonus:
+  - 0
+  - 1.5
+  - 3.2
+  - 5
+  - 7.2
+  tiresCost: 5e010000ee02000078050000600900003c0f0000i
+  tiresGripBonus:
+  - 0
+  - 1.2
+  - 2.5
+  - 4
+  - 5.8
+  tiresRecoveryBonus:
+  - 0
+  - 0.6
+  - 1.4
+  - 2.3
+  - 3.5
+  turboCost: f4010000e803000008070000b80b0000c0120000i
+  turboPowerBonus:
+  - 0
+  - 0.08
+  - 0.18
+  - 0.3
+  - 0.45
+  turboDurationBonus:
+  - 0
+  - 0.4
+  - 0.9
+  - 1.5
+  - 2.2

@@ -1,0 +1,78 @@
+================================================================================
+   NEON DRIFT — ABNORMAL VEHICLE STOP DIAGNOSTIC DUMP (ABNORMAL SPEED DROP)
+================================================================================
+Trigger Frame: 1775 | Time: 40.62s | Position: (-20.39, 846.69)
+Vehicle State: Grip | Steer: 0.00 | Drift: False | AutoAcc: True
+Vehicle Speed: 11.28 m/s | Prev: 30.16 m/s | Rigidbody2D.linearVelocity: (7.08, 8.79)
+Last Contact: [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91) | Normal: (-0.63, -0.78)
+GameManager State: Playing
+TrackManager Active Chunks: 21
+
+--- 30 FRAMES PRIOR TO STOP EVENT ---
+Frame | Time  | Pos (X, Y)      | Speed | linVel (X, Y)   | State    | Steer | Contact
+--------------------------------------------------------------------------------
+ 1746 | 40.04 | ( -27.3, 831.7) |  30.2 | (  -0.5,  30.2) | Grip     |  0.00 | None
+ 1747 | 40.06 | ( -27.3, 832.3) |  30.2 | (   0.7,  30.2) | Grip     |  1.00 | None
+ 1748 | 40.08 | ( -27.3, 832.9) |  30.2 | (   1.8,  30.1) | Grip     |  1.00 | None
+ 1749 | 40.10 | ( -27.3, 833.5) |  30.2 | (   3.0,  30.0) | Grip     |  1.00 | None
+ 1750 | 40.12 | ( -27.2, 834.1) |  30.2 | (   4.1,  29.9) | Grip     |  1.00 | None
+ 1751 | 40.14 | ( -27.2, 834.7) |  30.2 | (   5.3,  29.7) | Grip     |  1.00 | None
+ 1752 | 40.16 | ( -27.0, 835.3) |  30.2 | (   6.4,  29.5) | Grip     |  1.00 | None
+ 1753 | 40.18 | ( -26.9, 835.9) |  30.2 | (   7.6,  29.2) | Grip     |  1.00 | None
+ 1754 | 40.20 | ( -26.8, 836.5) |  30.2 | (   8.7,  28.9) | Grip     |  1.00 | None
+ 1755 | 40.22 | ( -26.6, 837.1) |  30.2 | (   9.8,  28.5) | Grip     |  1.00 | None
+ 1756 | 40.24 | ( -26.4, 837.7) |  30.2 | (  10.9,  28.1) | Grip     |  1.00 | None
+ 1757 | 40.26 | ( -26.2, 838.2) |  30.2 | (  12.0,  27.7) | Grip     |  1.00 | None
+ 1758 | 40.28 | ( -25.9, 838.8) |  30.2 | (  13.0,  27.2) | Grip     |  1.00 | None
+ 1759 | 40.30 | ( -25.7, 839.3) |  30.2 | (  14.1,  26.7) | Grip     |  1.00 | None
+ 1760 | 40.32 | ( -25.4, 839.8) |  30.2 | (  15.1,  26.1) | Grip     |  1.00 | None
+ 1761 | 40.34 | ( -25.1, 840.4) |  30.2 | (  16.1,  25.5) | Grip     |  1.00 | None
+ 1762 | 40.36 | ( -24.8, 840.9) |  30.2 | (  17.0,  24.9) | Grip     |  1.00 | None
+ 1763 | 40.38 | ( -24.4, 841.4) |  30.2 | (  18.0,  24.2) | Grip     |  1.00 | None
+ 1764 | 40.40 | ( -24.1, 841.9) |  30.2 | (  18.9,  23.5) | Grip     |  1.00 | None
+ 1765 | 40.42 | ( -23.7, 842.3) |  30.2 | (  18.9,  23.5) | Grip     |  0.00 | None
+ 1766 | 40.44 | ( -23.3, 842.8) |  30.2 | (  18.9,  23.5) | Grip     |  0.00 | None
+ 1767 | 40.46 | ( -22.9, 843.3) |  30.2 | (  18.9,  23.5) | Grip     |  0.00 | None
+ 1768 | 40.48 | ( -22.6, 843.7) |  30.2 | (  18.9,  23.5) | Grip     |  0.00 | None
+ 1769 | 40.50 | ( -22.2, 844.2) |  30.2 | (  18.9,  23.5) | Grip     |  0.00 | None
+ 1770 | 40.52 | ( -21.8, 844.7) |  30.2 | (  18.9,  23.5) | Grip     |  0.00 | None
+ 1771 | 40.54 | ( -21.4, 845.2) |  30.2 | (  18.9,  23.5) | Grip     |  0.00 | None
+ 1772 | 40.56 | ( -21.0, 845.6) |  30.2 | (  18.9,  23.5) | Grip     |  0.00 | None
+ 1773 | 40.58 | ( -20.7, 846.1) |  30.2 | (  18.9,  23.5) | Grip     |  0.00 | None
+ 1774 | 40.60 | ( -20.3, 846.6) |  30.2 | (  18.9,  23.5) | Grip     |  0.00 | None
+ 1775 | 40.62 | ( -20.4, 846.7) |  11.3 | (   7.1,   8.8) | Grip     |  0.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+
+--- 30 FRAMES POST STOP EVENT ---
+Frame | Time  | Pos (X, Y)      | Speed | linVel (X, Y)   | State    | Steer | Contact
+--------------------------------------------------------------------------------
+ 1776 | 40.64 | ( -20.2, 846.9) |  12.0 | (   7.5,   9.4) | Grip     |  0.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1777 | 40.66 | ( -20.1, 847.1) |  12.7 | (   8.0,   9.9) | Grip     |  0.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1778 | 40.68 | ( -19.9, 847.2) |  13.5 | (   8.4,  10.5) | Grip     |  0.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1779 | 40.70 | ( -19.8, 847.5) |  14.2 | (   8.9,  11.0) | Grip     |  0.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1780 | 40.72 | ( -19.6, 847.7) |  14.9 | (   9.4,  11.6) | Grip     |  0.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1781 | 40.74 | ( -19.4, 847.9) |  15.6 | (   9.8,  12.2) | Grip     |  0.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1782 | 40.76 | ( -19.2, 848.2) |  16.4 | (  10.3,  12.7) | Grip     |  0.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1783 | 40.78 | ( -19.0, 848.4) |  17.1 | (  10.1,  13.8) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1784 | 40.80 | ( -18.8, 848.7) |  17.8 | (   9.9,  14.8) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1785 | 40.82 | ( -18.6, 849.0) |  18.5 | (   9.6,  15.9) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1786 | 40.84 | ( -18.4, 849.3) |  19.3 | (   9.3,  16.9) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1787 | 40.86 | ( -18.2, 849.6) |  20.0 | (   8.9,  17.9) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1788 | 40.88 | ( -18.0, 850.0) |  20.7 | (   8.4,  18.9) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1789 | 40.90 | ( -17.9, 850.4) |  21.4 | (   7.9,  19.9) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1790 | 40.92 | ( -17.7, 850.8) |  22.2 | (   7.3,  20.9) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1791 | 40.94 | ( -17.6, 851.2) |  22.2 | (   6.4,  21.2) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1792 | 40.96 | ( -17.4, 851.6) |  22.2 | (   5.5,  21.5) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1793 | 40.98 | ( -17.3, 852.0) |  22.2 | (   4.6,  21.7) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1794 | 41.00 | ( -17.2, 852.5) |  22.2 | (   3.7,  21.9) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1795 | 41.02 | ( -17.2, 852.9) |  22.2 | (   2.8,  22.0) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1796 | 41.04 | ( -17.1, 853.4) |  22.2 | (   1.9,  22.1) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1797 | 41.06 | ( -17.1, 853.8) |  22.2 | (   1.0,  22.1) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1798 | 41.08 | ( -17.1, 854.2) |  22.2 | (   0.1,  22.2) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1799 | 41.10 | ( -17.1, 854.7) |  22.2 | (  -0.8,  22.2) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-19.91, 847.91)
+ 1800 | 41.12 | ( -17.1, 855.1) |  22.2 | (  -1.7,  22.1) | Grip     | -1.00 | None
+ 1801 | 41.14 | ( -17.1, 855.6) |  22.2 | (  -2.6,  22.0) | Grip     | -1.00 | None
+ 1802 | 41.16 | ( -17.2, 856.0) |  22.2 | (  -3.5,  21.9) | Grip     | -1.00 | None
+ 1803 | 41.18 | ( -17.2, 856.4) |  22.2 | (  -4.4,  21.7) | Grip     | -1.00 | None
+ 1804 | 41.20 | ( -17.2, 856.8) |   8.1 | (  -2.0,   7.8) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-18.21, 857.75)
+ 1805 | 41.22 | ( -17.2, 857.0) |   8.4 | (  -2.4,   8.1) | Grip     | -1.00 | [Enter] with 'TrafficCar_Pooled' (Tag: Traffic, Layer: Default) at pt (-18.21, 857.75)
+================================================================================

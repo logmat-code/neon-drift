@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478b39bc7bfa74382887c746848b4487, type: 3}
+  m_Name: CarConfig
+  m_EditorClassIdentifier: Assembly-CSharp::NeonDrift.Data.CarConfig
+  baseTopSpeed: 19
+  baseAcceleration: 15
+  brakeDeceleration: 20
+  turnRate: 130
+  lowSpeedSteerMultiplier: 1.25
+  highSpeedSteerMultiplier: 0.85
+  minDriftSpeed: 6
+  driftBaseTurnRate: 58
+  driftMinTurnRate: 28
+  driftMaxTurnRate: 100
+  driftCorneringRate: 72
+  baseDriftSlipAngle: 28
+  maxDriftSlipAngle: 48
+  minDriftSlipAngle: 14
+  slipAngleRate: 95
+  driftSpeedRetention: 0.95
+  hardDriftSpeedRetention: 0.88
+  driftExitDuration: 0.2
+  transitionFlickThreshold: 16
+  perfectExitMinAngle: 18
+  perfectExitMaxAngle: 46
+  perfectExitImpulse: 3.5
+  driftChainWindow: 1.2
+  boostSpeedMultiplier: 1.45
+  boostAccelerationMultiplier: 2.2
+  boostDuration: 2.8
+  maxBoostEnergy: 100

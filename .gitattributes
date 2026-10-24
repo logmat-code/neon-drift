@@ -1,0 +1,9 @@
+/Library/ArtifactDB filter=lfs diff=lfs merge=lfs -text
+/Library/Bee/200b0aE.dag filter=lfs diff=lfs merge=lfs -text
+/Library/Bee/200b0aE.dag.json filter=lfs diff=lfs merge=lfs -text
+/Library/DataStore/UDSData_2.bin filter=lfs diff=lfs merge=lfs -text
+/Library/DataStore/UDSData_21.bin filter=lfs diff=lfs merge=lfs -text
+/Library/DataStore/UDSData_24.bin filter=lfs diff=lfs merge=lfs -text
+/Library/DataStore/UDSData_8.bin filter=lfs diff=lfs merge=lfs -text
+/Library/Search/98957a664bd18c47a3e41b2a0189ef53.SearchIndexArtifactImporter.262146.b.index filter=lfs diff=lfs merge=lfs -text
+/Library/SourceAssetDB filter=lfs diff=lfs merge=lfs -text
