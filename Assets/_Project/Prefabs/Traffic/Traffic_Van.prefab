@@ -180,7 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2770f08ab304544418849dc01553778d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NeonDrift.World.TrafficCar
-  carType: 2
-  forwardSpeed: 13
-  currentLane: 0
+  carType: 4
+  speed: 13
   hasAwardedNearMiss: 0
+  currentLane: 0
+  longitudinalDistance: 0
+  lateralOffset: 0

@@ -1,0 +1,117 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de76a7f90a7e64ffc99b8300b6380aad, type: 3}
+  m_Name: CarCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::NeonDrift.Data.CarCatalog
+  cars:
+  - id: kitsune_s13
+    displayName: KITSUNE S13
+    archetype: BALANCED STREET DRIFTER
+    priceNC: 0
+    carSprite: {fileID: 21300000, guid: ee28fc1e5e407b8a8ce1f0a15a77ef86, type: 3}
+    baseTopSpeed: 19
+    baseAcceleration: 15
+    brakeDeceleration: 24
+    turnRate: 130
+    driftBaseTurnRate: 58
+    maxDriftSlipAngle: 48
+    minDriftSlipAngle: 14
+    driftSpeedRetention: 0.95
+    boostMultiplier: 1.4
+    boostDuration: 2.8
+    maxDurabilityHits: 3
+    engineBasePitch: 1
+  - id: akuma_86
+    displayName: AKUMA 86
+    archetype: AGILE & LIGHTWEIGHT TOUGE
+    priceNC: 3000
+    carSprite: {fileID: 0}
+    baseTopSpeed: 18.5
+    baseAcceleration: 16
+    brakeDeceleration: 24
+    turnRate: 145
+    driftBaseTurnRate: 65
+    maxDriftSlipAngle: 48
+    minDriftSlipAngle: 14
+    driftSpeedRetention: 0.95
+    boostMultiplier: 1.4
+    boostDuration: 2.8
+    maxDurabilityHits: 3
+    engineBasePitch: 1.08
+  - id: ryujin_rx
+    displayName: RYUJIN RX
+    archetype: ROTARY DRIFT SPECIALIST
+    priceNC: 6000
+    carSprite: {fileID: 0}
+    baseTopSpeed: 20
+    baseAcceleration: 15.5
+    brakeDeceleration: 24
+    turnRate: 135
+    driftBaseTurnRate: 72
+    maxDriftSlipAngle: 48
+    minDriftSlipAngle: 14
+    driftSpeedRetention: 0.95
+    boostMultiplier: 1.4
+    boostDuration: 2.8
+    maxDurabilityHits: 3
+    engineBasePitch: 1.15
+  - id: kage_r34
+    displayName: KAGE R34
+    archetype: HIGHWAY KING (HIGH STABILITY)
+    priceNC: 9000
+    carSprite: {fileID: 0}
+    baseTopSpeed: 21
+    baseAcceleration: 16.5
+    brakeDeceleration: 24
+    turnRate: 125
+    driftBaseTurnRate: 54
+    maxDriftSlipAngle: 48
+    minDriftSlipAngle: 14
+    driftSpeedRetention: 0.95
+    boostMultiplier: 1.4
+    boostDuration: 2.8
+    maxDurabilityHits: 4
+    engineBasePitch: 0.95
+  - id: raiden_gt
+    displayName: RAIDEN GT
+    archetype: TURBO CHARGED ACCEL & BOOST
+    priceNC: 12000
+    carSprite: {fileID: 0}
+    baseTopSpeed: 21.5
+    baseAcceleration: 18
+    brakeDeceleration: 24
+    turnRate: 128
+    driftBaseTurnRate: 56
+    maxDriftSlipAngle: 48
+    minDriftSlipAngle: 14
+    driftSpeedRetention: 0.95
+    boostMultiplier: 1.6
+    boostDuration: 2.8
+    maxDurabilityHits: 4
+    engineBasePitch: 1.05
+  - id: oni_x
+    displayName: ONI X
+    archetype: DEMON HYPERCAR (MAX SPEED)
+    priceNC: 15000
+    carSprite: {fileID: 0}
+    baseTopSpeed: 23.5
+    baseAcceleration: 18.5
+    brakeDeceleration: 24
+    turnRate: 120
+    driftBaseTurnRate: 60
+    maxDriftSlipAngle: 48
+    minDriftSlipAngle: 14
+    driftSpeedRetention: 0.95
+    boostMultiplier: 1.4
+    boostDuration: 2.8
+    maxDurabilityHits: 5
+    engineBasePitch: 1.25

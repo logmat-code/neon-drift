@@ -431,6 +431,45 @@ namespace NeonDrift.World
         /// Queries the road frame (center, rotation, density, drift direction) at a specified distance ahead of the player.
         /// Used by TrafficManager to spawn cars strictly in highway lanes.
         /// </summary>
+        public bool GetRoadSampleAtDistance(float distance, float lateralOffset, out Vector2 pos, out Quaternion rot)
+        {
+            pos = Vector2.zero;
+            rot = Quaternion.identity;
+            if (activeChunks.Count == 0) return false;
+
+            float accumulatedDist = 0f;
+            for (int i = 0; i < activeChunks.Count; i++)
+            {
+                var chunk = activeChunks[i];
+                if (chunk == null) continue;
+                float chunkLen = chunk.lengthMeters;
+
+                if (distance <= accumulatedDist + chunkLen || i == activeChunks.Count - 1)
+                {
+                    float localT = Mathf.Clamp01((distance - accumulatedDist) / Mathf.Max(1f, chunkLen));
+                    if (chunk.stepPositions != null && chunk.stepPositions.Length > 0)
+                    {
+                        int stepIdx = Mathf.Clamp(Mathf.RoundToInt(localT * (chunk.stepPositions.Length - 1)), 0, chunk.stepPositions.Length - 1);
+                        Vector2 center = chunk.stepPositions[stepIdx];
+                        rot = chunk.stepRotations[stepIdx];
+                        Vector2 right = rot * Vector2.right;
+                        pos = center + right * lateralOffset;
+                        return true;
+                    }
+                    else
+                    {
+                        Vector2 center = Vector2.Lerp(chunk.entryPosition, chunk.exitPosition, localT);
+                        rot = Quaternion.Euler(0, 0, -Mathf.LerpAngle(chunk.entryHeading, chunk.exitHeading, localT));
+                        Vector2 right = rot * Vector2.right;
+                        pos = center + right * lateralOffset;
+                        return true;
+                    }
+                }
+                accumulatedDist += chunkLen;
+            }
+            return false;
+        }
+
         public bool GetRoadFrameAhead(
             float distanceAhead,
             out Vector2 center,

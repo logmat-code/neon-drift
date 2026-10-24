@@ -53,6 +53,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/_Project/Scripts/Presentation/HomeView.cs" />
+    <Compile Include="Assets/_Project/Scripts/Data/CustomizationCatalog.cs" />
     <Compile Include="Assets/_Project/Scripts/Vehicle/VehicleController.cs" />
     <Compile Include="Assets/_Project/Scripts/World/RoadChunk.cs" />
     <Compile Include="Assets/_Project/Scripts/Presentation/PlayModeZoneCapture.cs" />
@@ -60,12 +61,14 @@
     <Compile Include="Assets/_Project/Scripts/Presentation/VehicleVFX.cs" />
     <Compile Include="Assets/_Project/Scripts/World/DriftPattern.cs" />
     <Compile Include="Assets/_Project/Scripts/Gameplay/ScoreManager.cs" />
+    <Compile Include="Assets/_Project/Scripts/Monetization/Yodo1AdsManager.cs" />
     <Compile Include="Assets/_Project/Scripts/Core/VehicleStopDiagnostic.cs" />
     <Compile Include="Assets/_Project/Scripts/Gameplay/FlowManager.cs" />
     <Compile Include="Assets/_Project/Scripts/Progression/SaveSystem.cs" />
     <Compile Include="Assets/_Project/Scripts/World/TrafficCar.cs" />
     <Compile Include="Assets/_Project/Scripts/World/TrackManager.cs" />
     <Compile Include="Assets/_Project/Scripts/Presentation/AudioManager.cs" />
+    <Compile Include="Assets/_Project/Scripts/Data/CarCatalog.cs" />
     <Compile Include="Assets/_Project/Scripts/Data/FlowConfig.cs" />
     <Compile Include="Assets/_Project/Scripts/Presentation/MobileTouchButton.cs" />
     <Compile Include="Assets/_Project/Scripts/Presentation/GarageView.cs" />
@@ -80,11 +83,14 @@
     <Compile Include="Assets/_Project/Scripts/Presentation/EndlessPlayModeCapturer.cs" />
     <Compile Include="Assets/_Project/Scripts/Progression/ProgressionManager.cs" />
     <Compile Include="Assets/_Project/Scripts/World/TrafficManager.cs" />
+    <Compile Include="Assets/_Project/Scripts/Tutorial/TutorialManager.cs" />
+    <Compile Include="Assets/_Project/Scripts/Social/SocialShareManager.cs" />
     <Compile Include="Assets/_Project/Scripts/Gameplay/NearMissDetector.cs" />
     <Compile Include="Assets/_Project/Scripts/Gameplay/CollisionHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/_Project/ValidationAuditReport.txt" />
+    <None Include="Assets/_Project/MasterPassLiveAuditReport.txt" />
     <None Include="Assets/_Project/StopEventDump.txt" />
   </ItemGroup>
   <ItemGroup>

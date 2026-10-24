@@ -35,7 +35,7 @@ namespace NeonDrift.Presentation
             {
                 var data = ProgressionManager.Instance.CurrentData;
                 if (bestScoreText != null) bestScoreText.text = $"BEST: {data.bestScore:N0}";
-                if (creditsText != null) creditsText.text = $"CR: {data.credits:N0}";
+                if (creditsText != null) creditsText.text = $"{data.credits:N0} NC";
             }
         }
     }

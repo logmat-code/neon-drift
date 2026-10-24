@@ -160,8 +160,11 @@ namespace NeonDrift.Core
             }
         }
 
+        private string currentRunId;
+
         public void StartRun()
         {
+            currentRunId = System.Guid.NewGuid().ToString();
             // Reset player strictly to cannonical start position (0, 6, 0)
             playerStartPos = new Vector3(0f, 6f, 0f);
             playerStartRot = Quaternion.identity;
@@ -226,21 +229,36 @@ namespace NeonDrift.Core
         {
             if (currentState != GameState.Playing) return;
 
-            bool completed = true;
             int score = scoreManager != null ? scoreManager.currentScore : 0;
             float longestDrift = scoreManager != null ? scoreManager.longestDrift : 0f;
             int maxCombo = scoreManager != null ? scoreManager.maxCombo : 0;
             int nearMisses = scoreManager != null ? scoreManager.nearMissCount : 0;
+            float distance = trackManager != null ? trackManager.totalDistanceTraveled : 0f;
+            int trafficGaps = nearMisses / 2;
 
-            int credits = ProgressionManager.Instance != null 
-                ? ProgressionManager.Instance.CalculateCreditsEarned(score, completed, maxCombo, nearMisses) 
-                : 250;
+            int credits = 0;
+            bool isNewRecord = false;
 
-            ProgressionManager.Instance?.RecordRunResults(score, longestDrift, maxCombo, nearMisses, credits);
+            if (ProgressionManager.Instance != null)
+            {
+                ProgressionManager.Instance.SettleRunIdempotent(
+                    currentRunId,
+                    score,
+                    distance,
+                    maxCombo,
+                    nearMisses,
+                    trafficGaps,
+                    out credits,
+                    out isNewRecord);
+            }
+            else
+            {
+                credits = 150;
+            }
 
             int best = ProgressionManager.Instance != null ? ProgressionManager.Instance.CurrentData.bestScore : score;
 
-            resultsView?.DisplayResults(reason, score, best, longestDrift, maxCombo, nearMisses, credits);
+            resultsView?.DisplayResults(reason, score, best, longestDrift, maxCombo, nearMisses, credits, distance);
             EnterState(GameState.Results);
         }
 

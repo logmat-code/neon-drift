@@ -7,9 +7,9 @@ Darwin version:          24.6.0
 Architecture:            arm64
 Running under Rosetta:   NO
 Available memory:        49152 MB
-Date:                    2026-10-24T14:08:30Z
+Date:                    2026-10-24T16:59:11Z
 [Licensing::Module] Trying to connect to existing licensing client channel...
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-logmat" at "2026-10-24T14:08:30.979538Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-logmat" at "2026-10-24T16:59:11.124119Z"
 
 COMMAND LINE ARGUMENTS:
 /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/MacOS/Unity
@@ -23,9 +23,9 @@ AssetImportWorkerHW0
 -logFile
 Logs/AssetImportWorkerHW0.log
 -srvPort
-58473
+61092
 -parentPid
-84433
+90884
 -analyticsCloudUserId
 anonymous
 -analyticsLocalProjectId
@@ -86,7 +86,7 @@ Successfully changed project path to: /Users/logmat/Desktop/CLAUDE/NeonDrift
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
 Player connection [8640618688]  Target information:
 
-Player connection [8640618688]  * "[IP] 192.168.1.12 [Port] 0 [Flags] 2 [Guid] 4169684785 [EditorId] 4169684785 [Version] 1048832 [Id] OSXEditor(0,MacBook-Pro-de-Matias.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+Player connection [8640618688]  * "[IP] 192.168.1.12 [Port] 0 [Flags] 2 [Guid] 3019632940 [EditorId] 3019632940 [Version] 1048832 [Id] OSXEditor(0,MacBook-Pro-de-Matias.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
 
 Player connection [8640618688] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [8640618688] Host joined alternative multi-casting on [225.0.0.222:34997]...
@@ -129,19 +129,19 @@ Has Float Filtering: 1
 ReadWrite Texture Tier: 2
 [Licensing::Client] Handshaking with LicensingClient:
   Version:                 1.18.3+d7ffd15
-  Session Id:              89984826d19c448da53f092aa50bc93e
+  Session Id:              0a7dc1f6832e4a3fafa29390d5bbdf99
   Correlation Id:          b9c7231150aa75ed8ddead81b194ebef
-  External correlation Id: 2289096213109384226
+  External correlation Id: 1834482432753364377
   Machine Id:              4qLDUGMRa+xgv/WJd8yMsCb+6N0=
 [Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-logmat" (connect: 0.00s, validation: 0.00s, handshake: 0.21s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-logmat-notifications" at "2026-10-24T14:08:31.195329Z"
-[Licensing::Module] Licensing Background thread has ended after 0.22s
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-logmat-notifications" at "2026-10-24T16:59:11.334094Z"
+[Licensing::Module] Licensing Background thread has ended after 0.21s
 Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/BCLExtensions/runtime/netstandard2.1'
 Mono path[2] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56469
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56915
 CodeReloadManager initialized
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
@@ -154,7 +154,7 @@ Register platform support module: /Applications/Unity/Hub/Editor/6000.6.2f1/Play
   Type: Assigned
   Expiration: Unlimited
 Register platform support module: /Applications/Unity/Hub/Editor/6000.6.2f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.011044 seconds.
+Registered in 0.001426 seconds.
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
@@ -165,22 +165,22 @@ Package Manager log level set to [2]
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Scripting: successfully reloaded assembly
 - Finished resetting the current domain, in  0.228 seconds
-Domain Reload Profiling: 491ms
-	BeginReloadAssembly (40ms)
+Domain Reload Profiling: 462ms
+	BeginReloadAssembly (38ms)
 	RebuildCommonClasses (3ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (38ms)
-	LoadAllAssembliesAndSetupDomain (174ms)
-		LoadAssemblies (39ms)
-		TypeCache.Refresh (125ms)
-			TypeCache.ScanAssembly (117ms)
-		AnalyzeDomain (1ms)
+	initialDomainReloadingComplete (26ms)
+	LoadAllAssembliesAndSetupDomain (159ms)
+		LoadAssemblies (37ms)
+		TypeCache.Refresh (114ms)
+			TypeCache.ScanAssembly (106ms)
+		AnalyzeDomain (0ms)
 	FinalizeReload (228ms)
 		SetupLoadedEditorAssemblies (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
-			BeforeProcessingInitializeOnLoad (48ms)
+			BeforeProcessingInitializeOnLoad (49ms)
 			ProcessInitializeOnLoadAttributes (41ms)
-			ProcessInitializeOnLoadMethodAttributes (88ms)
+			ProcessInitializeOnLoadMethodAttributes (89ms)
 Initializing Unity extensions:
 [Licensing::Client] Successfully resolved entitlement details
 [CoreBusinessMetrics] Unexpected thread when updating session info.
@@ -189,7 +189,6 @@ Initializing Unity extensions:
 Worker process is ready to serve import requests
 Import Worker Mode flag is 0x00
 Begin MonoManager ReloadAssembly
-Editor requested this worker to shutdown with reason: Editor is closing down
 'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 'Packages/com.unity.render-pipelines.core/Editor/Deprecated.cs' contains partial class of Unity.Object, exactly 1 of the partial classes needs to be in a file with the same filename. This is to know the one that can be referenced from ie. GameObjects
 Native extension for Android target not found
@@ -200,26 +199,26 @@ Native extension for WebGL target not found
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  0.263 seconds
-Domain Reload Profiling: 588ms
-	BeginReloadAssembly (98ms)
+- Finished resetting the current domain, in  0.290 seconds
+Domain Reload Profiling: 597ms
+	BeginReloadAssembly (94ms)
 		DisableScriptedObjects (3ms)
-		CreateAndSetChildDomain (13ms)
-	RebuildCommonClasses (5ms)
+		CreateAndSetChildDomain (14ms)
+	RebuildCommonClasses (4ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (18ms)
-	LoadAllAssembliesAndSetupDomain (194ms)
-		LoadAssemblies (95ms)
-		TypeCache.Refresh (54ms)
-			TypeCache.ScanAssembly (46ms)
+	initialDomainReloadingComplete (16ms)
+	LoadAllAssembliesAndSetupDomain (184ms)
+		LoadAssemblies (85ms)
+		TypeCache.Refresh (51ms)
+			TypeCache.ScanAssembly (43ms)
 		AnalyzeDomain (18ms)
 			BuildScriptInfoCaches (16ms)
-	FinalizeReload (263ms)
+	FinalizeReload (290ms)
 		SetupLoadedEditorAssemblies (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
-			BeforeProcessingInitializeOnLoad (47ms)
-			ProcessInitializeOnLoadAttributes (65ms)
-			ProcessInitializeOnLoadMethodAttributes (55ms)
+			BeforeProcessingInitializeOnLoad (53ms)
+			ProcessInitializeOnLoadAttributes (74ms)
+			ProcessInitializeOnLoadMethodAttributes (58ms)
 		AwakeInstancesAfterBackupRestoration (3ms)
 AcceleratorClientConnectionCallback - disconnected - :0
 WARNING: Shader Unsupported: 'Universal Render Pipeline/VR/SpatialMapping/Wireframe' - All subshaders removed
@@ -228,14 +227,28 @@ WARNING: Shader If subshaders removal was intentional, you may have forgotten tu
 Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
 Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
 Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/UnityShaderCompiler
-Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
+Launched and connected shader compiler UnityShaderCompiler after 0.00 seconds
 Unloading 65 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4074 unused Assets / (8.5 MB). Loaded Objects now: 4945.
-Memory consumption went from 160.9 MB to 152.4 MB.
-Total: 4.869208 ms (FindLiveObjects: 0.256250 ms CreateObjectMapping: 0.078833 ms MarkObjects: 3.341500 ms  DeleteObjects: 1.122042 ms)
+Unloading 4081 unused Assets / (8.6 MB). Loaded Objects now: 4952.
+Memory consumption went from 160.7 MB to 152.1 MB.
+Total: 4.983166 ms (FindLiveObjects: 0.236708 ms CreateObjectMapping: 0.057166 ms MarkObjects: 3.510417 ms  DeleteObjects: 1.111750 ms)
 
+========================================================================
+Received Prepare
 AcceleratorClientConnectionCallback - disconnected - :0
-Thread 0xc6c287000 may have been prematurely finalized
+WARNING: Shader Unsupported: 'Universal Render Pipeline/VR/SpatialMapping/Wireframe' - All subshaders removed
+WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support conservative rasterization
+Unloading 64 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 64 unused Assets / (5.6 MB). Loaded Objects now: 4952.
+Memory consumption went from 156.2 MB to 150.6 MB.
+Total: 4.133375 ms (FindLiveObjects: 0.157292 ms CreateObjectMapping: 0.030208 ms MarkObjects: 3.217542 ms  DeleteObjects: 0.655000 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+Editor requested this worker to shutdown with reason: Editor is closing down
+AcceleratorClientConnectionCallback - disconnected - :0
+Thread 0xc74413000 may have been prematurely finalized
 AssetImportWorker is now disconnected from the server
 Process exiting
 [ExitDontLaunchBugReporter] Exiting without the bug reporter. Application will exit with return code 0

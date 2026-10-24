@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbe8726f08d6844288898c39c8833969, type: 3}
+  m_Name: CustomizationCatalog
+  m_EditorClassIdentifier: Assembly-CSharp::NeonDrift.Data.CustomizationCatalog
+  paints:
+  - id: paint_0
+    displayName: Factory White
+    category: 0
+    priceNC: 0
+    primaryColor: {r: 1, g: 1, b: 1, a: 1}
+    emissionColor: {r: 0, g: 1, b: 1, a: 1}
+  - id: paint_1
+    displayName: Neon Magenta
+    category: 0
+    priceNC: 350
+    primaryColor: {r: 1, g: 0.1, b: 0.6, a: 1}
+    emissionColor: {r: 0, g: 1, b: 1, a: 1}
+  - id: paint_2
+    displayName: Cyber Cyan
+    category: 0
+    priceNC: 350
+    primaryColor: {r: 0.1, g: 0.9, b: 1, a: 1}
+    emissionColor: {r: 0, g: 1, b: 1, a: 1}
+  - id: paint_3
+    displayName: Midnight Gold
+    category: 0
+    priceNC: 500
+    primaryColor: {r: 1, g: 0.8, b: 0.1, a: 1}
+    emissionColor: {r: 0, g: 1, b: 1, a: 1}
+  underglows:
+  - id: underglow_0
+    displayName: Cyan Neon
+    category: 1
+    priceNC: 0
+    primaryColor: {r: 1, g: 1, b: 1, a: 1}
+    emissionColor: {r: 0, g: 1, b: 1, a: 1}
+  - id: underglow_1
+    displayName: Magenta Glow
+    category: 1
+    priceNC: 800
+    primaryColor: {r: 1, g: 1, b: 1, a: 1}
+    emissionColor: {r: 1, g: 0, b: 1, a: 1}
+  - id: underglow_2
+    displayName: Acid Lime
+    category: 1
+    priceNC: 1000
+    primaryColor: {r: 1, g: 1, b: 1, a: 1}
+    emissionColor: {r: 0, g: 1, b: 0, a: 1}
+  smokes: []

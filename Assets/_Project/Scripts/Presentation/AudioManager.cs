@@ -1,4 +1,5 @@
 using UnityEngine;
+using NeonDrift.Vehicle;
 
 namespace NeonDrift.Presentation
 {
@@ -7,38 +8,37 @@ namespace NeonDrift.Presentation
         public static AudioManager Instance { get; private set; }
 
         [Header("Audio Sources")]
-        [SerializeField] private AudioSource engineSource;
-        [SerializeField] private AudioSource skidSource;
-        [SerializeField] private AudioSource boostSource;
-        [SerializeField] private AudioSource sfxSource;
         [SerializeField] private AudioSource musicSource;
+        [SerializeField] private AudioSource engineSource;
+        [SerializeField] private AudioSource driftSource;
+        [SerializeField] private AudioSource sfxSource;
 
-        [Header("Optional Custom Audio Clips (If null, synthesized clips are generated)")]
-        [SerializeField] private AudioClip customEngineClip;
-        [SerializeField] private AudioClip customSkidClip;
-        [SerializeField] private AudioClip customBoostClip;
-        [SerializeField] private AudioClip customCrashClip;
-        [SerializeField] private AudioClip customHeavyCrashClip;
-        [SerializeField] private AudioClip customUiClickClip;
-        [SerializeField] private AudioClip customPerfectExitClip;
-        [SerializeField] private AudioClip customGameOverClip;
-        [SerializeField] private AudioClip customNearMissClip;
-        [SerializeField] private AudioClip customMusicClip;
+        [Header("Clips")]
+        [SerializeField] private AudioClip musicLoop;
+        [SerializeField] private AudioClip engineLoop;
+        [SerializeField] private AudioClip driftScreech;
+        [SerializeField] private AudioClip boostSfx;
+        [SerializeField] private AudioClip crashSfx;
+        [SerializeField] private AudioClip nearMissSfx;
+        [SerializeField] private AudioClip uiClickSfx;
+        [SerializeField] private AudioClip gameOverSfx;
 
-        public AudioClip CustomBoostClip { get => customBoostClip; set => customBoostClip = value; }
-        public AudioClip CustomCrashClip { get => customCrashClip; set => customCrashClip = value; }
-        public AudioClip CustomHeavyCrashClip { get => customHeavyCrashClip; set => customHeavyCrashClip = value; }
-        public AudioClip CustomUiClickClip { get => customUiClickClip; set => customUiClickClip = value; }
-        public AudioClip CustomGameOverClip { get => customGameOverClip; set => customGameOverClip = value; }
-        public AudioClip CustomNearMissClip { get => customNearMissClip; set => customNearMissClip = value; }
-        public AudioClip CustomMusicClip { get => customMusicClip; set => customMusicClip = value; }
+        [Header("Tuning")]
+        public float masterVolume = 1f;
+        public float musicVolume = 0.8f;
+        public float engineVolume = 0.8f;
+        public float sfxVolume = 1f;
 
-        private AudioClip synthEngineClip;
-        private AudioClip synthSkidClip;
-        private AudioClip synthBoostClip;
-        private AudioClip synthCrashClip;
-        private AudioClip synthUiClickClip;
-        private AudioClip synthPerfectClip;
+        // Custom Clip Properties for ProjectBuilder wiring
+        public AudioClip CustomBoostClip { get => boostSfx; set => boostSfx = value; }
+        public AudioClip CustomCrashClip { get => crashSfx; set => crashSfx = value; }
+        public AudioClip CustomHeavyCrashClip { get => crashSfx; set => crashSfx = value; }
+        public AudioClip CustomUiClickClip { get => uiClickSfx; set => uiClickSfx = value; }
+        public AudioClip CustomGameOverClip { get => gameOverSfx; set => gameOverSfx = value; }
+        public AudioClip CustomNearMissClip { get => nearMissSfx; set => nearMissSfx = value; }
+        public AudioClip CustomMusicClip { get => musicLoop; set => musicLoop = value; }
+
+        private VehicleController targetVehicle;
 
         private void Awake()
         {
@@ -48,234 +48,122 @@ namespace NeonDrift.Presentation
                 return;
             }
             Instance = this;
-
-            SetupAudioSources();
-            GenerateProceduralAudioClips();
+            DontDestroyOnLoad(gameObject);
+            EnsureSources();
         }
 
-        private void SetupAudioSources()
+        private void EnsureSources()
         {
-            if (musicSource == null)
-            {
-                musicSource = gameObject.AddComponent<AudioSource>();
-                musicSource.loop = true;
-                musicSource.playOnAwake = false;
-                musicSource.volume = 0.45f;
-            }
-            if (engineSource == null)
-            {
-                engineSource = gameObject.AddComponent<AudioSource>();
-                engineSource.loop = true;
-                engineSource.playOnAwake = false;
-                engineSource.volume = 0.35f;
-            }
-            if (skidSource == null)
-            {
-                skidSource = gameObject.AddComponent<AudioSource>();
-                skidSource.loop = true;
-                skidSource.playOnAwake = false;
-                skidSource.volume = 0f;
-            }
-            if (boostSource == null)
-            {
-                boostSource = gameObject.AddComponent<AudioSource>();
-                boostSource.loop = false;
-                boostSource.playOnAwake = false;
-                boostSource.volume = 0.6f;
-            }
-            if (sfxSource == null)
-            {
-                sfxSource = gameObject.AddComponent<AudioSource>();
-                sfxSource.loop = false;
-                sfxSource.playOnAwake = false;
-                sfxSource.volume = 0.5f;
-            }
+            if (musicSource == null) musicSource = gameObject.AddComponent<AudioSource>();
+            if (engineSource == null) engineSource = gameObject.AddComponent<AudioSource>();
+            if (driftSource == null) driftSource = gameObject.AddComponent<AudioSource>();
+            if (sfxSource == null) sfxSource = gameObject.AddComponent<AudioSource>();
+
+            musicSource.loop = true;
+            engineSource.loop = true;
+            driftSource.loop = true;
+
+            musicSource.playOnAwake = false;
+            engineSource.playOnAwake = false;
+            driftSource.playOnAwake = false;
+            sfxSource.playOnAwake = false;
         }
 
-        private void GenerateProceduralAudioClips()
+        public void SetTargetVehicle(VehicleController vehicle)
         {
-            int sampleRate = 44100;
+            targetVehicle = vehicle;
+        }
 
-            // 1. Engine Loop (harmonic low rumble)
-            float engineDuration = 0.5f;
-            int engineSamples = Mathf.RoundToInt(sampleRate * engineDuration);
-            float[] engineData = new float[engineSamples];
-            for (int i = 0; i < engineSamples; i++)
+        private void Update()
+        {
+            if (targetVehicle == null) return;
+
+            // 1. Reactive Engine Audio (Pitch & Volume response to vehicle speed & boost)
+            if (engineSource != null && engineSource.isPlaying)
             {
-                float t = (float)i / sampleRate;
-                float wave = Mathf.Sin(2f * Mathf.PI * 65f * t) * 0.5f 
-                           + Mathf.Sin(2f * Mathf.PI * 130f * t) * 0.3f 
-                           + Mathf.Sin(2f * Mathf.PI * 195f * t) * 0.15f;
-                engineData[i] = wave;
+                float speedRatio = Mathf.Clamp01(targetVehicle.currentSpeed / 28f);
+                float basePitch = 0.8f + speedRatio * 1.2f;
+                if (targetVehicle.isBoosting) basePitch += 0.35f;
+                engineSource.pitch = Mathf.Lerp(engineSource.pitch, basePitch, Time.deltaTime * 8f);
+                engineSource.volume = masterVolume * engineVolume * (0.4f + speedRatio * 0.6f);
             }
-            synthEngineClip = AudioClip.Create("SynthEngine", engineSamples, 1, sampleRate, false);
-            synthEngineClip.SetData(engineData, 0);
 
-            // 2. Tire Skid (noise band)
-            float skidDuration = 0.4f;
-            int skidSamples = Mathf.RoundToInt(sampleRate * skidDuration);
-            float[] skidData = new float[skidSamples];
-            for (int i = 0; i < skidSamples; i++)
+            // 2. Reactive Drift Tire Screech (Smooth fade & intensity based on slip angle)
+            if (driftSource != null)
             {
-                float noise = (Random.value * 2f - 1f) * 0.4f;
-                float t = (float)i / sampleRate;
-                skidData[i] = noise * Mathf.Sin(2f * Mathf.PI * 850f * t);
+                bool isDrifting = targetVehicle.currentState == DriftState.Drifting || targetVehicle.currentState == DriftState.DriftEntry;
+                if (isDrifting && targetVehicle.currentSpeed > 5f)
+                {
+                    if (!driftSource.isPlaying && driftScreech != null)
+                    {
+                        driftSource.clip = driftScreech;
+                        driftSource.Play();
+                    }
+                    float slipIntensity = Mathf.Clamp01(targetVehicle.currentSlipAngle / 40f);
+                    driftSource.volume = Mathf.Lerp(driftSource.volume, masterVolume * sfxVolume * slipIntensity * 0.85f, Time.deltaTime * 10f);
+                    driftSource.pitch = Mathf.Lerp(driftSource.pitch, 0.9f + slipIntensity * 0.35f, Time.deltaTime * 6f);
+                }
+                else
+                {
+                    driftSource.volume = Mathf.Lerp(driftSource.volume, 0f, Time.deltaTime * 12f);
+                    if (driftSource.volume <= 0.01f && driftSource.isPlaying)
+                    {
+                        driftSource.Stop();
+                    }
+                }
             }
-            synthSkidClip = AudioClip.Create("SynthSkid", skidSamples, 1, sampleRate, false);
-            synthSkidClip.SetData(skidData, 0);
-
-            // 3. Crash Impact (noise punch + sub bass decay)
-            float crashDuration = 0.35f;
-            int crashSamples = Mathf.RoundToInt(sampleRate * crashDuration);
-            float[] crashData = new float[crashSamples];
-            for (int i = 0; i < crashSamples; i++)
-            {
-                float t = (float)i / crashSamples;
-                float env = Mathf.Exp(-t * 8f);
-                float sub = Mathf.Sin(2f * Mathf.PI * 90f * ((float)i / sampleRate));
-                float noise = (Random.value * 2f - 1f);
-                crashData[i] = (sub * 0.6f + noise * 0.4f) * env;
-            }
-            synthCrashClip = AudioClip.Create("SynthCrash", crashSamples, 1, sampleRate, false);
-            synthCrashClip.SetData(crashData, 0);
-
-            // 4. Boost Surge
-            float boostDuration = 0.6f;
-            int boostSamples = Mathf.RoundToInt(sampleRate * boostDuration);
-            float[] boostData = new float[boostSamples];
-            for (int i = 0; i < boostSamples; i++)
-            {
-                float t = (float)i / sampleRate;
-                float freq = Mathf.Lerp(250f, 650f, (float)i / boostSamples);
-                float env = Mathf.Sin(Mathf.PI * ((float)i / boostSamples));
-                boostData[i] = Mathf.Sin(2f * Mathf.PI * freq * t) * env * 0.5f;
-            }
-            synthBoostClip = AudioClip.Create("SynthBoost", boostSamples, 1, sampleRate, false);
-            synthBoostClip.SetData(boostData, 0);
-
-            // 5. UI Click
-            float clickDuration = 0.08f;
-            int clickSamples = Mathf.RoundToInt(sampleRate * clickDuration);
-            float[] clickData = new float[clickSamples];
-            for (int i = 0; i < clickSamples; i++)
-            {
-                float t = (float)i / sampleRate;
-                clickData[i] = Mathf.Sin(2f * Mathf.PI * 1200f * t) * Mathf.Exp(-t * 40f) * 0.4f;
-            }
-            synthUiClickClip = AudioClip.Create("SynthClick", clickSamples, 1, sampleRate, false);
-            synthUiClickClip.SetData(clickData, 0);
-
-            // 6. Perfect Exit Chime
-            float perfDuration = 0.3f;
-            int perfSamples = Mathf.RoundToInt(sampleRate * perfDuration);
-            float[] perfData = new float[perfSamples];
-            for (int i = 0; i < perfSamples; i++)
-            {
-                float t = (float)i / sampleRate;
-                float env = Mathf.Exp(-((float)i / perfSamples) * 4f);
-                perfData[i] = (Mathf.Sin(2f * Mathf.PI * 880f * t) + Mathf.Sin(2f * Mathf.PI * 1320f * t) * 0.5f) * env * 0.4f;
-            }
-            synthPerfectClip = AudioClip.Create("SynthPerfect", perfSamples, 1, sampleRate, false);
-            synthPerfectClip.SetData(perfData, 0);
-
-            // Assign defaults
-            engineSource.clip = customEngineClip != null ? customEngineClip : synthEngineClip;
-            skidSource.clip = customSkidClip != null ? customSkidClip : synthSkidClip;
-        }
-
-        public void StartEngine()
-        {
-            if (engineSource != null && !engineSource.isPlaying)
-                engineSource.Play();
-            if (skidSource != null && !skidSource.isPlaying)
-                skidSource.Play();
-        }
-
-        public void StopEngine()
-        {
-            if (engineSource != null) engineSource.Stop();
-            if (skidSource != null) skidSource.Stop();
-        }
-
-        public void UpdateEnginePitch(float speedRatio)
-        {
-            if (engineSource != null)
-            {
-                engineSource.pitch = Mathf.Lerp(0.85f, 2.2f, speedRatio);
-            }
-        }
-
-        public void SetSkidVolume(float volume)
-        {
-            if (skidSource != null)
-            {
-                skidSource.volume = Mathf.Clamp01(volume * 0.6f);
-            }
-        }
-
-        public void PlayBoost()
-        {
-            AudioClip clip = customBoostClip != null ? customBoostClip : synthBoostClip;
-            boostSource.PlayOneShot(clip);
-        }
-
-        public void PlayCrash()
-        {
-            AudioClip clip = customCrashClip != null ? customCrashClip : synthCrashClip;
-            sfxSource.PlayOneShot(clip);
-        }
-
-        public void PlayHeavyCrash()
-        {
-            AudioClip clip = customHeavyCrashClip != null ? customHeavyCrashClip : (customCrashClip != null ? customCrashClip : synthCrashClip);
-            sfxSource.PlayOneShot(clip);
-        }
-
-        public void PlayUiClick()
-        {
-            AudioClip clip = customUiClickClip != null ? customUiClickClip : synthUiClickClip;
-            sfxSource.PlayOneShot(clip);
-        }
-
-        public void PlayPerfectExit()
-        {
-            AudioClip clip = customPerfectExitClip != null ? customPerfectExitClip : synthPerfectClip;
-            sfxSource.PlayOneShot(clip);
-        }
-
-        public void PlayGameOver()
-        {
-            if (customGameOverClip != null)
-            {
-                sfxSource.PlayOneShot(customGameOverClip);
-            }
-        }
-
-        public void PlayNearMiss()
-        {
-            AudioClip clip = customNearMissClip != null ? customNearMissClip : (customPerfectExitClip != null ? customPerfectExitClip : synthPerfectClip);
-            sfxSource.PlayOneShot(clip);
         }
 
         public void StartMusic()
         {
-            if (musicSource == null) return;
-            if (customMusicClip != null && musicSource.clip != customMusicClip)
+            if (musicSource != null && musicLoop != null && !musicSource.isPlaying)
             {
-                musicSource.clip = customMusicClip;
-            }
-            if (musicSource.clip != null && !musicSource.isPlaying)
-            {
+                musicSource.clip = musicLoop;
+                musicSource.volume = masterVolume * musicVolume;
                 musicSource.Play();
             }
         }
 
-        public void StopMusic()
+        public void StartEngine()
         {
-            if (musicSource != null && musicSource.isPlaying)
+            if (engineSource != null && engineLoop != null)
             {
-                musicSource.Stop();
+                engineSource.clip = engineLoop;
+                engineSource.volume = masterVolume * engineVolume;
+                engineSource.Play();
             }
+        }
+
+        public void StopEngine()
+        {
+            engineSource?.Stop();
+            driftSource?.Stop();
+        }
+
+        public void PlayBoost() => PlaySFX(boostSfx);
+        public void PlayCrash() => PlaySFX(crashSfx);
+        public void PlayHeavyCrash() => PlaySFX(crashSfx);
+        public void PlayNearMiss() => PlaySFX(nearMissSfx);
+        public void PlayUIClick() => PlaySFX(uiClickSfx);
+        public void PlayGameOver() => PlaySFX(gameOverSfx);
+
+        private void PlaySFX(AudioClip clip)
+        {
+            if (sfxSource != null && clip != null)
+            {
+                sfxSource.PlayOneShot(clip, masterVolume * sfxVolume);
+            }
+        }
+
+        public void SetMasterVolume(float vol) { masterVolume = Mathf.Clamp01(vol); ApplyVolumes(); }
+        public void SetMusicVolume(float vol) { musicVolume = Mathf.Clamp01(vol); ApplyVolumes(); }
+        public void SetEngineVolume(float vol) { engineVolume = Mathf.Clamp01(vol); ApplyVolumes(); }
+        public void SetSFXVolume(float vol) { sfxVolume = Mathf.Clamp01(vol); ApplyVolumes(); }
+
+        private void ApplyVolumes()
+        {
+            if (musicSource != null) musicSource.volume = masterVolume * musicVolume;
+            if (engineSource != null) engineSource.volume = masterVolume * engineVolume;
         }
     }
 }

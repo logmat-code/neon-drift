@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using NeonDrift.Progression;
@@ -8,109 +9,180 @@ namespace NeonDrift.Presentation
 {
     public class GarageView : MonoBehaviour
     {
-        [Header("Profile & Credits")]
+        [Header("Header Info")]
         [SerializeField] private Text creditsText;
+        [SerializeField] private Text carNameText;
+        [SerializeField] private Text carArchetypeText;
+        [SerializeField] private Image carPreviewImage;
 
-        [Header("Stat Sliders / Bars")]
-        [SerializeField] private Image speedBar;
-        [SerializeField] private Image accelBar;
-        [SerializeField] private Image gripBar;
-        [SerializeField] private Image driftBar;
-        [SerializeField] private Image boostBar;
+        [Header("Vehicle Selector")]
+        [SerializeField] private Button prevCarBtn;
+        [SerializeField] private Button nextCarBtn;
+        [SerializeField] private Button buyOrEquipBtn;
+        [SerializeField] private Text buyOrEquipBtnText;
 
-        [Header("Upgrade Buttons & Labels")]
+        [Header("Upgrade Buttons & Levels (6 Categories)")]
         [SerializeField] private Button upgradeEngineBtn;
         [SerializeField] private Text engineLvlText;
         [SerializeField] private Text engineCostText;
-
-        [SerializeField] private Button upgradeTiresBtn;
-        [SerializeField] private Text tiresLvlText;
-        [SerializeField] private Text tiresCostText;
 
         [SerializeField] private Button upgradeTurboBtn;
         [SerializeField] private Text turboLvlText;
         [SerializeField] private Text turboCostText;
 
-        [Header("Navigation Buttons")]
+        [SerializeField] private Button upgradeSteerBtn;
+        [SerializeField] private Text steerLvlText;
+        [SerializeField] private Text steerCostText;
+
+        [SerializeField] private Button upgradeDriftBtn;
+        [SerializeField] private Text driftLvlText;
+        [SerializeField] private Text driftCostText;
+
+        [SerializeField] private Button upgradeBrakesBtn;
+        [SerializeField] private Text brakesLvlText;
+        [SerializeField] private Text brakesCostText;
+
+        [SerializeField] private Button upgradeDurabilityBtn;
+        [SerializeField] private Text durabilityLvlText;
+        [SerializeField] private Text durabilityCostText;
+
+        [Header("Monetization & Action Buttons")]
+        [SerializeField] private Button watchAdBonusBtn;
         [SerializeField] private Button backBtn;
         [SerializeField] private Button driveBtn;
-
-        [Header("Config")]
-        [SerializeField] private UpgradeConfig upgradeConfig;
 
         public event Action OnBackClicked;
         public event Action OnDriveClicked;
 
+        private int viewingCarIndex = 0;
+        private List<string> availableCarIds = new List<string> { "kitsune_s13", "akuma_86", "ryujin_rx", "kage_r34", "raiden_gt", "oni_x" };
+
         private void Start()
         {
+            if (prevCarBtn != null) prevCarBtn.onClick.AddListener(SelectPreviousCar);
+            if (nextCarBtn != null) nextCarBtn.onClick.AddListener(SelectNextCar);
+            if (buyOrEquipBtn != null) buyOrEquipBtn.onClick.AddListener(OnBuyOrEquipClicked);
+
+            if (upgradeEngineBtn != null) upgradeEngineBtn.onClick.AddListener(() => TryUpgrade("engine"));
+            if (upgradeTurboBtn != null) upgradeTurboBtn.onClick.AddListener(() => TryUpgrade("turbo"));
+            if (upgradeSteerBtn != null) upgradeSteerBtn.onClick.AddListener(() => TryUpgrade("steering"));
+            if (upgradeDriftBtn != null) upgradeDriftBtn.onClick.AddListener(() => TryUpgrade("drift"));
+            if (upgradeBrakesBtn != null) upgradeBrakesBtn.onClick.AddListener(() => TryUpgrade("brakes"));
+            if (upgradeDurabilityBtn != null) upgradeDurabilityBtn.onClick.AddListener(() => TryUpgrade("durability"));
+
+            if (watchAdBonusBtn != null) watchAdBonusBtn.onClick.AddListener(OnWatchAdClicked);
             if (backBtn != null) backBtn.onClick.AddListener(() => OnBackClicked?.Invoke());
             if (driveBtn != null) driveBtn.onClick.AddListener(() => OnDriveClicked?.Invoke());
-
-            if (upgradeEngineBtn != null) upgradeEngineBtn.onClick.AddListener(HandleUpgradeEngine);
-            if (upgradeTiresBtn != null) upgradeTiresBtn.onClick.AddListener(HandleUpgradeTires);
-            if (upgradeTurboBtn != null) upgradeTurboBtn.onClick.AddListener(HandleUpgradeTurbo);
 
             RefreshUI();
         }
 
+        private void OnEnable()
+        {
+            RefreshUI();
+        }
+
+        public void SelectPreviousCar()
+        {
+            viewingCarIndex = (viewingCarIndex - 1 + availableCarIds.Count) % availableCarIds.Count;
+            RefreshUI();
+        }
+
+        public void SelectNextCar()
+        {
+            viewingCarIndex = (viewingCarIndex + 1) % availableCarIds.Count;
+            RefreshUI();
+        }
+
+        private void OnBuyOrEquipClicked()
+        {
+            string carId = availableCarIds[viewingCarIndex];
+            var pm = ProgressionManager.Instance;
+            if (pm == null) return;
+
+            var vData = pm.CurrentData.GetVehicleData(carId);
+            if (vData.isUnlocked)
+            {
+                pm.TryEquipCar(carId);
+            }
+            else
+            {
+                pm.TryBuyCar(carId);
+            }
+            RefreshUI();
+        }
+
+        private void TryUpgrade(string category)
+        {
+            string carId = availableCarIds[viewingCarIndex];
+            var pm = ProgressionManager.Instance;
+            if (pm != null && pm.TryUpgradeCategory(carId, category))
+            {
+                AudioManager.Instance?.PlayUIClick();
+                RefreshUI();
+            }
+        }
+
+        private void OnWatchAdClicked()
+        {
+            Monetization.Yodo1AdsManager.Instance?.ShowGarageBonusRewardedAd((bonus) =>
+            {
+                AudioManager.Instance?.PlayUIClick();
+                RefreshUI();
+            });
+        }
+
         public void RefreshUI()
         {
-            if (ProgressionManager.Instance == null || ProgressionManager.Instance.CurrentData == null) return;
-            var data = ProgressionManager.Instance.CurrentData;
+            var pm = ProgressionManager.Instance;
+            if (pm == null || pm.CurrentData == null) return;
 
-            if (creditsText != null) creditsText.text = $"CREDITS: {data.credits:N0}";
+            if (creditsText != null) creditsText.text = $"{pm.CurrentData.credits:N0} NC";
 
-            // Stat bars (normalized 0..1)
-            if (speedBar != null) speedBar.fillAmount = Mathf.Clamp01(0.4f + data.engineLevel * 0.12f);
-            if (accelBar != null) accelBar.fillAmount = Mathf.Clamp01(0.45f + data.engineLevel * 0.11f);
-            if (gripBar != null) gripBar.fillAmount = Mathf.Clamp01(0.5f + data.tiresLevel * 0.10f);
-            if (driftBar != null) driftBar.fillAmount = Mathf.Clamp01(0.55f + data.tiresLevel * 0.09f);
-            if (boostBar != null) boostBar.fillAmount = Mathf.Clamp01(0.35f + data.turboLevel * 0.13f);
+            string currentId = availableCarIds[Mathf.Clamp(viewingCarIndex, 0, availableCarIds.Count - 1)];
+            var carDef = pm.CarCatalog?.GetCar(currentId);
+            var vData = pm.CurrentData.GetVehicleData(currentId);
 
-            // Engine
-            if (engineLvlText != null) engineLvlText.text = $"ENGINE LV.{data.engineLevel}";
-            int eCost = upgradeConfig != null ? upgradeConfig.GetEngineCost(data.engineLevel) : -1;
-            if (engineCostText != null) engineCostText.text = eCost > 0 ? $"CR {eCost}" : "MAX";
-            if (upgradeEngineBtn != null) upgradeEngineBtn.interactable = (eCost > 0 && data.credits >= eCost);
+            if (carNameText != null) carNameText.text = carDef != null ? carDef.displayName.ToUpper() : currentId.ToUpper();
+            if (carArchetypeText != null) carArchetypeText.text = carDef != null ? carDef.archetype : "STREET DRIFTER";
+            if (carPreviewImage != null && carDef != null && carDef.carSprite != null) carPreviewImage.sprite = carDef.carSprite;
 
-            // Tires
-            if (tiresLvlText != null) tiresLvlText.text = $"TIRES LV.{data.tiresLevel}";
-            int tCost = upgradeConfig != null ? upgradeConfig.GetTiresCost(data.tiresLevel) : -1;
-            if (tiresCostText != null) tiresCostText.text = tCost > 0 ? $"CR {tCost}" : "MAX";
-            if (upgradeTiresBtn != null) upgradeTiresBtn.interactable = (tCost > 0 && data.credits >= tCost);
+            // Buy or Equip button state
+            if (buyOrEquipBtnText != null)
+            {
+                if (currentId == pm.CurrentData.selectedVehicleId)
+                {
+                    buyOrEquipBtnText.text = "EQUIPPED";
+                    if (buyOrEquipBtn != null) buyOrEquipBtn.interactable = false;
+                }
+                else if (vData.isUnlocked)
+                {
+                    buyOrEquipBtnText.text = "EQUIP CAR";
+                    if (buyOrEquipBtn != null) buyOrEquipBtn.interactable = true;
+                }
+                else
+                {
+                    int price = carDef != null ? carDef.priceNC : 3000;
+                    buyOrEquipBtnText.text = $"UNLOCK ({price:N0} NC)";
+                    if (buyOrEquipBtn != null) buyOrEquipBtn.interactable = pm.CurrentData.credits >= price;
+                }
+            }
 
-            // Turbo
-            if (turboLvlText != null) turboLvlText.text = $"TURBO LV.{data.turboLevel}";
-            int tbCost = upgradeConfig != null ? upgradeConfig.GetTurboCost(data.turboLevel) : -1;
-            if (turboCostText != null) turboCostText.text = tbCost > 0 ? $"CR {tbCost}" : "MAX";
-            if (upgradeTurboBtn != null) upgradeTurboBtn.interactable = (tbCost > 0 && data.credits >= tbCost);
+            // Upgrades stats display
+            UpdateUpgradeSlot(vData.engineLevel, engineLvlText, engineCostText, upgradeEngineBtn, pm);
+            UpdateUpgradeSlot(vData.turboLevel, turboLvlText, turboCostText, upgradeTurboBtn, pm);
+            UpdateUpgradeSlot(vData.steeringLevel, steerLvlText, steerCostText, upgradeSteerBtn, pm);
+            UpdateUpgradeSlot(vData.driftControlLevel, driftLvlText, driftCostText, upgradeDriftBtn, pm);
+            UpdateUpgradeSlot(vData.brakesLevel, brakesLvlText, brakesCostText, upgradeBrakesBtn, pm);
+            UpdateUpgradeSlot(vData.durabilityLevel, durabilityLvlText, durabilityCostText, upgradeDurabilityBtn, pm);
         }
 
-        private void HandleUpgradeEngine()
+        private void UpdateUpgradeSlot(int level, Text lvlText, Text costText, Button btn, ProgressionManager pm)
         {
-            if (ProgressionManager.Instance.TryUpgradeEngine())
-            {
-                AudioManager.Instance?.PlayUiClick();
-                RefreshUI();
-            }
-        }
-
-        private void HandleUpgradeTires()
-        {
-            if (ProgressionManager.Instance.TryUpgradeTires())
-            {
-                AudioManager.Instance?.PlayUiClick();
-                RefreshUI();
-            }
-        }
-
-        private void HandleUpgradeTurbo()
-        {
-            if (ProgressionManager.Instance.TryUpgradeTurbo())
-            {
-                AudioManager.Instance?.PlayUiClick();
-                RefreshUI();
-            }
+            if (lvlText != null) lvlText.text = $"LVL {level}/5";
+            int cost = pm.GetUpgradeCost(level);
+            if (costText != null) costText.text = cost > 0 ? $"{cost} NC" : "MAX";
+            if (btn != null) btn.interactable = cost > 0 && pm.CurrentData.credits >= cost;
         }
     }
 }

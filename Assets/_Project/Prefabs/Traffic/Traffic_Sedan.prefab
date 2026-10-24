@@ -181,6 +181,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NeonDrift.World.TrafficCar
   carType: 1
-  forwardSpeed: 13
-  currentLane: 0
+  speed: 13
   hasAwardedNearMiss: 0
+  currentLane: 0
+  longitudinalDistance: 0
+  lateralOffset: 0

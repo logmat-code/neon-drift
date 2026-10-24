@@ -57,8 +57,10 @@
     <Compile Include="Assets/_Project/Scripts/Editor/DriftCalibrationMeasurer.cs" />
     <Compile Include="Assets/_Project/Scripts/Editor/ManualInputVerifier.cs" />
     <Compile Include="Assets/_Project/Scripts/Editor/EditorAutoRunner.cs" />
+    <Compile Include="Assets/_Project/Scripts/Editor/MasterPassLiveAuditor.cs" />
     <Compile Include="Assets/_Project/Scripts/Editor/EndlessDriftValidator.cs" />
     <Compile Include="Assets/_Project/Scripts/Editor/TuningGroundFullAuditor.cs" />
+    <Compile Include="Assets/_Project/Scripts/Editor/BuildAssetsIntegrator.cs" />
     <Compile Include="Assets/_Project/Scripts/Editor/LiveDriftVisualVerifier.cs" />
     <Compile Include="Assets/_Project/Scripts/Editor/ProjectBuilder.cs" />
     <Compile Include="Assets/_Project/Scripts/Editor/DriftTuningGroundBuilder.cs" />

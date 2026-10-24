@@ -233,9 +233,13 @@ namespace NeonDrift.Editor
             UpgradeConfig upConfig = AssetDatabase.LoadAssetAtPath<UpgradeConfig>(DATA_ROOT + "UpgradeConfig.asset");
             CarConfig carConfig = AssetDatabase.LoadAssetAtPath<CarConfig>(DATA_ROOT + "CarConfig.asset");
             FlowConfig flowConfig = AssetDatabase.LoadAssetAtPath<FlowConfig>(DATA_ROOT + "FlowConfig.asset");
+            CarCatalog carCatalog = AssetDatabase.LoadAssetAtPath<CarCatalog>(DATA_ROOT + "CarCatalog.asset");
+            CustomizationCatalog customCatalog = AssetDatabase.LoadAssetAtPath<CustomizationCatalog>(DATA_ROOT + "CustomizationCatalog.asset");
 
             SerializedObject soPM = new SerializedObject(pm);
             soPM.FindProperty("upgradeConfig").objectReferenceValue = upConfig;
+            soPM.FindProperty("carCatalog").objectReferenceValue = carCatalog;
+            soPM.FindProperty("customCatalog").objectReferenceValue = customCatalog;
             soPM.ApplyModifiedProperties();
 
             // 2. Portrait Camera
@@ -310,16 +314,24 @@ namespace NeonDrift.Editor
 
             Sprite compactSprite = AssetDatabase.LoadAssetAtPath<Sprite>(ART_ROOT + "Traffic/traffic_compact.png");
             Sprite sedanSprite = AssetDatabase.LoadAssetAtPath<Sprite>(ART_ROOT + "Traffic/traffic_sedan.png");
+            Sprite sportsSprite = AssetDatabase.LoadAssetAtPath<Sprite>(ART_ROOT + "Traffic/traffic_sports.png");
+            Sprite taxiSprite = AssetDatabase.LoadAssetAtPath<Sprite>(ART_ROOT + "Traffic/traffic_taxi.png");
             Sprite vanSprite = AssetDatabase.LoadAssetAtPath<Sprite>(ART_ROOT + "Traffic/traffic_van.png");
+            Sprite pickupSprite = AssetDatabase.LoadAssetAtPath<Sprite>(ART_ROOT + "Traffic/traffic_pickup.png");
+            Sprite busSprite = AssetDatabase.LoadAssetAtPath<Sprite>(ART_ROOT + "Traffic/traffic_bus.png");
 
-            trfMgr.Initialize(vc, tm, compactSprite, sedanSprite, vanSprite);
+            trfMgr.Initialize(vc, tm, compactSprite, sedanSprite, sportsSprite, taxiSprite, vanSprite, pickupSprite, busSprite);
 
             SerializedObject soTraffic = new SerializedObject(trfMgr);
             soTraffic.FindProperty("playerVehicle").objectReferenceValue = vc;
             soTraffic.FindProperty("trackManager").objectReferenceValue = tm;
             soTraffic.FindProperty("compactSprite").objectReferenceValue = compactSprite;
             soTraffic.FindProperty("sedanSprite").objectReferenceValue = sedanSprite;
+            soTraffic.FindProperty("sportsSprite").objectReferenceValue = sportsSprite;
+            soTraffic.FindProperty("taxiSprite").objectReferenceValue = taxiSprite;
             soTraffic.FindProperty("vanSprite").objectReferenceValue = vanSprite;
+            soTraffic.FindProperty("pickupSprite").objectReferenceValue = pickupSprite;
+            soTraffic.FindProperty("busSprite").objectReferenceValue = busSprite;
             soTraffic.ApplyModifiedProperties();
 
             // 6. Home Environment Scene (Portrait)
@@ -431,14 +443,14 @@ namespace NeonDrift.Editor
             HomeView view = root.AddComponent<HomeView>();
 
             // Logo & Subtitle
-            Text title = CreateUIText("Title", root.transform, "NEON DRIFT", 88, new Color(0f, 0.9f, 1f), new Vector2(0, 640), new Vector2(900, 140));
+            Text title = CreateUIText("Title", root.transform, "NEON DRIFT.", 88, new Color(0f, 0.9f, 1f), new Vector2(0, 640), new Vector2(900, 140));
             title.fontStyle = FontStyle.Bold;
 
             Text sub = CreateUIText("Subtitle", root.transform, "— MIDNIGHT DRIFT METROPOLIS —", 26, new Color(1f, 0f, 0.5f), new Vector2(0, 560), new Vector2(800, 50));
 
             // Profile info
             Text best = CreateUIText("BestScore", root.transform, "BEST: 0", 32, Color.white, new Vector2(0, 460), new Vector2(500, 50));
-            Text cr = CreateUIText("Credits", root.transform, "CR: 1,000", 32, new Color(1f, 0.7f, 0f), new Vector2(0, 410), new Vector2(500, 50));
+            Text cr = CreateUIText("Credits", root.transform, "1,000 NC", 32, new Color(1f, 0.75f, 0f), new Vector2(0, 410), new Vector2(500, 50));
 
             // Buttons (Clean vertical stack in bottom third)
             Button btnDrive = CreateUIButton("BtnDrive", root.transform, "DRIVE", new Color(0f, 0.8f, 0.95f), new Vector2(0, -380), new Vector2(460, 95));
@@ -461,61 +473,100 @@ namespace NeonDrift.Editor
             GameObject root = CreateUIPanel("GarageView", parent);
             GarageView view = root.AddComponent<GarageView>();
 
-            Text title = CreateUIText("GarageTitle", root.transform, "TUNING GARAGE", 56, new Color(1f, 0.05f, 0.5f), new Vector2(0, 780), new Vector2(800, 80));
+            Text title = CreateUIText("GarageTitle", root.transform, "GARAGE & SHOWROOM", 52, new Color(1f, 0.05f, 0.5f), new Vector2(0, 800), new Vector2(800, 70));
             title.fontStyle = FontStyle.Bold;
 
-            Text crText = CreateUIText("CreditsText", root.transform, "CREDITS: 1,000", 34, new Color(1f, 0.7f, 0f), new Vector2(0, 715), new Vector2(600, 50));
+            Text crText = CreateUIText("CreditsText", root.transform, "1,000 NC", 36, new Color(1f, 0.75f, 0f), new Vector2(0, 735), new Vector2(600, 50));
+            crText.fontStyle = FontStyle.Bold;
 
-            // Stat Bars Panel (stacked in upper middle)
-            GameObject statsPanel = CreateUIPanel("StatsPanel", root.transform);
-            RectTransform spRT = statsPanel.GetComponent<RectTransform>();
-            spRT.anchoredPosition = new Vector2(0, 160);
-            spRT.sizeDelta = new Vector2(860, 360);
+            // Vehicle Showroom Card (Center Y = +380)
+            GameObject carCard = CreateUIPanel("CarCard", root.transform);
+            RectTransform cardRT = carCard.GetComponent<RectTransform>();
+            cardRT.anchoredPosition = new Vector2(0, 390);
+            cardRT.sizeDelta = new Vector2(860, 480);
+            Image cardBg = carCard.GetComponent<Image>();
+            cardBg.color = new Color(0.06f, 0.08f, 0.12f, 0.95f);
 
-            CreateUIText("StatsTitle", statsPanel.transform, "VEHICLE PERFORMANCE", 28, Color.white, new Vector2(0, 140), new Vector2(600, 40));
+            Text cName = CreateUIText("CarName", carCard.transform, "KITSUNE S13", 42, new Color(0f, 0.9f, 1f), new Vector2(0, 180), new Vector2(700, 60));
+            cName.fontStyle = FontStyle.Bold;
 
-            Image spdBar = CreateUIBar("SpeedBar", statsPanel.transform, "SPEED", new Color(0f, 0.9f, 1f), 80);
-            Image accBar = CreateUIBar("AccelBar", statsPanel.transform, "ACCEL", new Color(0f, 0.9f, 1f), 30);
-            Image grpBar = CreateUIBar("GripBar", statsPanel.transform, "GRIP", new Color(0.2f, 1f, 0.5f), -20);
-            Image drfBar = CreateUIBar("DriftBar", statsPanel.transform, "DRIFT", new Color(1f, 0f, 0.6f), -70);
-            Image bstBar = CreateUIBar("BoostBar", statsPanel.transform, "BOOST", new Color(1f, 0.7f, 0f), -120);
+            Text cArch = CreateUIText("CarArch", carCard.transform, "BALANCED STREET DRIFTER", 24, new Color(0.7f, 0.8f, 0.95f), new Vector2(0, 130), new Vector2(700, 40));
 
-            // Upgrades Panel (stacked below stats)
+            // Car Preview Sprite Image
+            GameObject imgGO = new GameObject("CarPreview");
+            imgGO.transform.SetParent(carCard.transform, false);
+            RectTransform imgRT = imgGO.AddComponent<RectTransform>();
+            imgRT.anchoredPosition = new Vector2(0, 0);
+            imgRT.sizeDelta = new Vector2(160, 240);
+            Image carImg = imgGO.AddComponent<Image>();
+            carImg.preserveAspect = true;
+
+            Button prevBtn = CreateUIButton("PrevBtn", carCard.transform, "<", new Color(0.3f, 0.4f, 0.5f), new Vector2(-360, 0), new Vector2(80, 120));
+            Button nextBtn = CreateUIButton("NextBtn", carCard.transform, ">", new Color(0.3f, 0.4f, 0.5f), new Vector2(360, 0), new Vector2(80, 120));
+
+            Button buyEquipBtn = CreateUIButton("BuyEquipBtn", carCard.transform, "EQUIPPED", new Color(0f, 0.8f, 0.95f), new Vector2(0, -170), new Vector2(480, 75));
+            Text buyEquipText = buyEquipBtn.GetComponentInChildren<Text>();
+
+            // Upgrades Panel (6 Categories, Y = -180)
             GameObject upPanel = CreateUIPanel("UpgradesPanel", root.transform);
             RectTransform upRT = upPanel.GetComponent<RectTransform>();
-            upRT.anchoredPosition = new Vector2(0, -280);
-            upRT.sizeDelta = new Vector2(860, 400);
+            upRT.anchoredPosition = new Vector2(0, -180);
+            upRT.sizeDelta = new Vector2(860, 560);
+            Image upBg = upPanel.GetComponent<Image>();
+            upBg.color = new Color(0.05f, 0.06f, 0.10f, 0.90f);
 
-            var (eBtn, eLvl, eCost) = CreateUpgradeRow("EngineRow", upPanel.transform, "ENGINE (TOP SPEED)", 90);
-            var (tBtn, tLvl, tCost) = CreateUpgradeRow("TiresRow", upPanel.transform, "TIRES (GRIP & RECOVERY)", 0);
-            var (tbBtn, tbLvl, tbCost) = CreateUpgradeRow("TurboRow", upPanel.transform, "TURBO (BOOST POWER)", -90);
+            CreateUIText("UpTitle", upPanel.transform, "PERFORMANCE UPGRADES (5 TIERS)", 26, Color.white, new Vector2(0, 240), new Vector2(700, 40));
+
+            var (eBtn, eLvl, eCost) = CreateUpgradeRow("EngineRow", upPanel.transform, "ENGINE (TOP SPEED)", 170);
+            var (tbBtn, tbLvl, tbCost) = CreateUpgradeRow("TurboRow", upPanel.transform, "TURBO (BOOST POWER)", 100);
+            var (stBtn, stLvl, stCost) = CreateUpgradeRow("SteerRow", upPanel.transform, "STEERING (AGILITY)", 30);
+            var (drBtn, drLvl, drCost) = CreateUpgradeRow("DriftRow", upPanel.transform, "DRIFT (CONTROL & STABILITY)", -40);
+            var (brBtn, brLvl, brCost) = CreateUpgradeRow("BrakesRow", upPanel.transform, "BRAKES (TRACTION RECOVERY)", -110);
+            var (duBtn, duLvl, duCost) = CreateUpgradeRow("DurabilityRow", upPanel.transform, "DURABILITY (ARMOR HITS)", -180);
+
+            // Rewarded Ad Bonus Button (Earn Free NC)
+            Button adBonusBtn = CreateUIButton("AdBonusBtn", root.transform, "WATCH AD — +250 NC", new Color(1f, 0.65f, 0.1f), new Vector2(0, -560), new Vector2(460, 75));
 
             Button backBtn = CreateUIButton("BackBtn", root.transform, "< BACK", new Color(0.4f, 0.5f, 0.65f), new Vector2(-240, -780), new Vector2(260, 80));
-            Button driveBtn = CreateUIButton("DriveBtn", root.transform, "TEST DRIVE >", new Color(0f, 0.85f, 1f), new Vector2(240, -780), new Vector2(320, 90));
+            Button driveBtn = CreateUIButton("DriveBtn", root.transform, "DRIVE >", new Color(0f, 0.85f, 1f), new Vector2(240, -780), new Vector2(320, 90));
 
             SerializedObject so = new SerializedObject(view);
             so.FindProperty("creditsText").objectReferenceValue = crText;
-            so.FindProperty("speedBar").objectReferenceValue = spdBar;
-            so.FindProperty("accelBar").objectReferenceValue = accBar;
-            so.FindProperty("gripBar").objectReferenceValue = grpBar;
-            so.FindProperty("driftBar").objectReferenceValue = drfBar;
-            so.FindProperty("boostBar").objectReferenceValue = bstBar;
+            so.FindProperty("carNameText").objectReferenceValue = cName;
+            so.FindProperty("carArchetypeText").objectReferenceValue = cArch;
+            so.FindProperty("carPreviewImage").objectReferenceValue = carImg;
+            so.FindProperty("prevCarBtn").objectReferenceValue = prevBtn;
+            so.FindProperty("nextCarBtn").objectReferenceValue = nextBtn;
+            so.FindProperty("buyOrEquipBtn").objectReferenceValue = buyEquipBtn;
+            so.FindProperty("buyOrEquipBtnText").objectReferenceValue = buyEquipText;
 
             so.FindProperty("upgradeEngineBtn").objectReferenceValue = eBtn;
             so.FindProperty("engineLvlText").objectReferenceValue = eLvl;
             so.FindProperty("engineCostText").objectReferenceValue = eCost;
 
-            so.FindProperty("upgradeTiresBtn").objectReferenceValue = tBtn;
-            so.FindProperty("tiresLvlText").objectReferenceValue = tLvl;
-            so.FindProperty("tiresCostText").objectReferenceValue = tCost;
-
             so.FindProperty("upgradeTurboBtn").objectReferenceValue = tbBtn;
             so.FindProperty("turboLvlText").objectReferenceValue = tbLvl;
             so.FindProperty("turboCostText").objectReferenceValue = tbCost;
 
+            so.FindProperty("upgradeSteerBtn").objectReferenceValue = stBtn;
+            so.FindProperty("steerLvlText").objectReferenceValue = stLvl;
+            so.FindProperty("steerCostText").objectReferenceValue = stCost;
+
+            so.FindProperty("upgradeDriftBtn").objectReferenceValue = drBtn;
+            so.FindProperty("driftLvlText").objectReferenceValue = drLvl;
+            so.FindProperty("driftCostText").objectReferenceValue = drCost;
+
+            so.FindProperty("upgradeBrakesBtn").objectReferenceValue = brBtn;
+            so.FindProperty("brakesLvlText").objectReferenceValue = brLvl;
+            so.FindProperty("brakesCostText").objectReferenceValue = brCost;
+
+            so.FindProperty("upgradeDurabilityBtn").objectReferenceValue = duBtn;
+            so.FindProperty("durabilityLvlText").objectReferenceValue = duLvl;
+            so.FindProperty("durabilityCostText").objectReferenceValue = duCost;
+
+            so.FindProperty("watchAdBonusBtn").objectReferenceValue = adBonusBtn;
             so.FindProperty("backBtn").objectReferenceValue = backBtn;
             so.FindProperty("driveBtn").objectReferenceValue = driveBtn;
-            so.FindProperty("upgradeConfig").objectReferenceValue = config;
             so.ApplyModifiedProperties();
 
             return view;
@@ -646,9 +697,11 @@ namespace NeonDrift.Editor
             Text crEarned = CreateUIText("CreditsEarned", box.transform, "+0 CR", 46, new Color(1f, 0.75f, 0f), new Vector2(0, -50), new Vector2(650, 60));
             crEarned.fontStyle = FontStyle.Bold;
 
-            Button retryBtn = CreateUIButton("RetryBtn", box.transform, "RETRY RUN", new Color(0f, 0.85f, 1f), new Vector2(0, -200), new Vector2(460, 90));
-            Button garageBtn = CreateUIButton("GarageBtn", box.transform, "GARAGE", new Color(0.9f, 0.1f, 0.5f), new Vector2(0, -310), new Vector2(460, 80));
-            Button homeBtn = CreateUIButton("HomeBtn", box.transform, "MAIN MENU", new Color(0.3f, 0.4f, 0.55f), new Vector2(0, -410), new Vector2(460, 75));
+            Button retryBtn = CreateUIButton("RetryBtn", box.transform, "RETRY RUN", new Color(0f, 0.85f, 1f), new Vector2(0, -180), new Vector2(460, 85));
+            Button doubleNCBtn = CreateUIButton("DoubleNCBtn", box.transform, "2X REWARD (WATCH AD)", new Color(1f, 0.7f, 0.1f), new Vector2(0, -275), new Vector2(460, 75));
+            Button shareBtn = CreateUIButton("ShareBtn", box.transform, "SHARE STORY CARD", new Color(0.9f, 0.1f, 0.5f), new Vector2(0, -360), new Vector2(460, 70));
+            Button garageBtn = CreateUIButton("GarageBtn", box.transform, "GARAGE", new Color(0.2f, 0.8f, 0.5f), new Vector2(-160, -450), new Vector2(220, 75));
+            Button homeBtn = CreateUIButton("HomeBtn", box.transform, "MAIN MENU", new Color(0.3f, 0.4f, 0.55f), new Vector2(160, -450), new Vector2(220, 75));
 
             SerializedObject so = new SerializedObject(view);
             so.FindProperty("titleText").objectReferenceValue = title;
@@ -661,6 +714,8 @@ namespace NeonDrift.Editor
             so.FindProperty("retryButton").objectReferenceValue = retryBtn;
             so.FindProperty("garageButton").objectReferenceValue = garageBtn;
             so.FindProperty("homeButton").objectReferenceValue = homeBtn;
+            so.FindProperty("doubleCreditsButton").objectReferenceValue = doubleNCBtn;
+            so.FindProperty("shareButton").objectReferenceValue = shareBtn;
             so.ApplyModifiedProperties();
 
             return view;

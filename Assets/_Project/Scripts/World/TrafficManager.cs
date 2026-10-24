@@ -9,7 +9,11 @@ namespace NeonDrift.World
         [Header("Traffic Sprites")]
         [SerializeField] private Sprite compactSprite;
         [SerializeField] private Sprite sedanSprite;
+        [SerializeField] private Sprite sportsSprite;
+        [SerializeField] private Sprite taxiSprite;
         [SerializeField] private Sprite vanSprite;
+        [SerializeField] private Sprite pickupSprite;
+        [SerializeField] private Sprite busSprite;
 
         [Header("Target References")]
         [SerializeField] private VehicleController playerVehicle;
@@ -19,17 +23,15 @@ namespace NeonDrift.World
         public bool trafficEnabled = true;
 
         [Header("Spawning Tuning")]
-        public float spawnDistanceAhead = 42f;
+        public float spawnDistanceAhead = 55f;
         public float despawnDistanceBehind = 25f;
-        public float baseSpawnInterval = 1.8f;
-        public int maxActiveTraffic = 14;
+        public float baseSpawnInterval = 1.6f;
+        public int maxActiveTraffic = 16;
 
         private readonly List<TrafficCar> activeCars = new List<TrafficCar>();
         private readonly Queue<TrafficCar> pool = new Queue<TrafficCar>();
 
         private float spawnTimer = 0f;
-        private readonly float[] laneOffsets = new float[] { -5.25f, -1.75f, 1.75f, 5.25f };
-
         public int activeTrafficCount => activeCars.Count;
         public int pooledTrafficCount => pool.Count;
 
@@ -49,7 +51,8 @@ namespace NeonDrift.World
             }
         }
 
-        public void Initialize(VehicleController player, TrackManager track, Sprite compact, Sprite sedan, Sprite van)
+        public void Initialize(VehicleController player, TrackManager track, 
+            Sprite compact, Sprite sedan, Sprite sports, Sprite taxi, Sprite van, Sprite pickup, Sprite bus)
         {
             if (trackManager != null)
             {
@@ -60,7 +63,11 @@ namespace NeonDrift.World
             trackManager = track;
             compactSprite = compact;
             sedanSprite = sedan;
+            sportsSprite = sports;
+            taxiSprite = taxi;
             vanSprite = van;
+            pickupSprite = pickup;
+            busSprite = bus;
 
             if (trackManager != null)
             {
@@ -70,148 +77,95 @@ namespace NeonDrift.World
 
         private void Update()
         {
-            if (playerVehicle == null || !trafficEnabled) return;
+            if (playerVehicle == null || !trafficEnabled || trackManager == null) return;
 
-            spawnTimer -= Time.deltaTime;
+            float dt = Time.deltaTime;
+
+            // 1. Move all traffic vehicles along real highway curves
+            for (int i = 0; i < activeCars.Count; i++)
+            {
+                activeCars[i].ProcessMovement(dt);
+            }
+
+            // 2. Recycle cars outside the active road window
+            RecyclePassedTraffic();
+
+            // 3. Progressive Spawning (Variety evolves with distance)
+            spawnTimer -= dt;
             if (spawnTimer <= 0f && activeCars.Count < maxActiveTraffic)
             {
-                // Query road context ahead of player from TrackManager
-                Vector2 roadCenter = (Vector2)playerVehicle.transform.position + (Vector2)playerVehicle.transform.up * spawnDistanceAhead;
-                Quaternion roadRot = playerVehicle.transform.rotation;
-                float density = 0.4f;
-                int driftDir = 0;
-                ChunkType chunkType = ChunkType.StraightShort;
-
-                if (trackManager != null)
-                {
-                    trackManager.GetRoadFrameAhead(spawnDistanceAhead, out roadCenter, out roadRot, out density, out driftDir, out chunkType);
-                }
-
-                // Dynamic difficulty based on total distance
-                float distanceTraveled = trackManager != null ? trackManager.totalDistanceTraveled : 0f;
-                float difficultyFactor = Mathf.Clamp01(distanceTraveled / 2500f);
-                float effectiveDensity = Mathf.Clamp(density + difficultyFactor * 0.25f, 0.15f, 0.75f);
-
-                if (Random.value <= effectiveDensity + 0.15f)
-                {
-                    TrySpawnContextualTraffic(roadCenter, roadRot, driftDir, chunkType, effectiveDensity);
-                }
-
-                float currentInterval = Mathf.Lerp(baseSpawnInterval, 1.1f, difficultyFactor);
-                spawnTimer = Mathf.Max(0.7f, currentInterval / Mathf.Max(0.4f, effectiveDensity * 1.4f));
-            }
-
-            RecyclePassedTraffic();
-        }
-
-        private void TrySpawnContextualTraffic(Vector2 roadCenter, Quaternion roadRot, int driftDir, ChunkType chunkType, float density)
-        {
-            // Determine lane candidates based on chunk type to enable clean racing lines and avoid unavoidable walls
-            List<int> candidateLanes = new List<int> { 0, 1, 2, 3 };
-
-            if (chunkType == ChunkType.HairpinLeft || chunkType == ChunkType.HairpinRight)
-            {
-                // Hairpin: Spawns at most 1 car on the very outside lane, leaving the apex and racing line wide open
-                int safeLane = (chunkType == ChunkType.HairpinLeft) ? 3 : 0;
-                if (Random.value < 0.5f)
-                {
-                    SpawnCarAt(roadCenter, roadRot, safeLane);
-                }
-                return;
-            }
-
-            if (chunkType == ChunkType.TechnicalLeft || chunkType == ChunkType.TechnicalRight)
-            {
-                // Technical curve: Leave inside apex completely open, at most 1 car on the outer lane
-                int outerLane = (chunkType == ChunkType.TechnicalLeft) ? 3 : 0;
-                if (Random.value < 0.65f)
-                {
-                    SpawnCarAt(roadCenter, roadRot, outerLane);
-                }
-                return;
-            }
-
-            if (chunkType == ChunkType.StraightTraffic)
-            {
-                // Intentional Traffic Gap: Spawn in lane 0 and lane 3, leaving 1 & 2 open to thread between
-                SpawnCarAt(roadCenter, roadRot, 0);
-                if (density > 0.4f && Random.value < 0.8f)
-                {
-                    SpawnCarAt(roadCenter, roadRot, 3);
-                }
-                return;
-            }
-
-            if (driftDir == -1) // Sweeper or curve turning Left
-            {
-                // Leave inside apex (lane 0) clear; place traffic on outer lanes for Near Miss clipping
-                candidateLanes.Remove(0);
-            }
-            else if (driftDir == 1) // Sweeper or curve turning Right
-            {
-                // Leave inside apex (lane 3) clear; place traffic on outer lanes
-                candidateLanes.Remove(3);
-            }
-
-            // Never spawn in all 4 lanes simultaneously (always at least 1-2 open escape corridors)
-            int carsToSpawn = (density > 0.55f && candidateLanes.Count > 2 && Random.value < 0.55f) ? 2 : 1;
-
-            for (int i = 0; i < carsToSpawn; i++)
-            {
-                if (candidateLanes.Count <= 1) break;
-
-                int pickIdx = Random.Range(0, candidateLanes.Count);
-                int chosenLane = candidateLanes[pickIdx];
-                candidateLanes.RemoveAt(pickIdx);
-
-                SpawnCarAt(roadCenter, roadRot, chosenLane);
+                spawnTimer = baseSpawnInterval;
+                SpawnNextTraffic();
             }
         }
 
-        private void SpawnCarAt(Vector2 roadCenter, Quaternion roadRot, int lane)
+        private void SpawnNextTraffic()
         {
-            // Pick obstacle or traffic vehicle type
-            float typeRoll = Random.value;
+            float playerDist = trackManager.totalDistanceTraveled;
+            float spawnDist = playerDist + spawnDistanceAhead;
+
+            // Lane selection: 0, 1, 2, 3
+            int lane = Random.Range(0, 4);
+            float totalW = trackManager.roadWidth;
+            float laneWidth = totalW / 4f;
+            float laneOffset = -totalW * 0.5f + laneWidth * 0.5f + lane * laneWidth;
+
+            // Progressive Variety selection based on distance
+            float roll = Random.value;
             TrafficCar.CarType type;
-            if (typeRoll < 0.40f) type = TrafficCar.CarType.Compact;
-            else if (typeRoll < 0.70f) type = TrafficCar.CarType.Sedan;
-            else if (typeRoll < 0.88f) type = TrafficCar.CarType.Van;
-            else if (typeRoll < 0.96f) type = TrafficCar.CarType.SlowHazardTruck;
-            else type = TrafficCar.CarType.RoadBarrier; // Roadblock barrier
+            if (playerDist < 400f) // Early run: mostly compacts & sedans
+            {
+                type = roll < 0.6f ? TrafficCar.CarType.Compact : TrafficCar.CarType.Sedan;
+            }
+            else if (playerDist < 1200f) // Mid run: Taxis, Sports cars & Vans
+            {
+                if (roll < 0.35f) type = TrafficCar.CarType.Taxi;
+                else if (roll < 0.65f) type = TrafficCar.CarType.Sports;
+                else if (roll < 0.85f) type = TrafficCar.CarType.Van;
+                else type = TrafficCar.CarType.Sedan;
+            }
+            else // Late run: Pickups, Trucks, Transit Buses & Road Obstacles
+            {
+                if (roll < 0.20f) type = TrafficCar.CarType.Pickup;
+                else if (roll < 0.40f) type = TrafficCar.CarType.Bus;
+                else if (roll < 0.60f) type = TrafficCar.CarType.SlowHazardTruck;
+                else if (roll < 0.75f) type = TrafficCar.CarType.Sports;
+                else if (roll < 0.90f) type = TrafficCar.CarType.Taxi;
+                else type = TrafficCar.CarType.RoadBarrier;
+            }
 
             float speed = type switch
             {
-                TrafficCar.CarType.Compact => Random.Range(13f, 16f),
-                TrafficCar.CarType.Sedan => Random.Range(15f, 18f),
-                TrafficCar.CarType.Van => Random.Range(11f, 13f),
-                TrafficCar.CarType.SlowHazardTruck => Random.Range(7f, 9f), // Heavy slow mover requiring swift overtaking
-                TrafficCar.CarType.RoadBarrier => 0f, // Static road obstacle
-                _ => 13f
+                TrafficCar.CarType.Compact => Random.Range(13f, 15f),
+                TrafficCar.CarType.Sedan => Random.Range(14f, 17f),
+                TrafficCar.CarType.Taxi => Random.Range(15f, 18f),
+                TrafficCar.CarType.Sports => Random.Range(17f, 21f),
+                TrafficCar.CarType.Van => Random.Range(12f, 14f),
+                TrafficCar.CarType.Pickup => Random.Range(13f, 15f),
+                TrafficCar.CarType.Bus => Random.Range(10f, 12f),
+                TrafficCar.CarType.SlowHazardTruck => Random.Range(8f, 10f),
+                TrafficCar.CarType.RoadBarrier => 0f,
+                _ => 14f
             };
 
-            Vector2 rightDir = roadRot * Vector2.right;
-            float totalW = trackManager != null ? trackManager.roadWidth : 22f;
-            float laneWidth = totalW / 4f;
-            float laneOffset = -totalW * 0.5f + laneWidth * 0.5f + lane * laneWidth;
-            Vector2 spawnPos = roadCenter + rightDir * laneOffset;
-
             TrafficCar car = GetFromPool();
-            car.transform.position = spawnPos;
-            car.transform.rotation = roadRot;
-            car.ResetCar(type, speed, lane);
+            car.Configure(trackManager, type, speed, lane, spawnDist, laneOffset);
 
             SpriteRenderer sr = car.GetComponent<SpriteRenderer>();
             sr.sprite = type switch
             {
-                TrafficCar.CarType.Compact => compactSprite,
+                TrafficCar.CarType.Compact => compactSprite != null ? compactSprite : sedanSprite,
                 TrafficCar.CarType.Sedan => sedanSprite,
-                TrafficCar.CarType.Van => vanSprite,
-                TrafficCar.CarType.SlowHazardTruck => vanSprite,
-                TrafficCar.CarType.RoadBarrier => compactSprite,
+                TrafficCar.CarType.Taxi => taxiSprite != null ? taxiSprite : sedanSprite,
+                TrafficCar.CarType.Sports => sportsSprite != null ? sportsSprite : sedanSprite,
+                TrafficCar.CarType.Van => vanSprite != null ? vanSprite : sedanSprite,
+                TrafficCar.CarType.Pickup => pickupSprite != null ? pickupSprite : vanSprite,
+                TrafficCar.CarType.Bus => busSprite != null ? busSprite : vanSprite,
+                TrafficCar.CarType.SlowHazardTruck => vanSprite != null ? vanSprite : sedanSprite,
+                TrafficCar.CarType.RoadBarrier => compactSprite != null ? compactSprite : sedanSprite,
                 _ => sedanSprite
             };
 
-            // Color tint distinct vehicles (e.g. amber caution for slow truck, striped hazard orange for barrier)
             sr.color = type switch
             {
                 TrafficCar.CarType.SlowHazardTruck => new Color(1f, 0.65f, 0.15f, 1f),
@@ -226,19 +180,23 @@ namespace NeonDrift.World
                 {
                     TrafficCar.CarType.Compact => new Vector2(2.0f, 3.5f),
                     TrafficCar.CarType.Sedan => new Vector2(2.2f, 4.2f),
+                    TrafficCar.CarType.Taxi => new Vector2(2.2f, 4.2f),
+                    TrafficCar.CarType.Sports => new Vector2(2.3f, 4.4f),
                     TrafficCar.CarType.Van => new Vector2(2.5f, 5.2f),
+                    TrafficCar.CarType.Pickup => new Vector2(2.5f, 5.0f),
+                    TrafficCar.CarType.Bus => new Vector2(2.7f, 7.8f),
                     TrafficCar.CarType.SlowHazardTruck => new Vector2(2.8f, 5.8f),
                     TrafficCar.CarType.RoadBarrier => new Vector2(2.2f, 2.0f),
                     _ => new Vector2(2.2f, 4.2f)
                 };
             }
 
-            car.transform.localScale = (type == TrafficCar.CarType.RoadBarrier) 
-                ? new Vector3(0.9f, 0.6f, 1f) 
-                : new Vector3(0.72f, 0.72f, 1f);
-
+            car.transform.localScale = (type == TrafficCar.CarType.Bus) ? new Vector3(0.85f, 0.85f, 1f) : new Vector3(0.72f, 0.72f, 1f);
             car.gameObject.SetActive(true);
             activeCars.Add(car);
+
+            // Position immediately
+            car.ProcessMovement(0f);
         }
 
         private TrafficCar GetFromPool()
@@ -263,8 +221,7 @@ namespace NeonDrift.World
 
         private void RecyclePassedTraffic()
         {
-            Vector2 playerPos = playerVehicle.transform.position;
-            Vector2 playerForward = playerVehicle.transform.up;
+            float playerDist = trackManager.totalDistanceTraveled;
 
             for (int i = activeCars.Count - 1; i >= 0; i--)
             {
@@ -275,11 +232,8 @@ namespace NeonDrift.World
                     continue;
                 }
 
-                Vector2 toCar = (Vector2)car.transform.position - playerPos;
-                float forwardProj = Vector2.Dot(playerForward, toCar);
-
-                // Despawn if behind the player or excessively far ahead
-                if (forwardProj < -despawnDistanceBehind || forwardProj > spawnDistanceAhead + 45f)
+                float diff = car.longitudinalDistance - playerDist;
+                if (diff < -despawnDistanceBehind || diff > spawnDistanceAhead + 60f)
                 {
                     car.gameObject.SetActive(false);
                     pool.Enqueue(car);
@@ -290,16 +244,13 @@ namespace NeonDrift.World
 
         private void HandleFloatingOriginShift(Vector3 shift)
         {
+            // Traffic positions are calculated relative to TrackManager distance on curve,
+            // but for immediate visual continuity in this frame:
             foreach (var car in activeCars)
             {
                 if (car != null)
                 {
                     car.transform.position += shift;
-                    var rb = car.GetComponent<Rigidbody2D>();
-                    if (rb != null)
-                    {
-                        rb.position += (Vector2)shift;
-                    }
                 }
             }
         }

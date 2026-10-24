@@ -1,10 +1,10 @@
-[2026-10-24T14:08:26.875Z][INFO] Command-line: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/PackageManager/Server/UnityPackageManager server -s 84433 --ipc-path /tmp/Unity-Upm-84433.sock -l 2 --log-file /Users/logmat/Desktop/CLAUDE/NeonDrift/Logs/upm.log
-[2026-10-24T14:08:26.883Z][INFO] IPC server started (IPC path=/tmp/Unity-Upm-84433.sock).
-[2026-10-24T14:08:26.883Z][INFO] Hint: To connect to this UPM instance, launch Unity with the command-line parameter -upmIpcPath Upm-84433.
-[2026-10-24T14:08:27.617Z][INFO] project:list-packages <-- Request received
+[2026-10-24T16:59:08.243Z][INFO] Command-line: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/PackageManager/Server/UnityPackageManager server -s 90884 --ipc-path /tmp/Unity-Upm-90884.sock -l 2 --log-file /Users/logmat/Desktop/CLAUDE/NeonDrift/Logs/upm.log
+[2026-10-24T16:59:08.251Z][INFO] IPC server started (IPC path=/tmp/Unity-Upm-90884.sock).
+[2026-10-24T16:59:08.251Z][INFO] Hint: To connect to this UPM instance, launch Unity with the command-line parameter -upmIpcPath Upm-90884.
+[2026-10-24T16:59:08.903Z][INFO] project:list-packages <-- Request received
 params: {}
-[2026-10-24T14:08:27.700Z][INFO] project:list-packages --> 200 (83 ms)
-[2026-10-24T14:08:30.624Z][INFO] project:list-packages <-- Request received
+[2026-10-24T16:59:08.973Z][INFO] project:list-packages --> 200 (70 ms)
+[2026-10-24T16:59:10.778Z][INFO] project:list-packages <-- Request received
 params: {}
-[2026-10-24T14:08:30.658Z][INFO] project:list-packages --> 200 (34 ms)
-[2026-10-24T14:08:32.898Z][INFO] Received shutdown request (SIGTERM), shutting down Unity Package Manager
+[2026-10-24T16:59:10.814Z][INFO] project:list-packages --> 200 (36 ms)
+[2026-10-24T16:59:13.372Z][INFO] Received shutdown request (SIGTERM), shutting down Unity Package Manager

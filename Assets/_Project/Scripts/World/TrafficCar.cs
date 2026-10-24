@@ -1,6 +1,4 @@
 using UnityEngine;
-using NeonDrift.Gameplay;
-using NeonDrift.Vehicle;
 
 namespace NeonDrift.World
 {
@@ -10,44 +8,59 @@ namespace NeonDrift.World
         {
             Compact,
             Sedan,
+            Sports,
+            Taxi,
             Van,
+            Pickup,
             SlowHazardTruck,
+            Bus,
             RoadBarrier
         }
 
-        public CarType carType;
-        public float forwardSpeed = 12f;
-        public int currentLane = 0;
+        public CarType carType = CarType.Sedan;
+        public float speed = 12f;
+        public float forwardSpeed => speed;
         public bool hasAwardedNearMiss = false;
+        public int currentLane = 0;
+        public float longitudinalDistance = 0f;
+        public float lateralOffset = 0f;
 
-        private Rigidbody2D rb;
+        private TrackManager trackManager;
 
-        private void Awake()
+        public void Configure(TrackManager track, CarType type, float carSpeed, int lane, float startDistance, float laneOffset)
         {
-            rb = GetComponent<Rigidbody2D>();
-            if (rb == null)
-            {
-                rb = gameObject.AddComponent<Rigidbody2D>();
-            }
-            rb.gravityScale = 0f;
-            rb.bodyType = RigidbodyType2D.Kinematic;
+            trackManager = track;
+            carType = type;
+            speed = carSpeed;
+            hasAwardedNearMiss = false;
+            currentLane = lane;
+            longitudinalDistance = startDistance;
+            lateralOffset = laneOffset;
         }
 
-        private void FixedUpdate()
-        {
-            if (carType == CarType.RoadBarrier) return; // Static obstacle on road shoulder
-
-            // Traffic flows along the road heading (upwards in track coordinates)
-            Vector2 nextPos = rb.position + (Vector2)transform.up * (forwardSpeed * Time.fixedDeltaTime);
-            rb.MovePosition(nextPos);
-        }
-
-        public void ResetCar(CarType type, float speed, int lane)
+        public void ResetCar(CarType type, float carSpeed, int lane)
         {
             carType = type;
-            forwardSpeed = speed;
+            speed = carSpeed;
             currentLane = lane;
             hasAwardedNearMiss = false;
+        }
+
+        public void ProcessMovement(float dt)
+        {
+            if (carType != CarType.RoadBarrier)
+            {
+                longitudinalDistance += speed * dt;
+            }
+
+            if (trackManager != null)
+            {
+                if (trackManager.GetRoadSampleAtDistance(longitudinalDistance, lateralOffset, out Vector2 pos, out Quaternion rot))
+                {
+                    transform.position = new Vector3(pos.x, pos.y, 0f);
+                    transform.rotation = rot;
+                }
+            }
         }
     }
 }
