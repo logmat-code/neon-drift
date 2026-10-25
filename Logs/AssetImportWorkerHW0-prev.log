@@ -7,9 +7,9 @@ Darwin version:          24.6.0
 Architecture:            arm64
 Running under Rosetta:   NO
 Available memory:        49152 MB
-Date:                    2026-10-24T16:58:09Z
+Date:                    2026-10-24T17:49:22Z
 [Licensing::Module] Trying to connect to existing licensing client channel...
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-logmat" at "2026-10-24T16:58:09.087151Z"
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-logmat" at "2026-10-24T17:49:22.082674Z"
 
 COMMAND LINE ARGUMENTS:
 /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/MacOS/Unity
@@ -23,9 +23,9 @@ AssetImportWorkerHW0
 -logFile
 Logs/AssetImportWorkerHW0.log
 -srvPort
-61055
+62328
 -parentPid
-90616
+468
 -analyticsCloudUserId
 anonymous
 -analyticsLocalProjectId
@@ -86,7 +86,7 @@ Successfully changed project path to: /Users/logmat/Desktop/CLAUDE/NeonDrift
     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
 Player connection [8640618688]  Target information:
 
-Player connection [8640618688]  * "[IP] 192.168.1.12 [Port] 0 [Flags] 2 [Guid] 2503491482 [EditorId] 2503491482 [Version] 1048832 [Id] OSXEditor(0,MacBook-Pro-de-Matias.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
+Player connection [8640618688]  * "[IP] 192.168.1.12 [Port] 0 [Flags] 2 [Guid] 981517583 [EditorId] 981517583 [Version] 1048832 [Id] OSXEditor(0,MacBook-Pro-de-Matias.local) [Debug] 1 [PackageName] OSXEditor [ProjectName] Editor" 
 
 Player connection [8640618688] Host joined multi-casting on [225.0.0.222:54997]...
 Player connection [8640618688] Host joined alternative multi-casting on [225.0.0.222:34997]...
@@ -110,6 +110,23 @@ Initialising UDS system complete:
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.3+d7ffd15
+  Session Id:              47cc35bc946f4bb68b5b18657fd9501d
+  Correlation Id:          b9c7231150aa75ed8ddead81b194ebef
+  External correlation Id: 1525717992207921828
+  Machine Id:              4qLDUGMRa+xgv/WJd8yMsCb+6N0=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-logmat" (connect: 0.00s, validation: 0.00s, handshake: 0.21s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-logmat-notifications" at "2026-10-24T17:49:22.290063Z"
+[Licensing::Module] Licensing Background thread has ended after 0.21s
+[Licensing::Module] Licensing is initialized (took 0.05s).
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 4674256553018-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
 Initialize engine version: 6000.6.2f1 (770e33f6875c)
 [EntityIdStore] init: VM path (explicit commit), pageSize=16384, blockCount=262144, entitiesPerBlock=1024, slots reserved=4294967296 bytes
 [Subsystems] Discovering subsystems at path /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/UnitySubsystems
@@ -127,34 +144,19 @@ MSL Version: 3.0
 Has Float MSAA: 1
 Has Float Filtering: 1
 ReadWrite Texture Tier: 2
-[Licensing::Client] Handshaking with LicensingClient:
-  Version:                 1.18.3+d7ffd15
-  Session Id:              cc38ac4b79a64e769165908dc48eac78
-  Correlation Id:          b9c7231150aa75ed8ddead81b194ebef
-  External correlation Id: 3376682525443211919
-  Machine Id:              4qLDUGMRa+xgv/WJd8yMsCb+6N0=
-[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-logmat" (connect: 0.00s, validation: 0.00s, handshake: 0.21s)
-[Licensing::IpcConnector] Successfully connected to: "LicenseClient-logmat-notifications" at "2026-10-24T16:58:09.301527Z"
-[Licensing::Module] Licensing Background thread has ended after 0.21s
 Initialize mono
 Mono path[0] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/Managed'
 Mono path[1] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/BCLExtensions/runtime/netstandard2.1'
 Mono path[2] = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/lib/mono/unityjit-macos'
 Mono config path = '/Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Resources/Scripting/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56637
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56540
 CodeReloadManager initialized
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: /Applications/Unity/Hub/Editor/6000.6.2f1/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
 Register platform support module: /Applications/Unity/Hub/Editor/6000.6.2f1/PlaybackEngines/MacStandaloneSupport/UnityEditor.OSXStandalone.Extensions.dll
-[Licensing::Client] Successfully resolved entitlement details
-[Licensing::Module] License group:
-  Id: 4674256553018-UnityPersXXXX
-  Product: Unity Personal
-  Type: Assigned
-  Expiration: Unlimited
 Register platform support module: /Applications/Unity/Hub/Editor/6000.6.2f1/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.002008 seconds.
+Registered in 0.000419 seconds.
 Native extension for Android target not found
 Native extension for OSXStandalone target not found
 Native extension for WebGL target not found
@@ -164,23 +166,22 @@ Package Manager log level set to [2]
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  0.228 seconds
-Domain Reload Profiling: 466ms
-	BeginReloadAssembly (37ms)
-	RebuildCommonClasses (3ms)
+- Finished resetting the current domain, in  0.236 seconds
+Domain Reload Profiling: 465ms
+	BeginReloadAssembly (38ms)
 	RebuildNativeTypeToScriptingClass (9ms)
-	initialDomainReloadingComplete (27ms)
-	LoadAllAssembliesAndSetupDomain (163ms)
-		LoadAssemblies (37ms)
-		TypeCache.Refresh (116ms)
-			TypeCache.ScanAssembly (107ms)
+	initialDomainReloadingComplete (24ms)
+	LoadAllAssembliesAndSetupDomain (156ms)
+		LoadAssemblies (38ms)
+		TypeCache.Refresh (110ms)
+			TypeCache.ScanAssembly (102ms)
 		AnalyzeDomain (0ms)
-	FinalizeReload (228ms)
+	FinalizeReload (236ms)
 		SetupLoadedEditorAssemblies (0ms)
-			InitializePlatformSupportModulesInManaged (3ms)
-			BeforeProcessingInitializeOnLoad (47ms)
-			ProcessInitializeOnLoadAttributes (41ms)
-			ProcessInitializeOnLoadMethodAttributes (88ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			BeforeProcessingInitializeOnLoad (48ms)
+			ProcessInitializeOnLoadAttributes (42ms)
+			ProcessInitializeOnLoadMethodAttributes (95ms)
 Initializing Unity extensions:
 [Licensing::Client] Successfully resolved entitlement details
 [CoreBusinessMetrics] Unexpected thread when updating session info.
@@ -199,26 +200,26 @@ Native extension for WebGL target not found
 [Package Manager] Cannot connect to Unity Package Manager local server
 ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
 Scripting: successfully reloaded assembly
-- Finished resetting the current domain, in  0.285 seconds
-Domain Reload Profiling: 594ms
-	BeginReloadAssembly (92ms)
-		DisableScriptedObjects (3ms)
-		CreateAndSetChildDomain (12ms)
+- Finished resetting the current domain, in  0.288 seconds
+Domain Reload Profiling: 605ms
+	BeginReloadAssembly (98ms)
+		DisableScriptedObjects (4ms)
+		CreateAndSetChildDomain (13ms)
 	RebuildCommonClasses (4ms)
-	RebuildNativeTypeToScriptingClass (8ms)
+	RebuildNativeTypeToScriptingClass (9ms)
 	initialDomainReloadingComplete (17ms)
-	LoadAllAssembliesAndSetupDomain (187ms)
-		LoadAssemblies (86ms)
+	LoadAllAssembliesAndSetupDomain (188ms)
+		LoadAssemblies (93ms)
 		TypeCache.Refresh (50ms)
 			TypeCache.ScanAssembly (43ms)
-		AnalyzeDomain (19ms)
+		AnalyzeDomain (18ms)
 			BuildScriptInfoCaches (16ms)
-	FinalizeReload (286ms)
+	FinalizeReload (288ms)
 		SetupLoadedEditorAssemblies (0ms)
 			InitializePlatformSupportModulesInManaged (3ms)
-			BeforeProcessingInitializeOnLoad (55ms)
-			ProcessInitializeOnLoadAttributes (71ms)
-			ProcessInitializeOnLoadMethodAttributes (58ms)
+			BeforeProcessingInitializeOnLoad (51ms)
+			ProcessInitializeOnLoadAttributes (88ms)
+			ProcessInitializeOnLoadMethodAttributes (55ms)
 		AwakeInstancesAfterBackupRestoration (3ms)
 AcceleratorClientConnectionCallback - disconnected - :0
 WARNING: Shader Unsupported: 'Universal Render Pipeline/VR/SpatialMapping/Wireframe' - All subshaders removed
@@ -229,13 +230,13 @@ Shader Hidden/ChartRasterizerHardware is not supported: GPU does not support con
 Launching external process: /Applications/Unity/Hub/Editor/6000.6.2f1/Unity.app/Contents/Helpers/UnityShaderCompiler
 Launched and connected shader compiler UnityShaderCompiler after 0.01 seconds
 Unloading 65 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 4081 unused Assets / (8.9 MB). Loaded Objects now: 4952.
-Memory consumption went from 160.7 MB to 151.8 MB.
-Total: 4.885292 ms (FindLiveObjects: 0.235292 ms CreateObjectMapping: 0.060000 ms MarkObjects: 3.284375 ms  DeleteObjects: 1.232041 ms)
+Unloading 4184 unused Assets / (9.3 MB). Loaded Objects now: 5063.
+Memory consumption went from 161.0 MB to 151.7 MB.
+Total: 4.926625 ms (FindLiveObjects: 0.245833 ms CreateObjectMapping: 0.063458 ms MarkObjects: 3.420000 ms  DeleteObjects: 1.120042 ms)
 
 Editor requested this worker to shutdown with reason: Editor is closing down
 AcceleratorClientConnectionCallback - disconnected - :0
-Thread 0x43dc13000 may have been prematurely finalized
+Thread 0x437fc7000 may have been prematurely finalized
 AssetImportWorker is now disconnected from the server
 Process exiting
 [ExitDontLaunchBugReporter] Exiting without the bug reporter. Application will exit with return code 0

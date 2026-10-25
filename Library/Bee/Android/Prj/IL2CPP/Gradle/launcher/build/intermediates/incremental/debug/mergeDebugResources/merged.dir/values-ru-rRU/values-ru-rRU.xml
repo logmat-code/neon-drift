@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="bigo_ad_feedback_copied">ERID объявления скопирован</string>
+    <string name="bigo_ad_feedback_copy_ad_id">ERID: %s</string>
+    <string name="bigo_ad_feedback_copy_link">Скопировать ссылку</string>
+    <string name="bigo_ad_feedback_hide_ads">Скрыть рекламу</string>
+    <string name="bigo_ad_feedback_link_copied">Ссылка скопирована</string>
+    <string name="bigo_ad_feedback_rec_rule">Правила рекомендаций</string>
+    <string name="bigo_ad_feedback_report_ads">Пожаловаться на рекламу</string>
+    <string name="bigo_ad_feedback_user_privacy">Конфиденциальность</string>
+    <string name="bigo_ad_feedback_why_this_ad">О рекламодателе</string>
+    <string name="bigo_ad_tag">Реклама</string>
+</resources>

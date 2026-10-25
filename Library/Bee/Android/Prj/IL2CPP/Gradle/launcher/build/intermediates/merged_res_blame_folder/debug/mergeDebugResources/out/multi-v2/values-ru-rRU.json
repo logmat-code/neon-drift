@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.logmat.neondrift.launcher-mergeDebugResources-101:/values-ru-rRU/values-ru-rRU.xml",
+            "map": [
+                {
+                    "source": "/Users/logmat/.gradle/caches/9.3.1/transforms/392bcf3b683074a9c1ad57c0670d6a83/transformed/jetified-bigo-ads-5.7.0/res/values-ru-rRU/values-ru-rRU.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,134,199,273,342,418,493,573,650,723",
+                        "endColumns": "78,64,73,68,75,74,79,76,72,47",
+                        "endOffsets": "129,194,268,337,413,488,568,645,718,766"
+                    }
+                }
+            ]
+        }
+    ]
+}

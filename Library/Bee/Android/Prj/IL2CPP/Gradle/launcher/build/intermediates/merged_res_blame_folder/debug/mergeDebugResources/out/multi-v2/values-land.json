@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.logmat.neondrift.launcher-mergeDebugResources-101:/values-land/values-land.xml",
+            "map": [
+                {
+                    "source": "/Users/logmat/.gradle/caches/9.3.1/transforms/5cfabeaaceaaf7d17ebacb1a44be3db6/transformed/appcompat-1.6.1/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+                }
+            ]
+        }
+    ]
+}

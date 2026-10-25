@@ -1,0 +1,93 @@
+apply plugin: 'com.android.library'
+apply from: '../shared/keepUnitySymbols.gradle'
+apply from: '../shared/common.gradle'
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+// Android Resolver Dependencies Start
+    implementation 'com.yodo1.mas:full:4.18.1' // Assets/Yodo1/MAS/Editor/Dependencies/Yodo1MasAndroidDependencies.xml:15
+// Android Resolver Dependencies End
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.core:core:1.9.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.games:games-activity:4.4.0'
+    implementation 'androidx.games:games-frame-pacing:2.1.2'
+
+}
+
+// Android Resolver Exclusions Start
+android {
+  packaging {
+      exclude ('/lib/armeabi/*' + '*')
+      exclude ('/lib/armeabi-v7a/*' + '*')
+      exclude ('/lib/mips/*' + '*')
+      exclude ('/lib/mips64/*' + '*')
+      exclude ('/lib/x86/*' + '*')
+      exclude ('/lib/x86_64/*' + '*')
+  }
+}
+// Android Resolver Exclusions End
+android {
+    namespace "com.unity3d.player"
+    ndkPath "/Applications/Unity/Hub/Editor/6000.6.2f1/PlaybackEngines/AndroidPlayer/NDK"
+    ndkVersion "27.2.12479018"
+    compileSdk 36
+    buildToolsVersion "36.0.0"
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    defaultConfig {
+        minSdk 26
+        targetSdk 36
+        ndk {
+            abiFilters 'arm64-v8a'
+            debugSymbolLevel 'none'
+        }
+        consumerProguardFiles 'proguard-unity.txt'
+
+        externalNativeBuild {
+            cmake {
+                arguments "-DANDROID_STL=c++_shared", "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON"
+            }
+        }
+
+
+    }
+
+    lint {
+        abortOnError false
+    }
+
+    androidResources {
+        noCompress = ['.unity3d', '.ress', '.resource', '.obb', '.bundle', '.unityexp'] + unityStreamingAssets.tokenize(', ')
+        ignoreAssetsPattern = "!.svn:!.git:!.ds_store:!*.scc:!CVS:!thumbs.db:!picasa.ini:!*~"
+    }
+
+    packaging {
+        jniLibs {
+           useLegacyPackaging true
+        }
+    }
+}
+
+
+android.externalNativeBuild {
+    cmake {
+        version "3.22.1"
+
+        // Workaround for CMake long path issue on Windows, place CMake intermediate files next to Unity project
+        buildStagingDirectory "${unityProjectPath}/.utmp"
+
+        path "src/main/cpp/CMakeLists.txt"
+    }
+}
+
+android.buildFeatures {
+    prefab true
+}
+
+

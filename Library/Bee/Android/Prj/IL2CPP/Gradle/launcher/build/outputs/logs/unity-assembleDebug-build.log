@@ -1,0 +1,115 @@
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Configure project :unityLibrary
+Variant 'debug', will keep symbols in binaries for:
+  'libunity.so'
+  'libil2cpp.so'
+  'libmain.so'
+Variant 'release', symbols will be stripped from binaries.
+
+> Configure project :launcher
+WARNING: The option setting 'android.builtInKotlin=false' is deprecated.
+The current default is 'true'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option setting 'android.enableJetifier=true' is deprecated.
+The current default is 'false'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+Variant 'debug', will keep symbols in binaries for:
+  'libunity.so'
+  'libil2cpp.so'
+  'libmain.so'
+Variant 'release', symbols will be stripped from binaries.
+
+> Task :unityLibrary:preBuild UP-TO-DATE
+> Task :launcher:preBuild UP-TO-DATE
+> Task :launcher:preDebugBuild UP-TO-DATE
+> Task :unityLibrary:preDebugBuild UP-TO-DATE
+> Task :launcher:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :launcher:generateDebugResources
+> Task :unityLibrary:processDebugNavigationResources
+> Task :unityLibrary:generateDebugResources
+> Task :launcher:packageDebugResources
+> Task :unityLibrary:packageDebugResources
+> Task :unityLibrary:generateDebugAssets UP-TO-DATE
+> Task :unityLibrary:javaPreCompileDebug
+> Task :unityLibrary:parseDebugLocalResources
+> Task :unityLibrary:mergeDebugAssets
+> Task :unityLibrary:writeDebugAarMetadata
+> Task :unityLibrary:extractDeepLinksDebug
+> Task :unityLibrary:generateDebugRFile
+> Task :unityLibrary:compileDebugLibraryResources
+> Task :unityLibrary:processDebugManifest
+> Task :unityLibrary:compileDebugJavaWithJavac
+> Task :unityLibrary:processDebugJavaRes
+> Task :unityLibrary:bundleLibRuntimeToJarDebug
+> Task :unityLibrary:bundleLibCompileToJarDebug
+> Task :unityLibrary:bundleLibRuntimeToDirDebug
+> Task :launcher:processDebugNavigationResources
+> Task :launcher:generateDebugAssets UP-TO-DATE
+> Task :launcher:javaPreCompileDebug
+> Task :launcher:parseDebugLocalResources
+> Task :launcher:mergeDebugAssets
+> Task :launcher:generateDebugRFile
+> Task :launcher:compileDebugJavaWithJavac NO-SOURCE
+> Task :unityLibrary:configureCMakeDebug[arm64-v8a]
+> Task :launcher:compileDebugNavigationResources
+> Task :launcher:checkDebugAarMetadata
+> Task :launcher:compressDebugAssets
+> Task :launcher:mapDebugSourceSetPaths
+> Task :unityLibrary:buildCMakeDebug[arm64-v8a]
+> Task :launcher:desugarDebugFileDependencies
+> Task :unityLibrary:mergeDebugJniLibFolders
+> Task :launcher:createDebugCompatibleScreenManifests
+> Task :launcher:extractDeepLinksDebug
+> Task :unityLibrary:mergeDebugNativeLibs
+
+> Task :launcher:mergeDebugResources
+/Users/logmat/.gradle/caches/9.3.1/transforms/622082ef5020371a998de6c7fba4df74/transformed/jetified-smartdigimkttech-sdk-6.5.54/res/values/values.xml:179:4: Multiple substitutions specified in non-positional format of string resource string/sdm_cm_segment_process_bar_hint_text. Did you mean to add the formatted="false" attribute?
+/Users/logmat/.gradle/caches/9.3.1/transforms/622082ef5020371a998de6c7fba4df74/transformed/jetified-smartdigimkttech-sdk-6.5.54/res/values/values.xml:180:4: Multiple substitutions specified in non-positional format of string resource string/sdm_cm_segment_process_bar_hint_text_lite. Did you mean to add the formatted="false" attribute?
+/Users/logmat/.gradle/caches/9.3.1/transforms/622082ef5020371a998de6c7fba4df74/transformed/jetified-smartdigimkttech-sdk-6.5.54/res/values-zh/values-zh.xml:41:4: Multiple substitutions specified in non-positional format of string resource string/sdm_cm_segment_process_bar_hint_text. Did you mean to add the formatted="false" attribute?
+/Users/logmat/.gradle/caches/9.3.1/transforms/622082ef5020371a998de6c7fba4df74/transformed/jetified-smartdigimkttech-sdk-6.5.54/res/values-zh/values-zh.xml:42:4: Multiple substitutions specified in non-positional format of string resource string/sdm_cm_segment_process_bar_hint_text_lite. Did you mean to add the formatted="false" attribute?
+
+> Task :unityLibrary:copyDebugJniLibsProjectOnly
+
+> Task :launcher:processDebugMainManifest
+/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml Warning:
+	uses-permission#android.permission.READ_PHONE_STATE was tagged at AndroidManifest.xml:0 to remove other declarations but no other declaration present
+/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml Warning:
+	meta-data#MAS_SDK_TYPE@android:value was tagged at AndroidManifest.xml:0 to replace other declarations but no other declaration present
+/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml Warning:
+	meta-data#MAS_SDK_TYPE_DISPLAY_NAME@android:value was tagged at AndroidManifest.xml:0 to replace other declarations but no other declaration present
+/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml Warning:
+	meta-data#PUBLISH_CHANNEL_CODE@android:value was tagged at AndroidManifest.xml:0 to replace other declarations but no other declaration present
+
+> Task :launcher:processDebugManifest
+> Task :launcher:processDebugJavaRes NO-SOURCE
+> Task :launcher:mergeDebugJniLibFolders
+> Task :launcher:validateSigningDebug
+> Task :launcher:writeDebugAppMetadata
+> Task :launcher:writeDebugSigningConfigVersions
+> Task :launcher:processDebugManifestForPackage
+> Task :launcher:checkDebugDuplicateClasses
+> Task :launcher:mergeDebugNativeLibs
+> Task :launcher:mergeDebugJavaResource
+> Task :launcher:processDebugResources
+> Task :launcher:dexBuilderDebug
+> Task :launcher:mergeLibDexDebug
+> Task :launcher:mergeDebugGlobalSynthetics
+> Task :launcher:stripDebugDebugSymbols
+> Task :launcher:mergeProjectDexDebug
+> Task :launcher:mergeExtDexDebug
+> Task :launcher:packageDebug
+> Task :launcher:createDebugApkListingFileRedirect
+> Task :launcher:assembleDebug
+
+[Incubating] Problems report is available at: file:///Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 10.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 40s
+55 actionable tasks: 55 executed
+Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.3.1/userguide/configuration_cache_enabling.html

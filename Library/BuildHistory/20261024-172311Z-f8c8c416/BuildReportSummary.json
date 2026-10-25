@@ -1,0 +1,28 @@
+{
+    "Version": 2,
+    "BuildContentOptions": [
+        "None"
+    ],
+    "BuildManifestHash": "00000000000000000000000000000000",
+    "BuildName": "NEON DRIFT.",
+    "BuildOptions": [
+        "None"
+    ],
+    "BuildProfilePath": "",
+    "BuildResult": 2,
+    "BuildResultName": "Failed",
+    "BuildSessionGUID": "f8c8c416461ad4b0f870ecf0804723c0",
+    "BuildStartedAt": "2026-10-24T17:23:11.6521870Z",
+    "BuildType": 1,
+    "BuildTypeName": "Player",
+    "ContentSourceBuildSessionGUID": "00000000000000000000000000000000",
+    "OutputPath": "/Users/logmat/Desktop/CLAUDE/NeonDrift/Builds/Android/NEON_DRIFT_Release.aab",
+    "Platform": 13,
+    "PlatformName": "Android",
+    "Subtarget": 0,
+    "SubtargetName": "0",
+    "TotalErrors": 1,
+    "TotalSizeBytes": 0,
+    "TotalTimeMs": 466,
+    "TotalWarnings": 1
+}

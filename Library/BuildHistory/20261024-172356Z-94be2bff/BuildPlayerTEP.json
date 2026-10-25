@@ -1,0 +1,25 @@
+{
+
+"Instructions Readme": "1) Open Chrome or Edge, 2) go to chrome://tracing, 3) click Load, 4) navigate to this file.",
+"processInfo": {
+    
+},
+
+"traceEvents":[
+{ "pid": 94651, "tid": -1, "ph": "M", "name": "process_name", "args": { "name": "Unity" } },
+{ "pid": 94651, "tid": -1, "ph": "M", "name": "process_sort_index", "args": { "sort_index": "-100" } },
+{ "pid": 94651, "tid": 1, "ph": "M", "name": "thread_name", "args": { "name": "" } },
+{ "pid": 94651, "tid": 1, "ts": 1792862636464167, "dur": 367030, "ph": "X", "name": "Build player", "args": {} },
+{ "pid": 94651, "tid": 1, "ts": 1792862636464465, "dur": 2120, "ph": "X", "name": "Call PrepareForBuild callbacks", "args": {} },
+{ "pid": 94651, "tid": 1, "ts": 1792862636469065, "dur": 165, "ph": "X", "name": "Call internal build started callbacks", "args": {} },
+{ "pid": 94651, "tid": 1, "ts": 1792862636476312, "dur": 262050, "ph": "X", "name": "Preprocess Player", "args": {} },
+{ "pid": 94651, "tid": 1, "ts": 1792862636738370, "dur": 272, "ph": "X", "name": "Save scenes before build", "args": {} },
+{ "pid": 94651, "tid": 1, "ts": 1792862636748545, "dur": 18999, "ph": "X", "name": "Prepare For Build", "args": {} },
+{ "pid": 94651, "tid": 1, "ts": 1792862636831012, "dur": 180, "ph": "X", "name": "Call Post-Process callbacks", "args": {} },
+{ "pid": 94651, "tid": 1, "ts": 1792862636831869, "dur": 286, "ph": "X", "name": "ChromeTraceHeader", "args": {} },
+{ "pid": 94651, "tid": 1, "ts": 1792862636833664, "dur": 337, "ph": "X", "name": "", "args": {} },
+{ "pid": 94651, "tid": 1, "ts": 1792862636833128, "dur": 1167, "ph": "X", "name": "Write chrome-trace events", "args": {} },
+{}
+
+]
+}

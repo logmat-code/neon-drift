@@ -1,0 +1,7 @@
+UnityEditor.Android.AndroidProjectFiles::get_ProjectLevelBuildGradle
+UnityEditor.Android.AndroidProjectFiles::get_UnityLibraryBuildGradle
+UnityEditor.Android.AndroidProjectFiles::get_LauncherBuildGradle
+UnityEditor.Android.AndroidProjectFiles::get_UnityLibraryManifest
+UnityEditor.Android.AndroidProjectFiles::get_LauncherManifest
+UnityEditor.Android.AndroidProjectFiles::get_GradleProperties
+UnityEditor.Android.AndroidProjectFiles::get_GradleSettings

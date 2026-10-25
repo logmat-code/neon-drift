@@ -1,0 +1,33 @@
+{
+    "Version": 2,
+    "BuildContentOptions": [
+        "None"
+    ],
+    "BuildManifestHash": "00000000000000000000000000000000",
+    "BuildName": "NEON DRIFT.",
+    "BuildOptions": [
+        "ForceOptimizeScriptCompilation",
+        "Il2CPP",
+        "CompressTextures",
+        "StripDebugSymbols",
+        "ShaderLivelinkSupport",
+        "Development"
+    ],
+    "BuildProfilePath": "",
+    "BuildResult": 1,
+    "BuildResultName": "Succeeded",
+    "BuildSessionGUID": "122133a34e94248fba71824a6c046732",
+    "BuildStartedAt": "2026-10-24T17:42:13.4385010Z",
+    "BuildType": 1,
+    "BuildTypeName": "Player",
+    "ContentSourceBuildSessionGUID": "00000000000000000000000000000000",
+    "OutputPath": "/Users/logmat/Desktop/CLAUDE/NeonDrift/Assets/../Builds/Android/NeonDrift_Dev.apk",
+    "Platform": 13,
+    "PlatformName": "Android",
+    "Subtarget": 0,
+    "SubtargetName": "0",
+    "TotalErrors": 0,
+    "TotalSizeBytes": 780428790,
+    "TotalTimeMs": 120569,
+    "TotalWarnings": 28
+}

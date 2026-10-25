@@ -1,0 +1,5 @@
+com.logmat.neondrift
+mipmap app_icon
+mipmap ic_launcher_background
+mipmap ic_launcher_foreground
+string app_name

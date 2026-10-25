@@ -399,6 +399,7 @@ namespace NeonDrift.Editor
             GarageView garageView = CreateGarageUI(canvasGO.transform, upConfig);
             HUDView hudView = CreateHUDUI(canvasGO.transform, vc, fm, sm);
             ResultsView resultsView = CreateResultsUI(canvasGO.transform);
+            TutorialView tutView = CreateTutorialUI(canvasGO.transform);
 
             // Connect GameManager
             SerializedObject soGM = new SerializedObject(gm);
@@ -718,6 +719,40 @@ namespace NeonDrift.Editor
             so.FindProperty("shareButton").objectReferenceValue = shareBtn;
             so.ApplyModifiedProperties();
 
+            return view;
+        }
+
+        private static TutorialView CreateTutorialUI(Transform parent)
+        {
+            GameObject root = CreateUIPanel("TutorialView", parent);
+            TutorialView view = root.AddComponent<TutorialView>();
+
+            GameObject card = CreateUIPanel("TutorialCard", root.transform);
+            RectTransform cardRT = card.GetComponent<RectTransform>();
+            cardRT.anchoredPosition = new Vector2(0, 150);
+            cardRT.sizeDelta = new Vector2(860, 680);
+            Image cardBg = card.GetComponent<Image>();
+            cardBg.color = new Color(0.04f, 0.05f, 0.09f, 0.95f);
+
+            Text title = CreateUIText("TutorialTitle", card.transform, "PHASE 1: STEERING", 44, new Color(0f, 0.9f, 1f), new Vector2(0, 240), new Vector2(740, 60));
+            title.fontStyle = FontStyle.Bold;
+
+            Text instruction = CreateUIText("Instruction", card.transform, "Tap LEFT or RIGHT to navigate through highway lanes.", 32, Color.white, new Vector2(0, 100), new Vector2(740, 120));
+
+            Text hint = CreateUIText("Hint", card.transform, "Keep smooth rhythm between curbs to avoid speed penalties.", 26, new Color(1f, 0.8f, 0.2f), new Vector2(0, -50), new Vector2(740, 100));
+
+            Button nextBtn = CreateUIButton("NextBtn", card.transform, "NEXT PHASE >", new Color(0f, 0.85f, 1f), new Vector2(0, -180), new Vector2(440, 80));
+            Button skipBtn = CreateUIButton("SkipBtn", card.transform, "SKIP TUTORIAL", new Color(0.4f, 0.5f, 0.6f), new Vector2(0, -270), new Vector2(320, 60));
+
+            SerializedObject so = new SerializedObject(view);
+            so.FindProperty("titleText").objectReferenceValue = title;
+            so.FindProperty("instructionText").objectReferenceValue = instruction;
+            so.FindProperty("hintText").objectReferenceValue = hint;
+            so.FindProperty("nextButton").objectReferenceValue = nextBtn;
+            so.FindProperty("skipButton").objectReferenceValue = skipBtn;
+            so.ApplyModifiedProperties();
+
+            root.SetActive(false);
             return view;
         }
 

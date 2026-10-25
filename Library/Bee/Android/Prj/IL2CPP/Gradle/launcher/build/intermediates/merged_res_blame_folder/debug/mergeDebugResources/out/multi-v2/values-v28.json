@@ -1,0 +1,39 @@
+{
+    "logs": [
+        {
+            "outputFile": "com.logmat.neondrift.launcher-mergeDebugResources-101:/values-v28/values-v28.xml",
+            "map": [
+                {
+                    "source": "/Users/logmat/.gradle/caches/9.3.1/transforms/5cfabeaaceaaf7d17ebacb1a44be3db6/transformed/appcompat-1.6.1/res/values-v28/values-v28.xml",
+                    "from": {
+                        "startLines": "2,3,4,8",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "55,130,217,397",
+                        "endLines": "2,3,7,11",
+                        "endColumns": "74,86,12,12",
+                        "endOffsets": "125,212,392,584"
+                    }
+                },
+                {
+                    "source": "/Users/logmat/.gradle/caches/9.3.1/transforms/e0a20704a18cc6c07320f452f28eafe5/transformed/jetified-pag-sdk-ad-unfat-7909-20260204213520-release/res/values-v28/values-v28.xml",
+                    "from": {
+                        "startLines": "2,8",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,400",
+                        "endLines": "7,13",
+                        "endColumns": "12,12",
+                        "endOffsets": "395,779"
+                    },
+                    "to": {
+                        "startLines": "12,18",
+                        "startColumns": "4,4",
+                        "startOffsets": "589,934",
+                        "endLines": "17,23",
+                        "endColumns": "12,12",
+                        "endOffsets": "929,1313"
+                    }
+                }
+            ]
+        }
+    ]
+}

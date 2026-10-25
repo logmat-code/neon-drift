@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string-array name="exo_controls_playback_speeds">
+    <item>0.25x</item>
+    <item>0.5x</item>
+    <item>0.75x</item>
+    <item>標準</item>
+    <item>1.25x</item>
+    <item>1.5x</item>
+    <item>2x</item>
+  </string-array>
+    <plurals name="exo_controls_fastforward_by_amount_description">
+    <item quantity="one">%d 秒早送り</item>
+    <item quantity="other">%d 秒早送り</item>
+  </plurals>
+    <plurals name="exo_controls_rewind_by_amount_description">
+    <item quantity="one">%d 秒巻き戻し</item>
+    <item quantity="other">%d 秒巻き戻し</item>
+  </plurals>
+    <string msgid="5976598919945601918" name="abc_action_bar_home_description">"ホームに戻る"</string>
+    <string msgid="8388173803310557296" name="abc_action_bar_up_description">"前に戻る"</string>
+    <string msgid="3937310113216875497" name="abc_action_menu_overflow_description">"その他のオプション"</string>
+    <string msgid="4692188335987374352" name="abc_action_mode_done">"完了"</string>
+    <string msgid="1189761859438369441" name="abc_activity_chooser_view_see_all">"すべて表示"</string>
+    <string msgid="2165779757652331008" name="abc_activitychooserview_choose_application">"アプリの選択"</string>
+    <string msgid="4215997306490295099" name="abc_capital_off">"OFF"</string>
+    <string msgid="884982626291842264" name="abc_capital_on">"ON"</string>
+    <string msgid="8833365367933412986" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="2223301931652355242" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="838001238306846836" name="abc_menu_delete_shortcut_label">"Delete"</string>
+    <string msgid="7986526966204849475" name="abc_menu_enter_shortcut_label">"Enter"</string>
+    <string msgid="375214403600139847" name="abc_menu_function_shortcut_label">"Function+"</string>
+    <string msgid="4192209724446364286" name="abc_menu_meta_shortcut_label">"Meta+"</string>
+    <string msgid="4741552369836443843" name="abc_menu_shift_shortcut_label">"Shift+"</string>
+    <string msgid="5473865519181928982" name="abc_menu_space_shortcut_label">"Space"</string>
+    <string msgid="6180552449598693998" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="5520303668377388990" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="7208076849092622260" name="abc_search_hint">"検索…"</string>
+    <string msgid="3741173234950517107" name="abc_searchview_description_clear">"検索キーワードを削除"</string>
+    <string msgid="693312494995508443" name="abc_searchview_description_query">"検索キーワード"</string>
+    <string msgid="3417662926640357176" name="abc_searchview_description_search">"検索"</string>
+    <string msgid="1486535517437947103" name="abc_searchview_description_submit">"検索キーワードを送信"</string>
+    <string msgid="2293578557972875415" name="abc_searchview_description_voice">"音声検索"</string>
+    <string msgid="8875138169939072951" name="abc_shareactionprovider_share_with">"共有"</string>
+    <string msgid="9055268688411532828" name="abc_shareactionprovider_share_with_application">"<ns1:g id="APPLICATION_NAME">%s</ns1:g>と共有"</string>
+    <string msgid="1656852541809559762" name="abc_toolbar_collapse_description">"折りたたむ"</string>
+    <string name="applovin_agree_message">アプリを利用するために「次へ」をクリックしてください。</string>
+    <string name="applovin_alt_privacy_policy_text"/>
+    <string name="applovin_continue_button_text">次へ</string>
+    <string name="applovin_pp_and_tos_title">%s を使用するためには利用規約への同意およびプライバシーポリシーの確認が必要です。</string>
+    <string name="applovin_pp_title">%sを使用するためにはプライバシーポリシーを慎重に確認し、承認する必要があります。</string>
+    <string name="applovin_privacy_policy_text">プライバシーポリシー</string>
+    <string name="applovin_terms_of_service_text">利用規約</string>
+    <string name="applovin_terms_of_use_text">利用規約</string>
+    <string name="bigo_ad_about_app_default">このアプリについて</string>
+    <string name="bigo_ad_click_to_try">クリックして試しますか？</string>
+    <string name="bigo_ad_comment_num_text">レビュー</string>
+    <string name="bigo_ad_cta_default">さらに表示</string>
+    <string name="bigo_ad_cta_download_default">インストール</string>
+    <string name="bigo_ad_description_default">今すぐ無料でアクセス！</string>
+    <string name="bigo_ad_double_video_choose_video">お気に入りのビデオを選択してください</string>
+    <string name="bigo_ad_double_video_count_down">%d秒でプレイ</string>
+    <string name="bigo_ad_download_num_text">ダウンロード</string>
+    <string name="bigo_ad_form_agree">同意する</string>
+    <string name="bigo_ad_form_cancel">キャンセル</string>
+    <string name="bigo_ad_form_privacy_content">このフォームを送信することで、BIGO Ads および {company_name} と個人情報を共有することに同意したものとみなされます。BIGO Ads および {company_name} は、この情報をそれぞれのプライバシーポリシーに従い使用します。BIGO のプライバシーと {company_name} のプライバシーポリシーをご覧ください。</string>
+    <string name="bigo_ad_form_privacy_notice">プライバシーに関する通知</string>
+    <string name="bigo_ad_form_question_hint">この欄に入力してください</string>
+    <string name="bigo_ad_form_submit">送信</string>
+    <string name="bigo_ad_form_warning">回答が必要です</string>
+    <string name="bigo_ad_ic_application">応用</string>
+    <string name="bigo_ad_ic_everyone">みんな</string>
+    <string name="bigo_ad_ic_recommended">推薦する</string>
+    <string name="bigo_ad_ic_web">ウェブ</string>
+    <string name="bigo_ad_lose_reward">報酬を失うことになります</string>
+    <string name="bigo_ad_multi_img_more_text">もっと</string>
+    <string name="bigo_ad_resume">再開</string>
+    <string name="bigo_ad_skip">スキップ</string>
+    <string name="bigo_ad_skip_video">動画をスキップしますか？</string>
+    <string name="bigo_ad_title_default">素晴らしく興味深い</string>
+    <string name="bigo_ad_word_icon_guid">おすすめのアプリ</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"応答"</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"ビデオ"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"拒否"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"通話終了"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"着信"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"通話中"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"着信をスクリーニング中"</string>
+    <string msgid="406453423630273620" name="close_drawer">"ナビゲーションメニューを閉じる"</string>
+    <string msgid="7573152094250666567" name="close_sheet">"シートを閉じる"</string>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">有効にする</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text">%1$sの実行には、Google Play開発者サービスの有効化が必要です。</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Google Play開発者サービスの有効化</string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">インストール</string>
+    <string name="common_google_play_services_install_text">「%1$s」の実行には Google Play 開発者サービスが必要ですが、お使いのデバイスにはインストールされていません。</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">Google Play開発者サービスの入手</string>
+    <string name="common_google_play_services_notification_channel_name">Google Play 開発者サービスの利用</string>
+    <string name="common_google_play_services_notification_ticker">Google Play開発者サービスのエラー</string>
+    <string name="common_google_play_services_unknown_issue">「%1$s」で Google Play 開発者サービスに問題が発生しています。もう一度お試しください。</string>
+    <string name="common_google_play_services_unsupported_text">「%1$s」の実行には Google Play 開発者サービスが必要ですが、お使いのデバイスではサポートされていません。</string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">更新</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text">%1$sの実行にはGoogle Play開発者サービスの更新が必要です。</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">Google Play開発者サービスの更新</string>
+    <string name="common_google_play_services_updating_text">%1$sの実行にはGoogle Play開発者サービスが必要ですが、このサービスは現在更新中です。</string>
+    <string name="common_google_play_services_wear_update_text">Google Play開発者サービスの新しいバージョンが必要です。まもなく自動更新されます。</string>
+    <string name="common_open_on_phone">スマートフォンで開く</string>
+    <string name="common_signin_button_text">ログイン</string>
+    <string name="common_signin_button_text_long">Googleにログイン</string>
+    <string msgid="3209159573327985035" name="copy">"コピー"</string>
+    <string msgid="3260749812566568062" name="copy_toast_msg">"リンクをクリップボードにコピーしました"</string>
+    <string msgid="8038256446254964252" name="default_error_message">"入力値が無効です"</string>
+    <string msgid="6312721426453364202" name="default_popup_window_title">"ポップアップウィンドウ"</string>
+    <string msgid="1890207353314751437" name="dropdown_menu">"プルダウン メニュー"</string>
+    <string name="exo_controls_cc_disabled_description">字幕の有効化</string>
+    <string name="exo_controls_cc_enabled_description">字幕の無効化</string>
+    <string name="exo_controls_fastforward_description">早送り</string>
+    <string name="exo_controls_fullscreen_enter_description">全画面表示に変更</string>
+    <string name="exo_controls_fullscreen_exit_description">全画面表示を終了</string>
+    <string name="exo_controls_hide">プレーヤーのコントロールを非表示にする</string>
+    <string name="exo_controls_next_description">次へ</string>
+    <string name="exo_controls_overflow_hide_description">その他の設定の非表示</string>
+    <string name="exo_controls_overflow_show_description">その他の設定の表示</string>
+    <string name="exo_controls_pause_description">一時停止</string>
+    <string name="exo_controls_play_description">再生</string>
+    <string name="exo_controls_playback_speed">速度</string>
+    <string name="exo_controls_previous_description">前へ</string>
+    <string name="exo_controls_repeat_all_description">現在: 全曲リピート。モードを切り替えます。</string>
+    <string name="exo_controls_repeat_off_description">現在: リピートなし。モードを切り替えます。</string>
+    <string name="exo_controls_repeat_one_description">現在: 1 曲リピート。モードを切り替えます。</string>
+    <string name="exo_controls_rewind_description">巻き戻し</string>
+    <string name="exo_controls_seek_bar_description">再生中</string>
+    <string name="exo_controls_settings_description">設定</string>
+    <string name="exo_controls_show">プレーヤーのコントロールを表示する</string>
+    <string name="exo_controls_shuffle_off_description">シャッフル モードを有効にする</string>
+    <string name="exo_controls_shuffle_on_description">シャッフル モードを無効にする</string>
+    <string name="exo_controls_stop_description">停止</string>
+    <string name="exo_controls_vr_description">VR モード</string>
+    <string name="exo_download_completed">ダウンロードが完了しました</string>
+    <string name="exo_download_description">ダウンロード</string>
+    <string name="exo_download_downloading">ダウンロードしています</string>
+    <string name="exo_download_failed">ダウンロードに失敗しました</string>
+    <string name="exo_download_notification_channel_name">ダウンロード</string>
+    <string name="exo_download_paused">ダウンロード一時停止</string>
+    <string name="exo_download_paused_for_network">ダウンロード停止: ネットワーク接続中</string>
+    <string name="exo_download_paused_for_wifi">ダウンロード停止: Wi-Fi 接続中</string>
+    <string name="exo_download_removing">ダウンロードを削除しています</string>
+    <string name="exo_item_list">%1$s、%2$s</string>
+    <string name="exo_track_bitrate">%1$.2f Mbps</string>
+    <string name="exo_track_mono">モノラル</string>
+    <string name="exo_track_resolution">%1$d × %2$d</string>
+    <string name="exo_track_role_alternate">代替</string>
+    <string name="exo_track_role_closed_captions">字幕</string>
+    <string name="exo_track_role_commentary">解説</string>
+    <string name="exo_track_role_supplementary">補足</string>
+    <string name="exo_track_selection_auto">自動</string>
+    <string name="exo_track_selection_none">なし</string>
+    <string name="exo_track_selection_title_audio">音声</string>
+    <string name="exo_track_selection_title_text">文字</string>
+    <string name="exo_track_selection_title_video">動画</string>
+    <string name="exo_track_stereo">ステレオ</string>
+    <string name="exo_track_surround">サラウンド サウンド</string>
+    <string name="exo_track_surround_5_point_1">5.1 サラウンド サウンド</string>
+    <string name="exo_track_surround_7_point_1">7.1 サラウンド サウンド</string>
+    <string name="exo_track_unknown">不明</string>
+    <string name="exo_track_unknown_name">不明（%1$s）</string>
+    <string msgid="1234962710353108940" name="expand_button_title">"詳細設定"</string>
+    <string msgid="4566929209979330987" name="fallback_menu_item_copy_link">"リンクをコピー"</string>
+    <string msgid="3413186855122069269" name="fallback_menu_item_open_in_browser">"ブラウザで開く"</string>
+    <string msgid="7145444925855055364" name="fallback_menu_item_share_link">"リンクの共有"</string>
+    <string msgid="6827826412747255547" name="in_progress">"処理しています"</string>
+    <string msgid="2486394087603402002" name="indeterminate">"オンでもオフでもありません"</string>
+    <string name="native_body">本文</string>
+    <string name="native_headline">見出し</string>
+    <string name="native_media_view">メディアビュー</string>
+    <string msgid="542007171693138492" name="navigation_menu">"ナビゲーションメニュー"</string>
+    <string msgid="6610465462668679431" name="not_selected">"未選択"</string>
+    <string msgid="478774118347071097" name="not_set">"未設定"</string>
+    <string name="notifications_permission_confirm">許可</string>
+    <string name="notifications_permission_decline">許可しない</string>
+    <string name="notifications_permission_title">通知の送信をアプリに許可しますか？</string>
+    <string msgid="875452955155264703" name="off">"オフ"</string>
+    <string name="offline_dialog_image_description">アイコン</string>
+    <string name="offline_dialog_text">関心をお寄せいただきありがとうございます。\n再度オンラインになりましたら、追加情報をご案内します。</string>
+    <string name="offline_notification_title">オンラインになりました: 続きをご覧ください</string>
+    <string name="offline_notification_title_with_advertiser">オンラインになりました: %sについて続きをご確認ください</string>
+    <string name="offline_opt_in_confirm">OK</string>
+    <string name="offline_opt_in_decline">設定しない</string>
+    <string name="offline_opt_in_message">広告主のサイトへのリンクが記載された通知が届きます。</string>
+    <string name="offline_opt_in_title">ネットワークに接続したときに、広告を表示します。</string>
+    <string msgid="8655164131929253426" name="on">"オン"</string>
+    <string msgid="7961817945132860002" name="preference_copied">"「<ns1:g id="SUMMARY">%1$s</ns1:g>」をクリップボードにコピーしました。"</string>
+    <string msgid="5941395253238309765" name="range_end">"範囲の末尾"</string>
+    <string msgid="7097486360902471446" name="range_start">"範囲の先頭"</string>
+    <string name="s1">画像の保存</string>
+    <string name="s2">広告が画像ギャラリーに画像を保存することを許可しますか？</string>
+    <string name="s3">許可する</string>
+    <string name="s4">許可しない</string>
+    <string name="s5">カレンダーの予定の作成</string>
+    <string name="s6">広告がカレンダーの予定を作成することを許可しますか？</string>
+    <string name="s7">テスト広告</string>
+    <string name="sdm_cm_video_auto_play_after">秒後自動的に再生</string>
+    <string msgid="6264217191555673260" name="search_menu_title">"検索"</string>
+    <string msgid="6043586758067023" name="selected">"選択済み"</string>
+    <string msgid="6277540029070332960" name="status_bar_notification_info_overflow">"999+"</string>
+    <string msgid="5190123168583152844" name="summary_collapsed_preference_list">"<ns1:g id="CURRENT_ITEMS">%1$s</ns1:g>、<ns1:g id="ADDED_ITEMS">%2$s</ns1:g>"</string>
+    <string msgid="1672349317127674378" name="tab">"タブ"</string>
+    <string msgid="5946805113151406391" name="template_percent">"<ns1:g id="PERCENTAGE">%1$d</ns1:g>パーセント。"</string>
+    <string name="tt_ad_close_text">広告を閉じる</string>
+    <string name="tt_ad_is_closed">広告は終了しました</string>
+    <string name="tt_ad_logo_txt">AD</string>
+    <string name="tt_add_bad_reason">悪いと思う理由を追加してください</string>
+    <string name="tt_bad">悪い</string>
+    <string name="tt_choose_language">ja</string>
+    <string name="tt_comment_num">%1$s 件のレビュー</string>
+    <string name="tt_count_down_view">スキップ</string>
+    <string name="tt_dislike_header_tv_back">戻る</string>
+    <string name="tt_dislike_header_tv_title">選択する</string>
+    <string name="tt_display_error">表示エラーが発生しました</string>
+    <string name="tt_done">完了</string>
+    <string name="tt_feedback_experience_text">今後もサービスの向上に努めていきます。</string>
+    <string name="tt_feedback_submit_text">フィードバックを送信しました！ 再送信はできません。</string>
+    <string name="tt_feedback_thank_text">ご意見ありがとうございます！</string>
+    <string name="tt_feel_hint">この広告を見てどう思いましたか</string>
+    <string name="tt_good">良い</string>
+    <string name="tt_like_this_ad">この広告が気に入りましたか</string>
+    <string name="tt_list_end_tip">すべてのコンテンツを見ました</string>
+    <string name="tt_loading_more">読み込み中…  </string>
+    <string name="tt_logo_en">広告</string>
+    <string name="tt_more_copy_link">リンクをコピー</string>
+    <string name="tt_more_history">履歴</string>
+    <string name="tt_more_open_browser">ブラウザで開く</string>
+    <string name="tt_more_report">レポート</string>
+    <string name="tt_more_retry">再試行</string>
+    <string name="tt_more_title">もっと</string>
+    <string name="tt_msgPlayable">遊んで報酬をゲット!</string>
+    <string name="tt_multiple_ad_indicator">広告 %1$d / %2$d</string>
+    <string name="tt_negtiveBtnBtnText">やめる</string>
+    <string name="tt_negtive_txt">キャンセル</string>
+    <string name="tt_no_network">"ネットワークがありません。暫くしてから再度お試しください"</string>
+    <string name="tt_not_bad">悪くない</string>
+    <string name="tt_other_reason">その他の理由</string>
+    <string name="tt_postiveBtnText">再開</string>
+    <string name="tt_postiveBtnTextPlayable">つづける</string>
+    <string name="tt_postive_txt">確認</string>
+    <string name="tt_privacy_title">プライバシーポリシー</string>
+    <string name="tt_report_this_ad">サービス向上のため、この広告を報告してください</string>
+    <string name="tt_reward_feedback">フィードバック</string>
+    <string name="tt_reward_full_skip">%1$s秒後にスキップ</string>
+    <string name="tt_reward_msg">動画を最後まで見て報酬を受け取りましょう</string>
+    <string name="tt_reward_screen_skip_tx">スキップ</string>
+    <string name="tt_select_reason">理由を選択してください</string>
+    <string name="tt_skip_ad_time_text">%ds後にスキップ</string>
+    <string name="tt_suggestion_commit">送信する</string>
+    <string name="tt_try_now">今すぐやってみて下さい</string>
+    <string name="tt_video_bytesize">データ通信量</string>
+    <string name="tt_video_dial_phone">今すぐ電話をかける</string>
+    <string name="tt_video_download_apk">今すぐダウンロード</string>
+    <string name="tt_video_mobile_go_detail">今すぐ確認</string>
+    <string name="tt_video_retry_des_txt">ロード失敗、再試行してください</string>
+    <string name="tt_video_without_wifi_tips">再生すると%.2fMBの通信量が消費されます</string>
+    <string name="tt_web_title_default">広告</string>
+    <string msgid="5138405918326871307" name="v7_preference_off">"OFF"</string>
+    <string msgid="27351710992731591" name="v7_preference_on">"ON"</string>
+    <string name="watermark_label_prefix">AdMob - </string>
+    <string name="yodo1_mas_string_age"> 歳 です。</string>
+    <string name="yodo1_mas_string_protocol_privacy"> プライバシーポリシー</string>
+    <string name="yodo1_mas_string_protocol_term"> 利用規約</string>
+    <string name="yodo1_mas_string_uc_accept">同意します</string>
+    <string name="yodo1_mas_string_uc_age">おいくつですか。</string>
+    <string name="yodo1_mas_string_uc_msg"> ”同意します”ボタンをクリックすることによって、弊社のユーザー利用規約とプライバシーポリシーをお読みになった上、同意されたものと見なします。</string>
+    <string name="yodo1_mas_string_uc_prompt">最適なゲーミング体験をご提供できるように、ご年齢情報をご登録ください。</string>
+    <string name="yodo1_mas_string_uc_select_age">ご年齢はまだ設定されていません。</string>
+</resources>

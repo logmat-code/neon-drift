@@ -1,0 +1,198 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:2:1-36:12
+INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:2:1-36:12
+	package
+		INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:2:70-116
+	xmlns:android
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.VIBRATE
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:3:3-64
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:3:20-61
+uses-permission#android.permission.INTERNET
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:3-65
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:4:20-62
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:5:3-77
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:5:20-74
+uses-feature#0x00030001
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:6:3-52
+	android:glEsVersion
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:6:17-49
+uses-feature#android.hardware.vulkan.version
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:7:3-91
+	android:required
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:7:64-88
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:7:17-63
+uses-feature#android.hardware.touchscreen
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:8:3-88
+	android:required
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:8:61-85
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:8:17-60
+uses-feature#android.hardware.touchscreen.multitouch
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:9:3-99
+	android:required
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:9:72-96
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:9:17-71
+uses-feature#android.hardware.touchscreen.multitouch.distinct
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:10:3-108
+	android:required
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:10:81-105
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:10:17-80
+application
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:11:3-35:17
+	android:extractNativeLibs
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:11:86-118
+	android:appCategory
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:11:16-42
+	android:enableOnBackInvokedCallback
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:11:43-85
+meta-data#com.google.android.gms.ads.APPLICATION_ID
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:12:5-130
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:12:73-127
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:12:16-72
+meta-data#unity.splash-mode
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:13:5-69
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:13:49-66
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:13:16-48
+meta-data#unity.splash-enable
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:14:5-74
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:14:51-71
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:14:16-50
+meta-data#unity.requested-visible-insets
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:15:5-81
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:15:62-78
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:15:16-61
+meta-data#unity.system-bars-behavior
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:5-101
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:58-98
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:16:16-57
+meta-data#unity.render-outside-safearea
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:17:5-84
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:17:61-81
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:17:16-60
+meta-data#notch.config
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:18:5-81
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:18:44-78
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:18:16-43
+meta-data#unity.auto-report-fully-drawn
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:19:5-84
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:19:61-81
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:19:16-60
+meta-data#unity.strip-engine-code
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:20:5-78
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:20:55-75
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:20:16-54
+meta-data#unity.run-without-focus
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:21:5-79
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:21:55-76
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:21:16-54
+meta-data#unity.auto-set-game-state
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:22:5-80
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:22:57-77
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:22:16-56
+activity#com.unity3d.player.UnityPlayerGameActivity
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:5-34:16
+	android:screenOrientation
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:404-440
+	android:enabled
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:197-219
+	android:launchMode
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:280-311
+	android:hardwareAccelerated
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:244-279
+	android:exported
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:220-243
+	android:resizeableActivity
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:370-403
+	android:configChanges
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:15-196
+	android:theme
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:441-490
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:23:312-369
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:24:7-27:23
+category#android.intent.category.LAUNCHER
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:25:9-69
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:25:19-66
+action#android.intent.action.MAIN
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:26:9-61
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:26:17-58
+meta-data#unityplayer.UnityActivity
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:28:7-82
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:28:59-79
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:28:18-58
+meta-data#android.app.lib_name
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:29:7-77
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:29:54-74
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:29:18-53
+meta-data#WindowManagerPreference:FreeformWindowSize
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:30:7-130
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:30:76-127
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:30:18-75
+meta-data#WindowManagerPreference:FreeformWindowOrientation
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:31:7-144
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:31:83-141
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:31:18-82
+meta-data#notch_support
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:32:7-70
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:32:47-67
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:32:18-46
+layout
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:33:7-68
+	android:minWidth
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:33:41-65
+	android:minHeight
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml:33:15-40
+uses-sdk
+INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml
+INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/AndroidManifest.xml
