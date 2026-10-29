@@ -1,3 +1,4 @@
+using NeonDrift.Tutorial;
 using System.Collections;
 using UnityEngine;
 using NeonDrift.Data;
@@ -43,6 +44,7 @@ namespace NeonDrift.Core
         [SerializeField] private GarageView garageView;
         [SerializeField] private HUDView hudView;
         [SerializeField] private ResultsView resultsView;
+        [SerializeField] private TutorialView tutorialView;
 
         [Header("World Environments")]
         [SerializeField] private GameObject homeEnvironment;
@@ -222,7 +224,20 @@ namespace NeonDrift.Core
             var collisionHandler = playerVehicle != null ? playerVehicle.GetComponent<CollisionHandler>() : null;
             collisionHandler?.ResetDurability();
 
+            // Pre-seed initial highway traffic so the road is lively from the very first meter
+            trafficManager?.PreSeedInitialTraffic();
+
             EnterState(GameState.Playing);
+
+            // First install tutorial prompt
+            if (TutorialManager.Instance != null && TutorialManager.Instance.ShouldStartFirstDrive())
+            {
+                TutorialManager.Instance.StartTutorial();
+                if (tutorialView != null)
+                {
+                    tutorialView.DisplayStep(TutorialManager.Instance.currentStep);
+                }
+            }
         }
 
         public void EndRun(string reason = "RUN COMPLETE")
@@ -259,6 +274,7 @@ namespace NeonDrift.Core
             int best = ProgressionManager.Instance != null ? ProgressionManager.Instance.CurrentData.bestScore : score;
 
             resultsView?.DisplayResults(reason, score, best, longestDrift, maxCombo, nearMisses, credits, distance);
+            if (tutorialView != null) tutorialView.gameObject.SetActive(false);
             EnterState(GameState.Results);
         }
 

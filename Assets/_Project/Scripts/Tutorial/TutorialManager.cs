@@ -37,7 +37,8 @@ namespace NeonDrift.Tutorial
 
         public bool ShouldStartFirstDrive()
         {
-            var data = ProgressionManager.Instance?.CurrentData;
+            var pm = ProgressionManager.Instance ?? UnityEngine.Object.FindAnyObjectByType<ProgressionManager>(FindObjectsInactive.Include);
+            var data = pm?.CurrentData;
             if (data == null) return false;
             return !data.tutorialCompleted && !data.tutorialSkipped;
         }
@@ -74,11 +75,12 @@ namespace NeonDrift.Tutorial
         public void SkipTutorial()
         {
             currentStep = TutorialStep.Completed;
-            var data = ProgressionManager.Instance?.CurrentData;
+            var pm = ProgressionManager.Instance ?? UnityEngine.Object.FindAnyObjectByType<ProgressionManager>(FindObjectsInactive.Include);
+            var data = pm?.CurrentData;
             if (data != null)
             {
                 data.tutorialSkipped = true;
-                ProgressionManager.Instance.SaveProfile();
+                pm?.SaveProfile();
             }
             OnStepChanged?.Invoke(currentStep);
             Debug.Log("[Tutorial] Tutorial skipped by player.");
@@ -87,12 +89,14 @@ namespace NeonDrift.Tutorial
         public void CompleteTutorial()
         {
             currentStep = TutorialStep.Completed;
-            var data = ProgressionManager.Instance?.CurrentData;
+            var pm = ProgressionManager.Instance ?? UnityEngine.Object.FindAnyObjectByType<ProgressionManager>(FindObjectsInactive.Include);
+            var data = pm?.CurrentData;
             if (data != null && !data.tutorialCompleted)
             {
                 data.tutorialCompleted = true;
-                ProgressionManager.Instance.RewardRewardedAdNC(500); // 500 NC First Drive bonus
-                ProgressionManager.Instance.SaveProfile();
+                pm?.RewardRewardedAdNC(500); // 500 NC First Drive bonus
+                NeonDrift.Presentation.AudioManager.Instance?.PlayNeonCredits();
+                pm?.SaveProfile();
                 Debug.Log("[Tutorial] FIRST DRIVE Completed! +500 NC awarded.");
             }
             OnStepChanged?.Invoke(currentStep);

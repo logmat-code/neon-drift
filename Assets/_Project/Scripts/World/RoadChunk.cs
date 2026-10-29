@@ -54,36 +54,44 @@ namespace NeonDrift.World
 
         private static readonly float[] SLICE_OFFSETS = new float[]
         {
-            -50.0f,  // 0: Ground Far Left (-50m)
-            -11.0f,  // 1: Ground Inner Left (-11m)
-            -11.0f,  // 2: Curb Outer Left (-11m)
-            -10.2f,  // 3: Curb Inner Left (-10.2m)
-            -10.2f,  // 4: Asphalt Outer Left (-10.2m)
-            -0.25f,  // 5: Asphalt Inner Left (-0.25m)
-            -0.25f,  // 6: Centerline Left (-0.25m)
-            +0.25f,  // 7: Centerline Right (+0.25m)
-            +0.25f,  // 8: Asphalt Inner Right (+0.25m)
-            +10.2f,  // 9: Asphalt Outer Right (+10.2m)
-            +10.2f,  // 10: Curb Inner Right (+10.2m)
-            +11.0f,  // 11: Curb Outer Right (+11.0m)
-            +11.0f,  // 12: Ground Inner Right (+11.0m)
-            +50.0f   // 13: Ground Far Right (+50m)
+            -110.0f, // 0: Mountain Wall Far Left (-110m)
+            -25.0f,  // 1: Mountain Base Left (-25m)
+            -25.0f,  // 2: Shoulder Verge Left (-25m)
+            -11.2f,  // 3: Shoulder Edge Left (-11.2m)
+            -11.2f,  // 4: Curb Outer Left (-11.2m)
+            -10.2f,  // 5: Curb Inner Left (-10.2m)
+            -10.2f,  // 6: Asphalt Outer Left (-10.2m)
+            -0.25f,  // 7: Asphalt Inner Left (-0.25m)
+            -0.25f,  // 8: Centerline Left (-0.25m)
+            +0.25f,  // 9: Centerline Right (+0.25m)
+            +0.25f,  // 10: Asphalt Inner Right (+0.25m)
+            +10.2f,  // 11: Asphalt Outer Right (+10.2m)
+            +10.2f,  // 12: Curb Inner Right (+10.2m)
+            +11.2f,  // 13: Curb Outer Right (+11.2m)
+            +11.2f,  // 14: Shoulder Edge Right (+11.2m)
+            +25.0f,  // 15: Cliff Verge Right (+25m)
+            +25.0f,  // 16: Precipice Edge Right (+25m)
+            +110.0f  // 17: Deep Valley Abyss Right (+110m)
         };
 
-        private static readonly Color COLOR_GROUND   = new Color(0.045f, 0.050f, 0.065f, 1f); // Dark tarmac terrain
-        private static readonly Color COLOR_CURB     = new Color(0.95f, 0.95f, 0.98f, 1f);     // White curb
-        private static readonly Color COLOR_ASPHALT  = new Color(0.12f, 0.13f, 0.16f, 1f);    // Asphalt surface
-        private static readonly Color COLOR_YELLOW   = new Color(0.95f, 0.80f, 0.15f, 1f);    // Golden yellow centerline
+        private static readonly Color COLOR_MOUNTAIN = new Color(0.06f, 0.08f, 0.12f, 1f);  // Dark rocky alpine slope
+        private static readonly Color COLOR_SHOULDER = new Color(0.09f, 0.10f, 0.13f, 1f);  // Mountain dirt / gravel verge
+        private static readonly Color COLOR_CURB     = new Color(0.95f, 0.95f, 0.98f, 1f);  // Crisp white/cyan curb
+        private static readonly Color COLOR_ASPHALT  = new Color(0.14f, 0.15f, 0.18f, 1f);  // Dark highway asphalt
+        private static readonly Color COLOR_YELLOW   = new Color(0.96f, 0.82f, 0.15f, 1f);  // Neon gold highway double-line
+        private static readonly Color COLOR_ABYSS    = new Color(0.03f, 0.04f, 0.07f, 1f);  // Night cliff valley abyss
 
         private static readonly Color[] SLICE_COLORS = new Color[]
         {
-            COLOR_GROUND, COLOR_GROUND,   // 0, 1: Ground Left
-            COLOR_CURB, COLOR_CURB,       // 2, 3: Curb Left
-            COLOR_ASPHALT, COLOR_ASPHALT, // 4, 5: Asphalt Left
-            COLOR_YELLOW, COLOR_YELLOW,   // 6, 7: Centerline
-            COLOR_ASPHALT, COLOR_ASPHALT, // 8, 9: Asphalt Right
-            COLOR_CURB, COLOR_CURB,       // 10, 11: Curb Right
-            COLOR_GROUND, COLOR_GROUND    // 12, 13: Ground Right
+            COLOR_MOUNTAIN, COLOR_MOUNTAIN, // 0, 1: Mountain Face Far Left
+            COLOR_SHOULDER, COLOR_SHOULDER, // 2, 3: Gravel Verge Left
+            COLOR_CURB, COLOR_CURB,         // 4, 5: Curb Left
+            COLOR_ASPHALT, COLOR_ASPHALT,   // 6, 7: Asphalt Road Left
+            COLOR_YELLOW, COLOR_YELLOW,     // 8, 9: Centerline
+            COLOR_ASPHALT, COLOR_ASPHALT,   // 10, 11: Asphalt Road Right
+            COLOR_CURB, COLOR_CURB,         // 12, 13: Curb Right
+            COLOR_SHOULDER, COLOR_SHOULDER, // 14, 15: Precipice Verge Right
+            COLOR_ABYSS, COLOR_ABYSS        // 16, 17: Valley Abyss Right
         };
 
         private void EnsureComponents(Material roadMat)
@@ -150,7 +158,11 @@ namespace NeonDrift.World
             Sprite shopSprite,
             Sprite lampSprite,
             Sprite vmSprite,
-            float roadWidth)
+            float roadWidth,
+            Sprite pineSprite = null,
+            Sprite cliffSprite = null,
+            Sprite guardrailSprite = null,
+            Sprite chevronSprite = null)
         {
             EnsureComponents(roadMaterial);
 
@@ -244,15 +256,15 @@ namespace NeonDrift.World
                 stepRotations[q] = Quaternion.Euler(0f, 0f, -Mathf.Lerp(startHeading, exitHeading, t));
             }
 
-            // 5. Populate and position curbside props
-            DecorateProps(localPoints, localNormals, sliceCount, zone, towerSprite, shopSprite, lampSprite, vmSprite, halfRoad);
+            // 5. Populate and position mountain touge props
+            DecorateProps(localPoints, localNormals, sliceCount, zone, towerSprite, shopSprite, lampSprite, vmSprite, halfRoad, pineSprite, cliffSprite, guardrailSprite, chevronSprite);
 
             gameObject.SetActive(true);
         }
 
         private void BuildProceduralMesh(Vector2[] pts, Vector2[] normals, int count)
         {
-            int vertCount = count * 14;
+            int vertCount = count * 18;
             Vector3[] verts = new Vector3[vertCount];
             Color[] colors = new Color[vertCount];
             Vector2[] uvs = new Vector2[vertCount];
@@ -263,30 +275,30 @@ namespace NeonDrift.World
                 Vector2 n = normals[i];
                 float vCoord = (float)i / (count - 1);
 
-                for (int v = 0; v < 14; v++)
+                for (int v = 0; v < 18; v++)
                 {
-                    int idx = i * 14 + v;
+                    int idx = i * 18 + v;
                     Vector2 pos = p + n * SLICE_OFFSETS[v];
                     verts[idx] = new Vector3(pos.x, pos.y, 0f);
                     colors[idx] = SLICE_COLORS[v];
-                    uvs[idx] = new Vector2((float)v / 13f, vCoord);
+                    uvs[idx] = new Vector2((float)v / 17f, vCoord);
                 }
             }
 
             int segCount = count - 1;
-            int triCount = segCount * 7 * 6;
+            int triCount = segCount * 9 * 6;
             int[] triangles = new int[triCount];
             int triIdx = 0;
 
             for (int i = 0; i < segCount; i++)
             {
                 int next = i + 1;
-                for (int q = 0; q < 7; q++)
+                for (int q = 0; q < 9; q++)
                 {
-                    int c0 = i * 14 + q * 2;
-                    int c1 = i * 14 + q * 2 + 1;
-                    int n0 = next * 14 + q * 2;
-                    int n1 = next * 14 + q * 2 + 1;
+                    int c0 = i * 18 + q * 2;
+                    int c1 = i * 18 + q * 2 + 1;
+                    int n0 = next * 18 + q * 2;
+                    int n1 = next * 18 + q * 2 + 1;
 
                     triangles[triIdx++] = c0;
                     triangles[triIdx++] = n0;
@@ -316,7 +328,11 @@ namespace NeonDrift.World
             Sprite shopSprite,
             Sprite lampSprite,
             Sprite vmSprite,
-            float halfRoad)
+            float halfRoad,
+            Sprite pineSprite,
+            Sprite cliffSprite,
+            Sprite guardrailSprite,
+            Sprite chevronSprite)
         {
             // Deactivate existing active props into pool
             for (int i = 0; i < activeProps.Count; i++)
@@ -326,61 +342,48 @@ namespace NeonDrift.World
             }
             activeProps.Clear();
 
-            Color lampColor = zone switch
-            {
-                MicroZone.NeonCore => new Color(0f, 0.9f, 1f),
-                MicroZone.Backstreets => new Color(1f, 0.75f, 0.25f),
-                MicroZone.ElevatedMetro => new Color(0.4f, 0.85f, 1f),
-                MicroZone.NightMarket => new Color(1f, 0.2f, 0.5f),
-                MicroZone.CanalSide => new Color(0.85f, 0.95f, 1f),
-                _ => Color.white
-            };
-
-            Color buildingColor = zone switch
-            {
-                MicroZone.NeonCore => Color.white,
-                MicroZone.Backstreets => new Color(0.95f, 0.9f, 0.8f),
-                MicroZone.ElevatedMetro => new Color(0.5f, 0.6f, 0.75f),
-                MicroZone.NightMarket => new Color(1f, 0.85f, 0.9f),
-                MicroZone.CanalSide => new Color(0.35f, 0.45f, 0.8f),
-                _ => Color.white
-            };
-
-            int lampInterval = 3;
+            Color lampColor = new Color(0f, 0.9f, 1f); // Alpine night cyan highway glow
 
             for (int i = 1; i < sliceCount - 1; i++)
             {
                 Vector2 pt = localPoints[i];
                 Vector2 nrm = localNormals[i];
 
-                // 1. Street Lamps - regular cadence creating a continuous neon highway glow
-                if (i % lampInterval == 0 && lampSprite != null)
+                // 1. Guardrails along highway edge (both sides or outer precipice)
+                if (guardrailSprite != null && i % 2 == 0)
                 {
-                    SpawnProp(lampSprite, pt - nrm * (halfRoad + 1.8f), lampColor, -5, new Vector3(1.2f, 1.2f, 1f));
-                    SpawnProp(lampSprite, pt + nrm * (halfRoad + 1.8f), lampColor, -5, new Vector3(1.2f, 1.2f, 1f));
+                    SpawnProp(guardrailSprite, pt - nrm * (halfRoad + 0.6f), Color.white, -3, new Vector3(1.1f, 1.1f, 1f));
+                    SpawnProp(guardrailSprite, pt + nrm * (halfRoad + 0.6f), Color.white, -3, new Vector3(1.1f, 1.1f, 1f));
                 }
 
-                // 2. Vending Machines & Streetside Props
-                if (i % 4 == 1 && vmSprite != null)
+                // 2. Touge Drift Chevron Signs on Sharp Curves
+                if (chevronSprite != null && Mathf.Abs(curvatureDelta) > 15f && i % 4 == 1)
                 {
-                    Color vmTint = (i % 8 == 1) ? new Color(1f, 0.4f, 0.7f) : new Color(0.3f, 0.9f, 1f);
-                    SpawnProp(vmSprite, pt - nrm * (halfRoad + 2.8f), vmTint, -4, Vector3.one);
-                    SpawnProp(vmSprite, pt + nrm * (halfRoad + 2.8f), Color.white, -4, Vector3.one);
+                    float side = (driftDirection < 0) ? -1f : 1f;
+                    SpawnProp(chevronSprite, pt + nrm * (halfRoad + 2.0f) * side, Color.white, -2, new Vector3(1.2f, 1.2f, 1f));
                 }
 
-                // 3. Storefronts - dense sidewalk urban layer
-                if (i % 4 == 2 && shopSprite != null)
+                // 3. Mountain Rocky Cliff Wall (Inner Mountain Slope side)
+                if (cliffSprite != null && i % 3 == 0)
                 {
-                    SpawnProp(shopSprite, pt - nrm * (halfRoad + 7.5f), buildingColor, -15, new Vector3(1.4f, 1.4f, 1f));
-                    SpawnProp(shopSprite, pt + nrm * (halfRoad + 7.5f), buildingColor, -15, new Vector3(1.4f, 1.4f, 1f));
+                    float cliffOffset = halfRoad + 4.5f + (i % 2) * 1.5f;
+                    SpawnProp(cliffSprite, pt - nrm * cliffOffset, new Color(0.85f, 0.85f, 0.95f), -8, new Vector3(1.6f, 1.6f, 1f));
                 }
 
-                // 4. Skyline Towers - majestic neon cyberpunk skyscrapers in the backdrop
-                if (i % 5 == 0 && towerSprite != null)
+                // 4. Dense Alpine Mountain Pines (Both sides, forest slopes)
+                if (pineSprite != null && i % 2 == 1)
                 {
-                    Color towerTint = buildingColor * (0.8f + (i % 3) * 0.1f);
-                    SpawnProp(towerSprite, pt - nrm * (halfRoad + 18.0f), towerTint, -18, new Vector3(2.2f, 2.6f, 1f));
-                    SpawnProp(towerSprite, pt + nrm * (halfRoad + 18.0f), towerTint, -18, new Vector3(2.2f, 2.6f, 1f));
+                    float treeDistL = halfRoad + 5.0f + (i % 3) * 2.0f;
+                    float treeDistR = halfRoad + 6.0f + ((i + 1) % 3) * 2.5f;
+                    SpawnProp(pineSprite, pt - nrm * treeDistL, Color.white, -7, new Vector3(1.4f, 1.5f, 1f));
+                    SpawnProp(pineSprite, pt + nrm * treeDistR, Color.white, -7, new Vector3(1.3f, 1.4f, 1f));
+                }
+
+                // 5. Alpine Highway Cobra Street Lamps (Periodic cyan illumination)
+                if (i % 4 == 0 && lampSprite != null)
+                {
+                    SpawnProp(lampSprite, pt - nrm * (halfRoad + 1.8f), lampColor, -4, new Vector3(1.2f, 1.2f, 1f));
+                    SpawnProp(lampSprite, pt + nrm * (halfRoad + 1.8f), lampColor, -4, new Vector3(1.2f, 1.2f, 1f));
                 }
             }
         }

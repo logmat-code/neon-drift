@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using NeonDrift.Progression;
-using NeonDrift.Data;
 
 namespace NeonDrift.Presentation
 {
     public class GarageView : MonoBehaviour
     {
-        [Header("Header Info")]
+        [Header("Top Header")]
         [SerializeField] private Text creditsText;
+
+        [Header("Vehicle Display")]
         [SerializeField] private Text carNameText;
         [SerializeField] private Text carArchetypeText;
         [SerializeField] private Image carPreviewImage;
@@ -56,9 +57,24 @@ namespace NeonDrift.Presentation
 
         private int viewingCarIndex = 0;
         private List<string> availableCarIds = new List<string> { "kitsune_s13", "akuma_86", "ryujin_rx", "kage_r34", "raiden_gt", "oni_x" };
+        private bool isInitialized = false;
+
+        private void Awake()
+        {
+            InitializeListeners();
+        }
 
         private void Start()
         {
+            InitializeListeners();
+            RefreshUI();
+        }
+
+        private void InitializeListeners()
+        {
+            if (isInitialized) return;
+            isInitialized = true;
+
             if (prevCarBtn != null) prevCarBtn.onClick.AddListener(SelectPreviousCar);
             if (nextCarBtn != null) nextCarBtn.onClick.AddListener(SelectNextCar);
             if (buyOrEquipBtn != null) buyOrEquipBtn.onClick.AddListener(OnBuyOrEquipClicked);
@@ -73,41 +89,54 @@ namespace NeonDrift.Presentation
             if (watchAdBonusBtn != null) watchAdBonusBtn.onClick.AddListener(OnWatchAdClicked);
             if (backBtn != null) backBtn.onClick.AddListener(() => OnBackClicked?.Invoke());
             if (driveBtn != null) driveBtn.onClick.AddListener(() => OnDriveClicked?.Invoke());
-
-            RefreshUI();
         }
 
         private void OnEnable()
         {
+            InitializeListeners();
             RefreshUI();
         }
 
         public void SelectPreviousCar()
         {
             viewingCarIndex = (viewingCarIndex - 1 + availableCarIds.Count) % availableCarIds.Count;
+            AudioManager.Instance?.PlayUIClick();
             RefreshUI();
         }
 
         public void SelectNextCar()
         {
             viewingCarIndex = (viewingCarIndex + 1) % availableCarIds.Count;
+            AudioManager.Instance?.PlayUIClick();
             RefreshUI();
         }
 
-        private void OnBuyOrEquipClicked()
+        public void OnBuyOrEquipClicked()
         {
             string carId = availableCarIds[viewingCarIndex];
-            var pm = ProgressionManager.Instance;
-            if (pm == null) return;
+            var pm = ProgressionManager.Instance ?? UnityEngine.Object.FindAnyObjectByType<ProgressionManager>(FindObjectsInactive.Include);
+            if (pm == null || pm.CurrentData == null) return;
 
             var vData = pm.CurrentData.GetVehicleData(carId);
             if (vData.isUnlocked)
             {
                 pm.TryEquipCar(carId);
+                AudioManager.Instance?.PlayUIClick();
+                Debug.Log($"[GARAGE] Successfully equipped vehicle: {carId}");
             }
             else
             {
-                pm.TryBuyCar(carId);
+                bool bought = pm.TryBuyCar(carId);
+                if (bought)
+                {
+                    AudioManager.Instance?.PlayPurchaseSuccess();
+                    Debug.Log($"[GARAGE] Successfully purchased vehicle: {carId}");
+                }
+                else
+                {
+                    AudioManager.Instance?.PlayPurchaseDenied();
+                    Debug.LogWarning($"[GARAGE] Insufficient funds to buy vehicle: {carId}");
+                }
             }
             RefreshUI();
         }
@@ -115,7 +144,7 @@ namespace NeonDrift.Presentation
         private void TryUpgrade(string category)
         {
             string carId = availableCarIds[viewingCarIndex];
-            var pm = ProgressionManager.Instance;
+            var pm = ProgressionManager.Instance ?? UnityEngine.Object.FindAnyObjectByType<ProgressionManager>(FindObjectsInactive.Include);
             if (pm != null && pm.TryUpgradeCategory(carId, category))
             {
                 AudioManager.Instance?.PlayUIClick();
@@ -127,14 +156,17 @@ namespace NeonDrift.Presentation
         {
             Monetization.Yodo1AdsManager.Instance?.ShowGarageBonusRewardedAd((bonus) =>
             {
-                AudioManager.Instance?.PlayUIClick();
-                RefreshUI();
+                if (bonus > 0)
+                {
+                    AudioManager.Instance?.PlayUIClick();
+                    RefreshUI();
+                }
             });
         }
 
         public void RefreshUI()
         {
-            var pm = ProgressionManager.Instance;
+            var pm = ProgressionManager.Instance ?? UnityEngine.Object.FindAnyObjectByType<ProgressionManager>(FindObjectsInactive.Include);
             if (pm == null || pm.CurrentData == null) return;
 
             if (creditsText != null) creditsText.text = $"{pm.CurrentData.credits:N0} NC";
@@ -180,9 +212,20 @@ namespace NeonDrift.Presentation
         private void UpdateUpgradeSlot(int level, Text lvlText, Text costText, Button btn, ProgressionManager pm)
         {
             if (lvlText != null) lvlText.text = $"LVL {level}/5";
-            int cost = pm.GetUpgradeCost(level);
-            if (costText != null) costText.text = cost > 0 ? $"{cost} NC" : "MAX";
-            if (btn != null) btn.interactable = cost > 0 && pm.CurrentData.credits >= cost;
+            if (costText != null)
+            {
+                if (level >= 5)
+                {
+                    costText.text = "MAX";
+                    if (btn != null) btn.interactable = false;
+                }
+                else
+                {
+                    int cost = (pm.UpgradeConfig != null) ? pm.UpgradeConfig.GetUpgradeCost(level) : (level + 1) * 300;
+                    costText.text = $"{cost:N0} NC";
+                    if (btn != null) btn.interactable = pm.CurrentData.credits >= cost;
+                }
+            }
         }
     }
 }

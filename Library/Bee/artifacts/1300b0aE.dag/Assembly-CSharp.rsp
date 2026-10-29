@@ -559,6 +559,7 @@
 "Assets/_Project/Scripts/Tutorial/TutorialManager.cs"
 "Assets/_Project/Scripts/Vehicle/VehicleController.cs"
 "Assets/_Project/Scripts/World/DriftPattern.cs"
+"Assets/_Project/Scripts/World/MountainParallaxController.cs"
 "Assets/_Project/Scripts/World/RoadChunk.cs"
 "Assets/_Project/Scripts/World/TrackManager.cs"
 "Assets/_Project/Scripts/World/TrafficCar.cs"

@@ -12,6 +12,7 @@ ScriptsOnlyBuild:
     - NeonDrift.Gameplay.FlowManager
     - NeonDrift.Gameplay.NearMissDetector
     - NeonDrift.Gameplay.ScoreManager
+    - NeonDrift.Monetization.Yodo1AdsManager
     - NeonDrift.Presentation.AudioManager
     - NeonDrift.Presentation.CameraController
     - NeonDrift.Presentation.GameFeelManager
@@ -23,7 +24,9 @@ ScriptsOnlyBuild:
     - NeonDrift.Presentation.TutorialView
     - NeonDrift.Presentation.VehicleVFX
     - NeonDrift.Progression.ProgressionManager
+    - NeonDrift.Tutorial.TutorialManager
     - NeonDrift.Vehicle.VehicleController
+    - NeonDrift.World.MountainParallaxController
     - NeonDrift.World.TrackManager
     - NeonDrift.World.TrafficManager
     Unity.2D.Tilemap.Editor.dll:
@@ -66,9 +69,6 @@ ScriptsOnlyBuild:
     - UnityEngine.Rendering.Universal.WhiteBalance
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
-    Unity.ShaderGraph.Editor.dll:
-    - UnityEditor.ShaderGraph.ShaderGraphProjectSettings
-    - UnityEditor.ShaderGraph.SubGraphAsset
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.CommandLineTest.RunData
@@ -211,6 +211,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
     - Class: 83
       Script: {instanceID: 0}
     - Class: 89
@@ -240,6 +242,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {fileID: 11500000, guid: 0656ef7056f994180bceeff2ddc4c300, type: 3}
     - Class: 114
+      Script: {fileID: 11500000, guid: e878dd83b0d80424a97a9a5013c94196, type: 3}
+    - Class: 114
       Script: {fileID: 11500000, guid: c9d8e2cb3ef6744a99b8f1afcfc07fbf, type: 3}
     - Class: 114
       Script: {fileID: 11500000, guid: 606bc1a4f893541ba989fa6aaefcd6d1, type: 3}
@@ -262,7 +266,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {fileID: 11500000, guid: 03f5869bbd3c34fde80bc93a87ca81a8, type: 3}
     - Class: 114
+      Script: {fileID: 11500000, guid: c48e11f2251e24372ab3409e6abe4624, type: 3}
+    - Class: 114
       Script: {fileID: 11500000, guid: 1ad23c36c84824a7fb0bc4275381fa1d, type: 3}
+    - Class: 114
+      Script: {fileID: 11500000, guid: c0e436df9252b4a3aa85ce407ffd046e, type: 3}
     - Class: 114
       Script: {fileID: 11500000, guid: 907c773b076aa4cd78110930cf652617, type: 3}
     - Class: 114
@@ -300,6 +308,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -454,7 +468,7 @@ ScriptsOnlyBuild:
     className: Outline
   - hash:
       serializedVersion: 2
-      Hash: f4f10abfbb69076fa7abfb736b3b3759
+      Hash: e5e33f3835013a96f1ccebfb5d852dc8
     assemblyName: Assembly-CSharp
     namespaceName: NeonDrift.Presentation
     className: AudioManager
@@ -958,7 +972,7 @@ ScriptsOnlyBuild:
     className: OnScreenButton
   - hash:
       serializedVersion: 2
-      Hash: c28a98db637540965c15609075546783
+      Hash: 9f8e52c7934b27399d11631750c77c9d
     assemblyName: Assembly-CSharp
     namespaceName: NeonDrift.World
     className: TrafficManager
@@ -1150,7 +1164,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: 29309e98aa9f2bbe8996962183dadfe5
+      Hash: 1af07e673443a7264295be2a5ac0f71f
     assemblyName: Assembly-CSharp
     namespaceName: NeonDrift.Core
     className: GameManager
@@ -1184,6 +1198,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Universal.2D.Runtime
     namespaceName: UnityEngine.Rendering.Universal
     className: Light2D
+  - hash:
+      serializedVersion: 2
+      Hash: 2e5d56ff3bb2363755db85e454267e39
+    assemblyName: Assembly-CSharp
+    namespaceName: NeonDrift.World
+    className: MountainParallaxController
   - hash:
       serializedVersion: 2
       Hash: 6cf63e9dc888f92a3672d2e4db631c8e
@@ -1408,7 +1428,7 @@ ScriptsOnlyBuild:
     className: TextMeshPro
   - hash:
       serializedVersion: 2
-      Hash: 64ec22a9f10154dbf4da50b28384217d
+      Hash: 430eaa27f2a0ba3390f977977599dbf2
     assemblyName: Assembly-CSharp
     namespaceName: NeonDrift.World
     className: TrackManager
@@ -1517,5 +1537,5 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/_Project/Scenes/NeonDistrictLoop.unity
-  nativeClasses: 3000000082000000730000003100000000000000060000001b0000001c0000001500000012000000720000000200000081000000d500000009000000480000000d000000c0a219270b00000037000000080000007e0000000f1baa530a05df37130000007bce860a4e0000001e0000006200000005000000930000002c0100005e000000740000002f0000008d000000c400000001000000040000005300000059000000800000001900000014000000350000003d000000e00000007de23715d4000000de00000068000000df000000510000009d0000000300000032000000b40000000f010000i
+  nativeClasses: 3000000082000000730000003100000000000000060000001b0000001c0000001500000012000000720000000200000081000000d500000009000000480000000d000000c0a219270b00000037000000080000007e0000000f1baa530a05df37130000007bce860a4e0000001e0000006200000005000000930000002c0100005e000000740000002f0000008d000000c400000001000000040000005300000059000000800000001900000014000000f00000001101000010010000350000003d000000e00000007de23715d4000000de0000005200000068000000df000000510000009d0000000300000032000000b40000000f010000i
   playerPath: /Users/logmat/Desktop/CLAUDE/NeonDrift/Assets/../Builds/Android/NeonDrift_Dev.apk

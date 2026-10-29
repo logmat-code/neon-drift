@@ -11,6 +11,7 @@
 		<type fullname="NeonDrift.Gameplay.FlowManager" preserve="nothing"/>
 		<type fullname="NeonDrift.Gameplay.NearMissDetector" preserve="nothing"/>
 		<type fullname="NeonDrift.Gameplay.ScoreManager" preserve="nothing"/>
+		<type fullname="NeonDrift.Monetization.Yodo1AdsManager" preserve="nothing"/>
 		<type fullname="NeonDrift.Presentation.AudioManager" preserve="nothing"/>
 		<type fullname="NeonDrift.Presentation.CameraController" preserve="nothing"/>
 		<type fullname="NeonDrift.Presentation.GameFeelManager" preserve="nothing"/>
@@ -22,7 +23,9 @@
 		<type fullname="NeonDrift.Presentation.TutorialView" preserve="nothing"/>
 		<type fullname="NeonDrift.Presentation.VehicleVFX" preserve="nothing"/>
 		<type fullname="NeonDrift.Progression.ProgressionManager" preserve="nothing"/>
+		<type fullname="NeonDrift.Tutorial.TutorialManager" preserve="nothing"/>
 		<type fullname="NeonDrift.Vehicle.VehicleController" preserve="nothing"/>
+		<type fullname="NeonDrift.World.MountainParallaxController" preserve="nothing"/>
 		<type fullname="NeonDrift.World.TrackManager" preserve="nothing"/>
 		<type fullname="NeonDrift.World.TrafficManager" preserve="nothing"/>
 	</assembly>
@@ -71,10 +74,14 @@
 		<type fullname="UnityEditor.TagManager" preserve="nothing"/>
 		<type fullname="UnityEditor.TimeManager" preserve="nothing"/>
 		<type fullname="UnityEditor.VFXManager" preserve="nothing"/>
+		<type fullname="UnityEngine.Audio.AudioMixer" preserve="nothing"/>
+		<type fullname="UnityEngine.Audio.AudioMixerGroup" preserve="nothing"/>
+		<type fullname="UnityEngine.Audio.AudioMixerSnapshot" preserve="nothing"/>
 		<type fullname="UnityEngine.Audio.AudioResource" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioBehaviour" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioClip" preserve="nothing"/>
 		<type fullname="UnityEngine.AudioListener" preserve="nothing"/>
+		<type fullname="UnityEngine.AudioSource" preserve="nothing"/>
 		<type fullname="UnityEngine.Behaviour" preserve="nothing"/>
 		<type fullname="UnityEngine.BoxCollider2D" preserve="nothing"/>
 		<type fullname="UnityEngine.Camera" preserve="nothing"/>

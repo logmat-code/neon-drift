@@ -79,6 +79,9 @@ namespace NeonDrift.Editor
             EditorUserBuildSettings.buildAppBundle = false;
             EditorUserBuildSettings.development = true;
 
+            // For development APK, use standard debug keystore to prevent missing keystore errors
+            PlayerSettings.Android.useCustomKeystore = false;
+
             string[] scenes = new string[]
             {
                 "Assets/_Project/Scenes/NeonDistrictLoop.unity"
@@ -112,6 +115,78 @@ namespace NeonDrift.Editor
                         }
                     }
                 }
+            }
+        }
+        public static void BuildSignedReleaseAab()
+        {
+            ConfigureAndroidSettings();
+
+            // Configure Icon
+            Texture2D icon = AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/_Project/Art/Icons/AppIcon_512.png");
+            if (icon != null)
+            {
+                PlayerSettings.SetIconsForTargetGroup(BuildTargetGroup.Android, new Texture2D[] { icon });
+                Debug.Log("[AndroidReleaseBuilder] Assigned 512x512 Master AppIcon to Android TargetGroup.");
+            }
+
+            // Keystore Configuration
+            string credPath = "/Users/logmat/.gemini/antigravity/brain/keystore_secure/keystore_credentials.txt";
+            if (File.Exists(credPath))
+            {
+                string[] lines = File.ReadAllLines(credPath);
+                string ksPath = "";
+                string alias = "";
+                string pass = "";
+                foreach (var line in lines)
+                {
+                    if (line.StartsWith("KEYSTORE_PATH=")) ksPath = line.Substring("KEYSTORE_PATH=".Length);
+                    if (line.StartsWith("KEY_ALIAS=")) alias = line.Substring("KEY_ALIAS=".Length);
+                    if (line.StartsWith("KEYSTORE_PASSWORD=")) pass = line.Substring("KEYSTORE_PASSWORD=".Length);
+                }
+
+                PlayerSettings.Android.useCustomKeystore = true;
+                PlayerSettings.Android.keystoreName = ksPath;
+                PlayerSettings.Android.keystorePass = pass;
+                PlayerSettings.Android.keyaliasName = alias;
+                PlayerSettings.Android.keyaliasPass = pass;
+                Debug.Log($"[AndroidReleaseBuilder] Configured Custom Keystore: {ksPath} with Alias: {alias}");
+            }
+            else
+            {
+                Debug.LogWarning("[AndroidReleaseBuilder] Keystore credentials file not found at " + credPath);
+            }
+
+            // Production settings
+            PlayerSettings.Android.bundleVersionCode = 2;
+            PlayerSettings.bundleVersion = "1.0.1";
+            EditorUserBuildSettings.buildAppBundle = true;
+            EditorUserBuildSettings.development = false;
+
+            string releaseDir = Path.Combine(Application.dataPath, "../Builds/Android/Release");
+            if (!Directory.Exists(releaseDir)) Directory.CreateDirectory(releaseDir);
+
+            string aabPath = Path.Combine(releaseDir, "NeonDrift_Release_v1.aab");
+            Debug.Log($"[AndroidReleaseBuilder] Starting Signed Release AAB Build to: {aabPath}");
+
+            string[] scenes = new string[] { "Assets/_Project/Scenes/NeonDistrictLoop.unity" };
+            BuildPlayerOptions buildPlayerOptions = new BuildPlayerOptions
+            {
+                scenes = scenes,
+                locationPathName = aabPath,
+                target = BuildTarget.Android,
+                options = BuildOptions.None
+            };
+
+            BuildReport report = BuildPipeline.BuildPlayer(buildPlayerOptions);
+            BuildSummary summary = report.summary;
+
+            if (summary.result == BuildResult.Succeeded)
+            {
+                Debug.Log($"[AndroidReleaseBuilder] SUCCESS! Signed AAB generated at: {aabPath} (Size: {summary.totalSize / (1024 * 1024)} MB)");
+            }
+            else
+            {
+                Debug.LogError($"[AndroidReleaseBuilder] AAB Build FAILED with {summary.totalErrors} errors. Result: {summary.result}");
             }
         }
     }

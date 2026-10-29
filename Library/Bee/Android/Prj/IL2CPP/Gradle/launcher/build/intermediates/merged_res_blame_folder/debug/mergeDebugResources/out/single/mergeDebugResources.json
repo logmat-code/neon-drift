@@ -4,16 +4,8 @@
         "source": "com.logmat.neondrift.launcher-main-105:/mipmap-xhdpi/ic_launcher_background.png"
     },
     {
-        "merged": "com.logmat.neondrift.launcher-debug-103:/mipmap-mdpi_app_icon.png.flat",
-        "source": "com.logmat.neondrift.launcher-main-105:/mipmap-mdpi/app_icon.png"
-    },
-    {
-        "merged": "com.logmat.neondrift.launcher-debug-103:/mipmap-hdpi_ic_launcher_background.png.flat",
-        "source": "com.logmat.neondrift.launcher-main-105:/mipmap-hdpi/ic_launcher_background.png"
-    },
-    {
-        "merged": "com.logmat.neondrift.launcher-debug-103:/mipmap-anydpi-v26_app_icon.xml.flat",
-        "source": "com.logmat.neondrift.launcher-main-105:/mipmap-anydpi-v26/app_icon.xml"
+        "merged": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-debug-103:/mipmap-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-main-105:/mipmap-xxxhdpi/ic_launcher_background.png"
     },
     {
         "merged": "com.logmat.neondrift.launcher-debug-103:/mipmap-ldpi_ic_launcher_background.png.flat",
@@ -24,15 +16,47 @@
         "source": "com.logmat.neondrift.launcher-main-105:/mipmap-xxhdpi/ic_launcher_background.png"
     },
     {
+        "merged": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-debug-103:/mipmap-anydpi-v26_app_icon.xml.flat",
+        "source": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-main-105:/mipmap-anydpi-v26/app_icon.xml"
+    },
+    {
+        "merged": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-debug-103:/mipmap-hdpi_ic_launcher_background.png.flat",
+        "source": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-main-105:/mipmap-hdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-debug-103:/mipmap-mdpi_app_icon.png.flat",
+        "source": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-main-105:/mipmap-mdpi/app_icon.png"
+    },
+    {
+        "merged": "com.logmat.neondrift.launcher-debug-103:/mipmap-hdpi_ic_launcher_background.png.flat",
+        "source": "com.logmat.neondrift.launcher-main-105:/mipmap-hdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-debug-103:/mipmap-ldpi_ic_launcher_background.png.flat",
+        "source": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-main-105:/mipmap-ldpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-debug-103:/mipmap-xhdpi_ic_launcher_background.png.flat",
+        "source": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-main-105:/mipmap-xhdpi/ic_launcher_background.png"
+    },
+    {
+        "merged": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-debug-103:/mipmap-mdpi_ic_launcher_background.png.flat",
+        "source": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-main-105:/mipmap-mdpi/ic_launcher_background.png"
+    },
+    {
         "merged": "com.logmat.neondrift.launcher-debug-103:/mipmap-mdpi_ic_launcher_background.png.flat",
         "source": "com.logmat.neondrift.launcher-main-105:/mipmap-mdpi/ic_launcher_background.png"
     },
     {
-        "merged": "com.logmat.neondrift.launcher-debug-103:/mipmap-xxxhdpi_ic_launcher_background.png.flat",
-        "source": "com.logmat.neondrift.launcher-main-105:/mipmap-xxxhdpi/ic_launcher_background.png"
+        "merged": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-debug-103:/mipmap-xxhdpi_ic_launcher_background.png.flat",
+        "source": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-main-105:/mipmap-xxhdpi/ic_launcher_background.png"
     },
     {
-        "merged": "com.logmat.neondrift.launcher-debug-103:/mipmap-mdpi_ic_launcher_foreground.png.flat",
-        "source": "com.logmat.neondrift.launcher-main-105:/mipmap-mdpi/ic_launcher_foreground.png"
+        "merged": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-debug-103:/mipmap-mdpi_ic_launcher_foreground.png.flat",
+        "source": "/Users/logmat/.gradle/daemon/9.3.1/com.logmat.neondrift.launcher-main-105:/mipmap-mdpi/ic_launcher_foreground.png"
+    },
+    {
+        "merged": "com.logmat.neondrift.launcher-debug-103:/mipmap-xxxhdpi_ic_launcher_background.png.flat",
+        "source": "com.logmat.neondrift.launcher-main-105:/mipmap-xxxhdpi/ic_launcher_background.png"
     }
 ]

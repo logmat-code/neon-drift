@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:2:1-5:12
-INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:2:1-5:12
-INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:2:1-5:12
-INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:2:1-5:12
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:2:1-10:12
+INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:2:1-10:12
+INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:2:1-10:12
+INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:2:1-10:12
 MERGED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:2:1-102:12
 MERGED from [com.yodo1.mas:full:4.18.1] /Users/logmat/.gradle/caches/9.3.1/transforms/f5f7b02c6c640f9cadf785a56c22816a/transformed/jetified-full-4.18.1/AndroidManifest.xml:2:1-27:12
 MERGED from [com.yodo1.mas.mediation.admob.adapters:applovin-ad-manager:4.18.1] /Users/logmat/.gradle/caches/9.3.1/transforms/942dfab56aac5053af9e596ec582b2b2/transformed/jetified-applovin-ad-manager-4.18.1/AndroidManifest.xml:2:1-7:12
@@ -300,8 +300,8 @@ MERGED from [org.chromium.net:cronet-api:72.3626.96] /Users/logmat/.gradle/cache
 	android:installLocation
 		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:2:11-51
 application
-ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:3:3-83
-INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:3:3-83
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:3:3-8:17
+INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:3:3-8:17
 MERGED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:26:5-100:19
 MERGED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:26:5-100:19
 MERGED from [com.yodo1.mas:full:4.18.1] /Users/logmat/.gradle/caches/9.3.1/transforms/f5f7b02c6c640f9cadf785a56c22816a/transformed/jetified-full-4.18.1/AndroidManifest.xml:12:5-25:19
@@ -465,18 +465,46 @@ MERGED from [com.pangle.global:pag-apm:2.0.0.8] /Users/logmat/.gradle/caches/9.3
 		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:3:16-47
 	android:enableOnBackInvokedCallback
 		ADDED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:28:9-51
+meta-data#com.google.android.gms.ads.APPLICATION_ID
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:4:5-130
+MERGED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:30:9-32:70
+MERGED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:30:9-32:70
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:4:73-127
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:4:16-72
+meta-data#Yodo1ChannelCode
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:5:5-107
+	tools:replace
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:5:75-104
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:5:48-74
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:5:16-47
+meta-data#engineType
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:6:5-66
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:6:42-63
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:6:16-41
+meta-data#engineVersion
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:7:5-74
+	android:value
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:7:45-71
+	android:name
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:7:16-44
 supports-screens
-ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:4:3-163
+ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:9:3-163
 	android:largeScreens
-		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:4:78-105
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:9:78-105
 	android:smallScreens
-		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:4:21-48
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:9:21-48
 	android:normalScreens
-		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:4:49-77
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:9:49-77
 	android:xlargeScreens
-		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:4:106-134
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:9:106-134
 	android:anyDensity
-		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:4:135-160
+		ADDED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:9:135-160
 uses-sdk
 INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml
@@ -1293,12 +1321,6 @@ ADDED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/An
 		ADDED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:24:9-33
 	android:name
 		ADDED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:23:9-72
-meta-data#com.google.android.gms.ads.APPLICATION_ID
-ADDED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:30:9-32:70
-	android:value
-		ADDED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:32:13-67
-	android:name
-		ADDED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:31:13-69
 meta-data#unity.splash-mode
 ADDED from [:unityLibrary] /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/merged_manifest/debug/processDebugManifest/AndroidManifest.xml:33:9-35:33
 	android:value

@@ -97,6 +97,30 @@
             "icon": null
           },
           {
+            "name": "AudioMixer",
+            "scenes": [
+              "Assets/_Project/Scenes/NeonDistrictLoop.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "AudioMixerGroup",
+            "scenes": [
+              "Assets/_Project/Scenes/NeonDistrictLoop.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
+            "name": "AudioMixerSnapshot",
+            "scenes": [
+              "Assets/_Project/Scenes/NeonDistrictLoop.unity"
+            ],
+            "dependencyType": 0,
+            "icon": null
+          },
+          {
             "name": "AudioResource",
             "scenes": [
               "Assets/_Project/Scenes/NeonDistrictLoop.unity"
@@ -106,7 +130,9 @@
           },
           {
             "name": "AudioSource",
-            "scenes": [],
+            "scenes": [
+              "Assets/_Project/Scenes/NeonDistrictLoop.unity"
+            ],
             "dependencyType": 0,
             "icon": null
           },

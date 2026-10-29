@@ -32,86 +32,86 @@ MonoBehaviour:
     engineBasePitch: 1
   - id: akuma_86
     displayName: AKUMA 86
-    archetype: AGILE & LIGHTWEIGHT TOUGE
-    priceNC: 3000
-    carSprite: {fileID: 0}
-    baseTopSpeed: 18.5
-    baseAcceleration: 16
-    brakeDeceleration: 24
+    archetype: LIGHTWEIGHT DRIFT SPECIALIST
+    priceNC: 1500
+    carSprite: {fileID: 21300000, guid: 7468c632d4b304f27b7d25bfd97451d6, type: 3}
+    baseTopSpeed: 18
+    baseAcceleration: 16.5
+    brakeDeceleration: 26
     turnRate: 145
     driftBaseTurnRate: 65
-    maxDriftSlipAngle: 48
-    minDriftSlipAngle: 14
-    driftSpeedRetention: 0.95
-    boostMultiplier: 1.4
-    boostDuration: 2.8
-    maxDurabilityHits: 3
-    engineBasePitch: 1.08
+    maxDriftSlipAngle: 50
+    minDriftSlipAngle: 12
+    driftSpeedRetention: 0.94
+    boostMultiplier: 1.35
+    boostDuration: 2.5
+    maxDurabilityHits: 2
+    engineBasePitch: 1.12
   - id: ryujin_rx
     displayName: RYUJIN RX
-    archetype: ROTARY DRIFT SPECIALIST
-    priceNC: 6000
-    carSprite: {fileID: 0}
+    archetype: ROTARY PRECISION COUPE
+    priceNC: 3000
+    carSprite: {fileID: 21300000, guid: 4108258ebb2ec45489317b7b7d2828c0, type: 3}
     baseTopSpeed: 20
-    baseAcceleration: 15.5
-    brakeDeceleration: 24
+    baseAcceleration: 15.8
+    brakeDeceleration: 25
     turnRate: 135
-    driftBaseTurnRate: 72
+    driftBaseTurnRate: 68
     maxDriftSlipAngle: 48
     minDriftSlipAngle: 14
-    driftSpeedRetention: 0.95
-    boostMultiplier: 1.4
+    driftSpeedRetention: 0.96
+    boostMultiplier: 1.42
     boostDuration: 2.8
     maxDurabilityHits: 3
-    engineBasePitch: 1.15
+    engineBasePitch: 1.18
   - id: kage_r34
     displayName: KAGE R34
-    archetype: HIGHWAY KING (HIGH STABILITY)
-    priceNC: 9000
-    carSprite: {fileID: 0}
+    archetype: HIGH-GRIP HIGHWAY SUPERCAR
+    priceNC: 5000
+    carSprite: {fileID: 21300000, guid: 9ce87cc2b257a4aad8441623d9c30a74, type: 3}
     baseTopSpeed: 21
-    baseAcceleration: 16.5
+    baseAcceleration: 17
     brakeDeceleration: 24
-    turnRate: 125
-    driftBaseTurnRate: 54
-    maxDriftSlipAngle: 48
-    minDriftSlipAngle: 14
+    turnRate: 124
+    driftBaseTurnRate: 52
+    maxDriftSlipAngle: 44
+    minDriftSlipAngle: 15
     driftSpeedRetention: 0.95
-    boostMultiplier: 1.4
-    boostDuration: 2.8
+    boostMultiplier: 1.45
+    boostDuration: 3
     maxDurabilityHits: 4
-    engineBasePitch: 0.95
+    engineBasePitch: 0.94
   - id: raiden_gt
     displayName: RAIDEN GT
-    archetype: TURBO CHARGED ACCEL & BOOST
-    priceNC: 12000
-    carSprite: {fileID: 0}
-    baseTopSpeed: 21.5
+    archetype: HIGH-SPEED HYPERCAR SPECIALIST
+    priceNC: 7500
+    carSprite: {fileID: 21300000, guid: a55594bed1faa4686a3129a8e69fe03e, type: 3}
+    baseTopSpeed: 23
     baseAcceleration: 18
-    brakeDeceleration: 24
-    turnRate: 128
-    driftBaseTurnRate: 56
-    maxDriftSlipAngle: 48
-    minDriftSlipAngle: 14
-    driftSpeedRetention: 0.95
+    brakeDeceleration: 22
+    turnRate: 120
+    driftBaseTurnRate: 50
+    maxDriftSlipAngle: 42
+    minDriftSlipAngle: 16
+    driftSpeedRetention: 0.97
     boostMultiplier: 1.6
-    boostDuration: 2.8
-    maxDurabilityHits: 4
+    boostDuration: 3.2
+    maxDurabilityHits: 3
     engineBasePitch: 1.05
   - id: oni_x
     displayName: ONI X
-    archetype: DEMON HYPERCAR (MAX SPEED)
-    priceNC: 15000
-    carSprite: {fileID: 0}
-    baseTopSpeed: 23.5
-    baseAcceleration: 18.5
-    brakeDeceleration: 24
-    turnRate: 120
-    driftBaseTurnRate: 60
-    maxDriftSlipAngle: 48
-    minDriftSlipAngle: 14
-    driftSpeedRetention: 0.95
-    boostMultiplier: 1.4
-    boostDuration: 2.8
+    archetype: HEAVY POWER MUSCLE BEAST
+    priceNC: 10000
+    carSprite: {fileID: 21300000, guid: c3b126b6336004bf788783679980d768, type: 3}
+    baseTopSpeed: 20.5
+    baseAcceleration: 19
+    brakeDeceleration: 20
+    turnRate: 115
+    driftBaseTurnRate: 48
+    maxDriftSlipAngle: 40
+    minDriftSlipAngle: 18
+    driftSpeedRetention: 0.92
+    boostMultiplier: 1.5
+    boostDuration: 3
     maxDurabilityHits: 5
-    engineBasePitch: 1.25
+    engineBasePitch: 0.85

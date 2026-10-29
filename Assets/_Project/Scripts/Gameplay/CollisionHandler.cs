@@ -86,7 +86,14 @@ namespace NeonDrift.Gameplay
             }
             else
             {
-                NeonDrift.Presentation.AudioManager.Instance?.PlayCrash();
+                if (collision.gameObject.name.Contains("Cone") || collision.gameObject.name.Contains("Barrier"))
+                {
+                    NeonDrift.Presentation.AudioManager.Instance?.PlayObstacleHit();
+                }
+                else
+                {
+                    NeonDrift.Presentation.AudioManager.Instance?.PlayCrash();
+                }
             }
 
             // Fair defeat evaluation:

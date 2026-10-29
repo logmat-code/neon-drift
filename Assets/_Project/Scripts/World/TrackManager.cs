@@ -25,6 +25,12 @@ namespace NeonDrift.World
         [SerializeField] private Sprite lampSprite;
         [SerializeField] private Sprite vendingSprite;
 
+        [Header("Mountain Touge Environment")]
+        [SerializeField] private Sprite mountainPineSprite;
+        [SerializeField] private Sprite rockyCliffSprite;
+        [SerializeField] private Sprite mountainGuardrailSprite;
+        [SerializeField] private Sprite chevronSignSprite;
+
         public Material RoadMaterial { get => roadMaterial; set => roadMaterial = value; }
 
         public float roadWidth = 22f;
@@ -337,7 +343,11 @@ namespace NeonDrift.World
                 buildingShopSprite,
                 lampSprite,
                 vendingSprite,
-                roadWidth);
+                roadWidth,
+                mountainPineSprite,
+                rockyCliffSprite,
+                mountainGuardrailSprite,
+                chevronSignSprite);
 
             currentHeadPos = chunk.exitPosition;
             currentHeadHeading = chunk.exitHeading;

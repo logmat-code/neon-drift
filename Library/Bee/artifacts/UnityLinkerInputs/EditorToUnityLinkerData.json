@@ -161,6 +161,13 @@
         {
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "NeonDrift.Monetization.Yodo1AdsManager",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "NeonDrift.Presentation.AudioManager",
             "moduleName": "",
             "usedInScenes": []
@@ -238,7 +245,21 @@
         {
             "managedAssemblyName": "Assembly-CSharp.dll",
             "nativeClass": "",
+            "fullManagedTypeName": "NeonDrift.Tutorial.TutorialManager",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
             "fullManagedTypeName": "NeonDrift.Vehicle.VehicleController",
+            "moduleName": "",
+            "usedInScenes": []
+        },
+        {
+            "managedAssemblyName": "Assembly-CSharp.dll",
+            "nativeClass": "",
+            "fullManagedTypeName": "NeonDrift.World.MountainParallaxController",
             "moduleName": "",
             "usedInScenes": []
         },
@@ -365,6 +386,33 @@
         },
         {
             "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AudioMixer",
+            "fullManagedTypeName": "UnityEngine.Audio.AudioMixer",
+            "moduleName": "Audio",
+            "usedInScenes": [
+                "Assets/_Project/Scenes/NeonDistrictLoop.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AudioMixerGroup",
+            "fullManagedTypeName": "UnityEngine.Audio.AudioMixerGroup",
+            "moduleName": "Audio",
+            "usedInScenes": [
+                "Assets/_Project/Scenes/NeonDistrictLoop.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AudioMixerSnapshot",
+            "fullManagedTypeName": "UnityEngine.Audio.AudioMixerSnapshot",
+            "moduleName": "Audio",
+            "usedInScenes": [
+                "Assets/_Project/Scenes/NeonDistrictLoop.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "AudioResource",
             "fullManagedTypeName": "UnityEngine.Audio.AudioResource",
             "moduleName": "Audio",
@@ -403,6 +451,15 @@
             "managedAssemblyName": "UnityEngine.dll",
             "nativeClass": "AudioListener",
             "fullManagedTypeName": "UnityEngine.AudioListener",
+            "moduleName": "Audio",
+            "usedInScenes": [
+                "Assets/_Project/Scenes/NeonDistrictLoop.unity"
+            ]
+        },
+        {
+            "managedAssemblyName": "UnityEngine.dll",
+            "nativeClass": "AudioSource",
+            "fullManagedTypeName": "UnityEngine.AudioSource",
             "moduleName": "Audio",
             "usedInScenes": [
                 "Assets/_Project/Scenes/NeonDistrictLoop.unity"

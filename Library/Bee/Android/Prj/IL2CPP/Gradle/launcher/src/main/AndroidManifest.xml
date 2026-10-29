@@ -1,5 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <manifest android:installLocation="preferExternal" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools">
-  <application android:icon="@mipmap/app_icon" android:label="@string/app_name" />
+  <application android:icon="@mipmap/app_icon" android:label="@string/app_name">
+    <meta-data android:name="com.google.android.gms.ads.APPLICATION_ID" android:value="ca-app-pub-5784311004955543~4555927254" />
+    <meta-data android:name="Yodo1ChannelCode" android:value="GooglePlay" tools:replace="android:value" />
+    <meta-data android:name="engineType" android:value="Unity" />
+    <meta-data android:name="engineVersion" android:value="6000.6.2f1" />
+  </application>
   <supports-screens android:smallScreens="true" android:normalScreens="true" android:largeScreens="true" android:xlargeScreens="true" android:anyDensity="true" />
 </manifest>

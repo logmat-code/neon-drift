@@ -124,12 +124,12 @@ namespace NeonDrift.Progression
         {
             return currentLevel switch
             {
-                0 => 300,
-                1 => 700,
-                2 => 1400,
-                3 => 2500,
-                4 => 4000,
-                _ => -1 // Maxed
+                0 => 200,   // Level 1: Accessible starter upgrade
+                1 => 450,   // Level 2: Requires 2-3 solid runs
+                2 => 850,   // Level 3: Requires mid-tier investment
+                3 => 1500,  // Level 4: High commitment
+                4 => 2500,  // Level 5: Master specialization
+                _ => -1     // Maxed (Level 5 reached)
             };
         }
 
@@ -208,10 +208,27 @@ namespace NeonDrift.Progression
             var vData = CurrentData.GetVehicleData(carId);
 
             // Base stats from selected car definition
-            if (carDef != null && carDef.carSprite != null)
+            if (carDef != null)
             {
-                var sr = vehicle.GetComponent<SpriteRenderer>();
-                if (sr != null) sr.sprite = carDef.carSprite;
+                if (carDef.carSprite != null)
+                {
+                    var sr = vehicle.GetComponent<SpriteRenderer>();
+                    if (sr != null) sr.sprite = carDef.carSprite;
+                }
+
+                if (vehicle.Config != null)
+                {
+                    vehicle.Config.baseTopSpeed = carDef.baseTopSpeed;
+                    vehicle.Config.baseAcceleration = carDef.baseAcceleration;
+                    vehicle.Config.brakeDeceleration = carDef.brakeDeceleration;
+                    vehicle.Config.turnRate = carDef.turnRate;
+                    vehicle.Config.driftBaseTurnRate = carDef.driftBaseTurnRate;
+                    vehicle.Config.maxDriftSlipAngle = carDef.maxDriftSlipAngle;
+                    vehicle.Config.minDriftSlipAngle = carDef.minDriftSlipAngle;
+                    vehicle.Config.driftSpeedRetention = carDef.driftSpeedRetention;
+                    vehicle.Config.boostSpeedMultiplier = carDef.boostMultiplier;
+                    vehicle.Config.boostDuration = carDef.boostDuration;
+                }
             }
 
             // Apply 5-tier upgrade bonuses
@@ -262,14 +279,18 @@ namespace NeonDrift.Progression
         // Idempotent Run Earnings Settlement
         public int CalculateCreditsEarned(int score, float distanceMeters, int maxCombo, int nearMisses, int trafficGaps)
         {
-            int distNC = (int)(distanceMeters / 100f) * 5;
-            int scoreNC = (score / 1000) * 10;
-            int comboNC = (maxCombo >= 3) ? (maxCombo * 25) : (maxCombo * 10);
-            int nearMissNC = nearMisses * 15;
-            int gapNC = trafficGaps * 20;
+            // Balanced Formula:
+            // Short Run (1-2 min, ~400-800m, score ~5k-15k): 40 - 100 NC
+            // Medium Run (3-5 min, ~1500-2500m, score ~30k-60k): 120 - 250 NC
+            // Long Run (6-10 min, ~3500-6000m, score ~100k+): 300 - 600 NC
+            int distNC = (int)(distanceMeters / 100f) * 4;       // 4 NC per 100m
+            int scoreNC = (score / 100) * 4;                    // 4 NC per 100 pts (skill conversion calibrated to rebalanced points)
+            int comboNC = Mathf.Min(maxCombo * 6, 80);          // 6 NC per max combo, capped at 80
+            int nearMissNC = Mathf.Min(nearMisses * 5, 120);     // 5 NC per near miss, capped at 120
+            int gapNC = Mathf.Min(trafficGaps * 8, 80);          // 8 NC per traffic weave gap, capped at 80
 
             int totalNC = distNC + scoreNC + comboNC + nearMissNC + gapNC;
-            return Mathf.Max(30, totalNC);
+            return Mathf.Clamp(totalNC, 25, 650);
         }
 
         public bool SettleRunIdempotent(string runId, int score, float distanceMeters, int maxCombo, int nearMisses, int trafficGaps, out int ncEarned, out bool isNewRecord)

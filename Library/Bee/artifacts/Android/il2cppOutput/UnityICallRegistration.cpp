@@ -1542,6 +1542,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AudioSource_get_isPlaying_Injected();
 		Register_UnityEngine_AudioSource_get_isPlaying_Injected();
 
+		//System.IntPtr UnityEngine.AudioSource::get_generatorObject_Injected(System.IntPtr)
+		void Register_UnityEngine_AudioSource_get_generatorObject_Injected();
+		Register_UnityEngine_AudioSource_get_generatorObject_Injected();
+
 		//System.Single UnityEngine.AudioSource::GetPitch_Injected(System.IntPtr)
 		void Register_UnityEngine_AudioSource_GetPitch_Injected();
 		Register_UnityEngine_AudioSource_GetPitch_Injected();
@@ -1566,6 +1570,10 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_AudioSource_Stop_Injected();
 		Register_UnityEngine_AudioSource_Stop_Injected();
 
+		//System.Void UnityEngine.AudioSource::set_bypassEffects_Injected(System.IntPtr,System.Boolean)
+		void Register_UnityEngine_AudioSource_set_bypassEffects_Injected();
+		Register_UnityEngine_AudioSource_set_bypassEffects_Injected();
+
 		//System.Void UnityEngine.AudioSource::set_generatorObject_Injected(System.IntPtr,System.IntPtr)
 		void Register_UnityEngine_AudioSource_set_generatorObject_Injected();
 		Register_UnityEngine_AudioSource_set_generatorObject_Injected();
@@ -1577,6 +1585,10 @@ void RegisterAllStrippedInternalCalls()
 		//System.Void UnityEngine.AudioSource::set_playOnAwake_Injected(System.IntPtr,System.Boolean)
 		void Register_UnityEngine_AudioSource_set_playOnAwake_Injected();
 		Register_UnityEngine_AudioSource_set_playOnAwake_Injected();
+
+		//System.Void UnityEngine.AudioSource::set_spatialBlend_Injected(System.IntPtr,System.Single)
+		void Register_UnityEngine_AudioSource_set_spatialBlend_Injected();
+		Register_UnityEngine_AudioSource_set_spatialBlend_Injected();
 
 		//System.Void UnityEngine.AudioSource::set_volume_Injected(System.IntPtr,System.Single)
 		void Register_UnityEngine_AudioSource_set_volume_Injected();
@@ -4814,9 +4826,17 @@ void RegisterAllStrippedInternalCalls()
 		void Register_UnityEngine_PlayerPrefs_HasKey_Injected();
 		Register_UnityEngine_PlayerPrefs_HasKey_Injected();
 
+		//System.Boolean UnityEngine.PlayerPrefs::TrySetFloat_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Single)
+		void Register_UnityEngine_PlayerPrefs_TrySetFloat_Injected();
+		Register_UnityEngine_PlayerPrefs_TrySetFloat_Injected();
+
 		//System.Boolean UnityEngine.PlayerPrefs::TrySetSetString_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,UnityEngine.Bindings.ManagedSpanWrapper&)
 		void Register_UnityEngine_PlayerPrefs_TrySetSetString_Injected();
 		Register_UnityEngine_PlayerPrefs_TrySetSetString_Injected();
+
+		//System.Single UnityEngine.PlayerPrefs::GetFloat_Injected(UnityEngine.Bindings.ManagedSpanWrapper&,System.Single)
+		void Register_UnityEngine_PlayerPrefs_GetFloat_Injected();
+		Register_UnityEngine_PlayerPrefs_GetFloat_Injected();
 
 		//System.Void UnityEngine.PlayerPrefs::DeleteKey_Injected(UnityEngine.Bindings.ManagedSpanWrapper&)
 		void Register_UnityEngine_PlayerPrefs_DeleteKey_Injected();

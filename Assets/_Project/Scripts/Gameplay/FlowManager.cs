@@ -135,29 +135,29 @@ namespace NeonDrift.Gameplay
             if (currentDriftDistance >= 175f && driftTierAwarded < 4)
             {
                 driftTierAwarded = 4;
-                AddFlow(35f, true, "INSANE DRIFT", 1500);
+                AddFlow(24f, true, "INSANE DRIFT", 120); // Drift ultra largo (100-180 pts)
             }
             else if (currentDriftDistance >= 110f && driftTierAwarded < 3)
             {
                 driftTierAwarded = 3;
-                AddFlow(25f, true, "GREAT DRIFT", 700);
+                AddFlow(18f, true, "GREAT DRIFT", 70);  // Drift largo (60-90 pts)
             }
             else if (currentDriftDistance >= 60f && driftTierAwarded < 2)
             {
                 driftTierAwarded = 2;
-                AddFlow(20f, true, "LONG DRIFT", 350);
+                AddFlow(14f, true, "LONG DRIFT", 45);   // Drift medio (35-55 pts)
             }
             else if (currentDriftDistance >= 25f && driftTierAwarded < 1)
             {
                 driftTierAwarded = 1;
-                AddFlow(12f, true, "DRIFT", 150);
+                AddFlow(10f, true, "DRIFT", 20);        // Drift corto (15-25 pts)
             }
 
             // High speed drift bonus
             if (!highSpeedDriftAwarded && vehicle.currentSpeed > vehicle.Config.baseTopSpeed * 0.90f)
             {
                 highSpeedDriftAwarded = true;
-                AddFlow(15f, true, "HIGH SPEED DRIFT", 250);
+                AddFlow(10f, true, "HIGH SPEED DRIFT", 25);
             }
 
             driftTimeAccumulator += Time.fixedDeltaTime;

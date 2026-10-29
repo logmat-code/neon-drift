@@ -413,6 +413,7 @@ namespace NeonDrift.Vehicle
             {
                 boostRequested = false;
                 isBoosting = true;
+                NeonDrift.Presentation.AudioManager.Instance?.PlayBoost();
                 currentBoostDuration = config.boostDuration + upgradeBoostDurationBonus;
                 OnBoostStarted?.Invoke();
             }

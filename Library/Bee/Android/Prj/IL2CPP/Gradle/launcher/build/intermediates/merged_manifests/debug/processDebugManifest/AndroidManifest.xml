@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.logmat.neondrift"
     android:installLocation="preferExternal"
-    android:versionCode="1"
-    android:versionName="1.0" >
+    android:versionCode="2"
+    android:versionName="1.0.1" >
 
     <uses-sdk
         android:minSdkVersion="26"
@@ -135,6 +135,15 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5784311004955543~4555927254" />
+        <meta-data
+            android:name="Yodo1ChannelCode"
+            android:value="GooglePlay" />
+        <meta-data
+            android:name="engineType"
+            android:value="Unity" />
+        <meta-data
+            android:name="engineVersion"
+            android:value="6000.6.2f1" />
         <meta-data
             android:name="unity.splash-mode"
             android:value="0" />

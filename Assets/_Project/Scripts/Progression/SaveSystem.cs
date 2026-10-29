@@ -30,6 +30,7 @@ namespace NeonDrift.Progression
     {
         public int credits = 1000; // Neon Credits (NC)
         public int bestScore = 0;
+        public int scoreVersion = 2;
         public int totalRuns = 0;
         public float longestDriftRecord = 0f;
         public int maxComboRecord = 0;
@@ -98,6 +99,18 @@ namespace NeonDrift.Progression
                 string json = PlayerPrefs.GetString(SAVE_KEY);
                 SaveData data = JsonUtility.FromJson<SaveData>(json);
                 if (data == null) data = new SaveData();
+
+                // Safe Migration from V1 (unbounded hyper-inflated scores) to V2 (rebalanced arcade points)
+                if (data.scoreVersion < 2)
+                {
+                    if (data.bestScore > 10000)
+                    {
+                        data.bestScore = Mathf.Clamp(Mathf.RoundToInt(data.bestScore * 0.05f), 100, 8500);
+                        Debug.Log($"[SaveSystem] Migrated legacy high score to calibrated arcade scale: {data.bestScore}");
+                    }
+                    data.scoreVersion = 2;
+                    Save(data);
+                }
                 if (data.vehicles == null || data.vehicles.Count == 0)
                 {
                     data.GetVehicleData("kitsune_s13").isUnlocked = true;

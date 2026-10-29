@@ -1,4 +1,4 @@
-Starting a Gradle Daemon (subsequent builds will be faster)
+Starting a Gradle Daemon, 3 stopped Daemons could not be reused, use --status for details
 
 > Configure project :unityLibrary
 Variant 'debug', will keep symbols in binaries for:
@@ -14,66 +14,61 @@ It will be removed in version 10.0 of the Android Gradle plugin.
 WARNING: The option setting 'android.enableJetifier=true' is deprecated.
 The current default is 'false'.
 It will be removed in version 10.0 of the Android Gradle plugin.
+WARNING: The option 'android.enableDexingArtifactTransform' is deprecated.
+The current default is 'true'.
+It was removed in version 8.3 of the Android Gradle plugin.
+If you run into issues with dexing transforms, try setting `android.useFullClasspathForDexingTransform = true` instead.
 Variant 'debug', will keep symbols in binaries for:
   'libunity.so'
   'libil2cpp.so'
   'libmain.so'
 Variant 'release', symbols will be stripped from binaries.
 
-> Task :unityLibrary:preBuild UP-TO-DATE
 > Task :launcher:preBuild UP-TO-DATE
+> Task :unityLibrary:preBuild UP-TO-DATE
 > Task :launcher:preDebugBuild UP-TO-DATE
 > Task :unityLibrary:preDebugBuild UP-TO-DATE
 > Task :launcher:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :unityLibrary:processDebugNavigationResources UP-TO-DATE
+> Task :unityLibrary:generateDebugResources UP-TO-DATE
 > Task :launcher:generateDebugResources
-> Task :unityLibrary:processDebugNavigationResources
-> Task :unityLibrary:generateDebugResources
+> Task :unityLibrary:packageDebugResources UP-TO-DATE
+> Task :unityLibrary:parseDebugLocalResources UP-TO-DATE
+> Task :unityLibrary:generateDebugRFile UP-TO-DATE
+> Task :unityLibrary:javaPreCompileDebug UP-TO-DATE
 > Task :launcher:packageDebugResources
-> Task :unityLibrary:packageDebugResources
+> Task :unityLibrary:compileDebugJavaWithJavac UP-TO-DATE
+> Task :unityLibrary:bundleLibCompileToJarDebug UP-TO-DATE
 > Task :unityLibrary:generateDebugAssets UP-TO-DATE
-> Task :unityLibrary:javaPreCompileDebug
-> Task :unityLibrary:parseDebugLocalResources
-> Task :unityLibrary:mergeDebugAssets
-> Task :unityLibrary:writeDebugAarMetadata
-> Task :unityLibrary:extractDeepLinksDebug
-> Task :unityLibrary:generateDebugRFile
-> Task :unityLibrary:compileDebugLibraryResources
-> Task :unityLibrary:processDebugManifest
-> Task :unityLibrary:compileDebugJavaWithJavac
-> Task :unityLibrary:processDebugJavaRes
-> Task :unityLibrary:bundleLibRuntimeToJarDebug
-> Task :unityLibrary:bundleLibCompileToJarDebug
-> Task :unityLibrary:bundleLibRuntimeToDirDebug
 > Task :launcher:processDebugNavigationResources
+> Task :unityLibrary:mergeDebugAssets
+> Task :unityLibrary:bundleLibRuntimeToJarDebug UP-TO-DATE
+> Task :unityLibrary:writeDebugAarMetadata UP-TO-DATE
+> Task :unityLibrary:extractDeepLinksDebug UP-TO-DATE
+> Task :unityLibrary:processDebugManifest UP-TO-DATE
+> Task :unityLibrary:compileDebugLibraryResources UP-TO-DATE
+> Task :launcher:javaPreCompileDebug UP-TO-DATE
 > Task :launcher:generateDebugAssets UP-TO-DATE
-> Task :launcher:javaPreCompileDebug
+> Task :unityLibrary:processDebugJavaRes UP-TO-DATE
+> Task :unityLibrary:bundleLibRuntimeToDirDebug UP-TO-DATE
 > Task :launcher:parseDebugLocalResources
 > Task :launcher:mergeDebugAssets
-> Task :launcher:generateDebugRFile
+> Task :launcher:generateDebugRFile UP-TO-DATE
 > Task :launcher:compileDebugJavaWithJavac NO-SOURCE
-> Task :unityLibrary:configureCMakeDebug[arm64-v8a]
-> Task :launcher:compileDebugNavigationResources
-> Task :launcher:checkDebugAarMetadata
-> Task :launcher:compressDebugAssets
+> Task :launcher:desugarDebugFileDependencies UP-TO-DATE
+> Task :launcher:checkDebugAarMetadata UP-TO-DATE
+> Task :launcher:compileDebugNavigationResources UP-TO-DATE
 > Task :launcher:mapDebugSourceSetPaths
-> Task :unityLibrary:buildCMakeDebug[arm64-v8a]
-> Task :launcher:desugarDebugFileDependencies
-> Task :unityLibrary:mergeDebugJniLibFolders
+> Task :launcher:compressDebugAssets
 > Task :launcher:createDebugCompatibleScreenManifests
-> Task :launcher:extractDeepLinksDebug
-> Task :unityLibrary:mergeDebugNativeLibs
-
+> Task :launcher:extractDeepLinksDebug UP-TO-DATE
 > Task :launcher:mergeDebugResources
-/Users/logmat/.gradle/caches/9.3.1/transforms/622082ef5020371a998de6c7fba4df74/transformed/jetified-smartdigimkttech-sdk-6.5.54/res/values/values.xml:179:4: Multiple substitutions specified in non-positional format of string resource string/sdm_cm_segment_process_bar_hint_text. Did you mean to add the formatted="false" attribute?
-/Users/logmat/.gradle/caches/9.3.1/transforms/622082ef5020371a998de6c7fba4df74/transformed/jetified-smartdigimkttech-sdk-6.5.54/res/values/values.xml:180:4: Multiple substitutions specified in non-positional format of string resource string/sdm_cm_segment_process_bar_hint_text_lite. Did you mean to add the formatted="false" attribute?
-/Users/logmat/.gradle/caches/9.3.1/transforms/622082ef5020371a998de6c7fba4df74/transformed/jetified-smartdigimkttech-sdk-6.5.54/res/values-zh/values-zh.xml:41:4: Multiple substitutions specified in non-positional format of string resource string/sdm_cm_segment_process_bar_hint_text. Did you mean to add the formatted="false" attribute?
-/Users/logmat/.gradle/caches/9.3.1/transforms/622082ef5020371a998de6c7fba4df74/transformed/jetified-smartdigimkttech-sdk-6.5.54/res/values-zh/values-zh.xml:42:4: Multiple substitutions specified in non-positional format of string resource string/sdm_cm_segment_process_bar_hint_text_lite. Did you mean to add the formatted="false" attribute?
-
-> Task :unityLibrary:copyDebugJniLibsProjectOnly
 
 > Task :launcher:processDebugMainManifest
 /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml Warning:
 	uses-permission#android.permission.READ_PHONE_STATE was tagged at AndroidManifest.xml:0 to remove other declarations but no other declaration present
+/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml:5:5-107 Warning:
+	meta-data#Yodo1ChannelCode@android:value was tagged at AndroidManifest.xml:5 to replace other declarations but no other declaration present
 /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml Warning:
 	meta-data#MAS_SDK_TYPE@android:value was tagged at AndroidManifest.xml:0 to replace other declarations but no other declaration present
 /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/AndroidManifest.xml Warning:
@@ -83,21 +78,26 @@ Variant 'release', symbols will be stripped from binaries.
 
 > Task :launcher:processDebugManifest
 > Task :launcher:processDebugJavaRes NO-SOURCE
-> Task :launcher:mergeDebugJniLibFolders
-> Task :launcher:validateSigningDebug
-> Task :launcher:writeDebugAppMetadata
-> Task :launcher:writeDebugSigningConfigVersions
+> Task :launcher:mergeDebugJavaResource UP-TO-DATE
+> Task :unityLibrary:configureCMakeDebug[arm64-v8a]
+> Task :launcher:checkDebugDuplicateClasses UP-TO-DATE
+> Task :launcher:mergeExtDexDebug UP-TO-DATE
+> Task :launcher:mergeLibDexDebug UP-TO-DATE
+> Task :launcher:mergeDebugJniLibFolders UP-TO-DATE
+> Task :launcher:validateSigningDebug UP-TO-DATE
+> Task :launcher:writeDebugAppMetadata UP-TO-DATE
+> Task :launcher:writeDebugSigningConfigVersions UP-TO-DATE
 > Task :launcher:processDebugManifestForPackage
-> Task :launcher:checkDebugDuplicateClasses
+> Task :unityLibrary:buildCMakeDebug[arm64-v8a]
+> Task :unityLibrary:mergeDebugJniLibFolders
+> Task :unityLibrary:mergeDebugNativeLibs
+> Task :unityLibrary:copyDebugJniLibsProjectOnly
 > Task :launcher:mergeDebugNativeLibs
-> Task :launcher:mergeDebugJavaResource
-> Task :launcher:processDebugResources
-> Task :launcher:dexBuilderDebug
-> Task :launcher:mergeLibDexDebug
-> Task :launcher:mergeDebugGlobalSynthetics
 > Task :launcher:stripDebugDebugSymbols
-> Task :launcher:mergeProjectDexDebug
-> Task :launcher:mergeExtDexDebug
+> Task :launcher:processDebugResources
+> Task :launcher:dexBuilderDebug UP-TO-DATE
+> Task :launcher:mergeDebugGlobalSynthetics UP-TO-DATE
+> Task :launcher:mergeProjectDexDebug UP-TO-DATE
 > Task :launcher:packageDebug
 > Task :launcher:createDebugApkListingFileRedirect
 > Task :launcher:assembleDebug
@@ -110,6 +110,6 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/9.3.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 40s
-55 actionable tasks: 55 executed
+BUILD SUCCESSFUL in 9s
+55 actionable tasks: 23 executed, 32 up-to-date
 Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.3.1/userguide/configuration_cache_enabling.html

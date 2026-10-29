@@ -27,7 +27,7 @@
   },
   {
     "level_": 0,
-    "message_": "- no fingerprint file, will remove stale configuration folder",
+    "message_": "- a file changed",
     "file_": "/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt",
     "tag_": "debug|arm64-v8a",
     "diagnosticCode_": 0,
@@ -40,7 +40,46 @@
   },
   {
     "level_": 0,
-    "message_": "/Applications/Unity/Hub/Editor/6000.6.2f1/PlaybackEngines/AndroidPlayer/OpenJDK/bin/java \\\n  --class-path \\\n  /Users/logmat/.gradle/caches/modules-2/files-2.1/com.google.prefab/cli/2.1.0/aa32fec809c44fa531f01dcfb739b5b3304d3050/cli-2.1.0-all.jar \\\n  com.google.prefab.cli.AppKt \\\n  --build-system \\\n  cmake \\\n  --platform \\\n  android \\\n  --abi \\\n  arm64-v8a \\\n  --os-version \\\n  26 \\\n  --stl \\\n  c++_shared \\\n  --ndk-version \\\n  27 \\\n  --output \\\n  /var/folders/ml/sl85lctn60599nrj8rvy5q2h0000gn/T/agp-prefab-staging11802541237671325251/staged-cli-output \\\n  /Users/logmat/.gradle/caches/9.3.1/transforms/ffd743d4bb7dfe9c6bc7ddedb0849c21/transformed/jetified-games-activity-4.4.0/prefab \\\n  /Users/logmat/.gradle/caches/9.3.1/transforms/91b1807bcc31c04f200145de3d4bf71b/transformed/jetified-games-frame-pacing-2.1.2/prefab\n",
+    "message_": "  - /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt (LAST_MODIFIED_CHANGED)",
+    "file_": "/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "  - /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/FramePacing/CMakeLists.txt (LAST_MODIFIED_CHANGED)",
+    "file_": "/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "  - /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/GameActivity/CMakeLists.txt (LAST_MODIFIED_CHANGED)",
+    "file_": "/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt",
+    "tag_": "debug|arm64-v8a",
+    "diagnosticCode_": 0,
+    "memoizedIsInitialized": 1,
+    "unknownFields": {
+      "fields": {}
+    },
+    "memoizedSize": -1,
+    "memoizedHashCode": 0
+  },
+  {
+    "level_": 0,
+    "message_": "/Applications/Unity/Hub/Editor/6000.6.2f1/PlaybackEngines/AndroidPlayer/OpenJDK/bin/java \\\n  --class-path \\\n  /Users/logmat/.gradle/caches/modules-2/files-2.1/com.google.prefab/cli/2.1.0/aa32fec809c44fa531f01dcfb739b5b3304d3050/cli-2.1.0-all.jar \\\n  com.google.prefab.cli.AppKt \\\n  --build-system \\\n  cmake \\\n  --platform \\\n  android \\\n  --abi \\\n  arm64-v8a \\\n  --os-version \\\n  26 \\\n  --stl \\\n  c++_shared \\\n  --ndk-version \\\n  27 \\\n  --output \\\n  /var/folders/ml/sl85lctn60599nrj8rvy5q2h0000gn/T/agp-prefab-staging11475453012955830648/staged-cli-output \\\n  /Users/logmat/.gradle/caches/9.3.1/transforms/ffd743d4bb7dfe9c6bc7ddedb0849c21/transformed/jetified-games-activity-4.4.0/prefab \\\n  /Users/logmat/.gradle/caches/9.3.1/transforms/91b1807bcc31c04f200145de3d4bf71b/transformed/jetified-games-frame-pacing-2.1.2/prefab\n",
     "file_": "/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt",
     "tag_": "debug|arm64-v8a",
     "diagnosticCode_": 0,
@@ -66,20 +105,7 @@
   },
   {
     "level_": 0,
-    "message_": "removing stale contents from \u0027/Users/logmat/Desktop/CLAUDE/NeonDrift/.utmp/Debug/5d56m6r1/arm64-v8a\u0027",
-    "file_": "/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt",
-    "tag_": "debug|arm64-v8a",
-    "diagnosticCode_": 0,
-    "memoizedIsInitialized": 1,
-    "unknownFields": {
-      "fields": {}
-    },
-    "memoizedSize": -1,
-    "memoizedHashCode": 0
-  },
-  {
-    "level_": 0,
-    "message_": "created folder \u0027/Users/logmat/Desktop/CLAUDE/NeonDrift/.utmp/Debug/5d56m6r1/arm64-v8a\u0027",
+    "message_": "keeping json folder \u0027/Users/logmat/Desktop/CLAUDE/NeonDrift/.utmp/Debug/5d56m6r1/arm64-v8a\u0027 but regenerating project",
     "file_": "/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt",
     "tag_": "debug|arm64-v8a",
     "diagnosticCode_": 0,
@@ -157,7 +183,7 @@
   },
   {
     "level_": 0,
-    "message_": "hard linked /Users/logmat/Desktop/CLAUDE/NeonDrift/.utmp/Debug/5d56m6r1/arm64-v8a/compile_commands.json to /Users/logmat/Desktop/CLAUDE/NeonDrift/.utmp/tools/debug/arm64-v8a/compile_commands.json",
+    "message_": "deleted unexpected build output /Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/Debug/5d56m6r1/obj/arm64-v8a/libc++_shared.so in incremental regenerate",
     "file_": "/Users/logmat/Desktop/CLAUDE/NeonDrift/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/cpp/CMakeLists.txt",
     "tag_": "debug|arm64-v8a",
     "diagnosticCode_": 0,

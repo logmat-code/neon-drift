@@ -61,6 +61,7 @@
     <Compile Include="Assets/Yodo1/MAS/NoCode/Scripts/RewardedInterstitialAd.cs" />
     <Compile Include="Assets/_Project/Scripts/Presentation/GameFeelManager.cs" />
     <Compile Include="Assets/_Project/Scripts/Presentation/VehicleVFX.cs" />
+    <Compile Include="Assets/_Project/Scripts/World/MountainParallaxController.cs" />
     <Compile Include="Assets/_Project/Scripts/World/DriftPattern.cs" />
     <Compile Include="Assets/Yodo1/MAS/NoCode/Scripts/ConditionalHideAttribute.cs" />
     <Compile Include="Assets/_Project/Scripts/Gameplay/ScoreManager.cs" />
